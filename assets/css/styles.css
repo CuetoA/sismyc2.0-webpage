@@ -1,0 +1,25 @@
+.header{
+    background: rgb(235,229,229);
+    height: 89px;
+}
+
+.header .logo{
+    width: 70px;
+    margin: 0px;
+    margin-right: 20px;
+}
+.header .enlace-home{
+    font-size: 25px;
+    font-weight: bold;
+}
+.header .barra-nav{
+    width: 334.922px;
+}
+.header .barra-nav .enlace{
+    color: rgb(0,0,0);
+    font-size: 20px;
+}
+.header .barra-nav .enlace.principal{
+    text-decoration: underline;
+    font-weight: bold;
+}
