@@ -35,3 +35,19 @@
 .boton-inicio:hover{
     background: #4e5e32;
 }
+.boton-circular{
+    height: 200px;
+    width: 200px;
+    border-radius: 125px;
+    color: #3c3c3c;
+    background: #ebe5e5;
+    font-size: 26px;
+    font-weight: bold;
+}
+.boton-circular:hover{
+    background: #ebe5e5;
+    /* color: #ebe5e5; */
+    opacity: 0.8;
+    color: #3c3c3c;
+    /* border: 2px solid black; */
+}
