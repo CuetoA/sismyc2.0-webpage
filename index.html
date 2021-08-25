@@ -29,27 +29,40 @@
             </div>
         </div>
     </nav>
-    <div style="height: 255px;background: url(&quot;assets/img/SISMyC.png&quot;);">
-        <h1 style="text-align: center;padding-top: 72px;color: #ebe5e5;font-weight: bold;font-size: 65px;">SISMyC</h1>
-    </div>
-    <div>
-        <section>
-            <div class="bg-light border rounded border-light jumbotron py-5 px-4" id="prono" style="background: #ebe5e5;">
-                <p style="text-align: center;font-size: 18px;">
-                    El Sistema Informático del Sistema de Monitoreo y Control (SISMyC) se encarga de comunicar al usuario y los SSF's. De igual manera, permite ver los parámetros medidos, establece los ciclos de riego, comprueba las conexiones, almacena información sobre los árboles y captura datos taxonómicos.
-                    <br>
-                </p>
-                <div class="container">
-                    <a class="btn btn-primary boton-inicio" role="button" href="Visualizar/visualizar.html" >Ver información</a>
-                    <a class="btn btn-primary boton-inicio" role="button" href="Registrar/registrar.html" >Registrar</a>
+    <div class="secciones">
+        <section class="inicio">
+            <div style="height: 255px;background: url(&quot;assets/img/SISMyC.png&quot;);">
+                <h1 style="text-align: center;padding-top: 72px;color: #ebe5e5;font-weight: bold;font-size: 65px;">SISMyC</h1>
+            </div>
+            <div>
+                <div class="bg-light border rounded border-light jumbotron py-5 px-4" id="prono" style="background: #ebe5e5;">
+                    <p style="text-align: center;font-size: 18px;">
+                        El Sistema Informático del Sistema de Monitoreo y Control (SISMyC) se encarga de comunicar al usuario y los SSF's. De igual manera, permite ver los parámetros medidos, establece los ciclos de riego, comprueba las conexiones, almacena información sobre los árboles y captura datos taxonómicos.
+                        <br>
+                    </p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <a class="btn btn-primary boton-inicio" role="button" href="Visualizar/visualizar.html" >Ver información</a>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-primary boton-inicio" role="button" href="Registrar/registrar.html" >Registrar</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <section class="registrar">
+        </section>
+        <section class="visualizar">
+        </section>
     </div>
-    <div style="background: url(&quot;assets/img/SISMyC.png&quot;);">
-        <div class="col" style="opacity: 0;"></div>
+    <div class="abajo">
+        <div class="col" style="opacity: 0.5;"></div>
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
