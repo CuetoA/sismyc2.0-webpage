@@ -16,10 +16,22 @@
     width: 334.922px;
 }
 .header .barra-nav .enlace{
-    color: rgb(0,0,0);
+    color: black;
     font-size: 20px;
 }
 .header .barra-nav .enlace.principal{
     text-decoration: underline;
     font-weight: bold;
+}
+.boton{
+    border: 0;
+}
+.boton-inicio{
+    background: #7f9751;
+    height: 65px;
+    width: 260px;
+    font-size: 22px;
+}
+.boton-inicio:hover{
+    background: #4e5e32;
 }
