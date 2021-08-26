@@ -54,3 +54,6 @@
 .abajo{
     background: url('../img/SISMyC.png');
 }
+#accion{
+    display: inline;
+}

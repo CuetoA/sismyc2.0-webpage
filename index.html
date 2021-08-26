@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!-- Header -->
     <nav class="navbar navbar-light navbar-expand-md navigation-clean header">
         <div class="container">
             <img class="logo" src="assets/img/Arbol%201.jpg">
@@ -23,41 +24,64 @@
                 <ul class="navbar-nav ms-auto barra-nav">
                     <li class="nav-item"></li>
                     <li class="nav-item"><a class="nav-link enlace principal" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link enlace" href="Registrar/registrar.html" >Registrar</a></li>
-                    <li class="nav-item"><a class="nav-link enlace" href="Visualizar/visualizar.html" >Visualizar</a></li>
+                    <li class="nav-item"><a class="nav-link enlace" id="e-registrar">Registrar</a></li>
+                    <li class="nav-item"><a class="nav-link enlace" id="e-visualizar">Visualizar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- /Header -->
+
+    <!-- Contenido -->
     <div class="secciones">
-        <section class="inicio">
+        <section class="seccion inicio">
             <div style="height: 255px;background: url(&quot;assets/img/SISMyC.png&quot;);">
                 <h1 style="text-align: center;padding-top: 72px;color: #ebe5e5;font-weight: bold;font-size: 65px;">SISMyC</h1>
             </div>
-            <div>
-                <div class="bg-light border rounded border-light jumbotron py-5 px-4" id="prono" style="background: #ebe5e5;">
-                    <p style="text-align: center;font-size: 18px;">
-                        El Sistema Informático del Sistema de Monitoreo y Control (SISMyC) se encarga de comunicar al usuario y los SSF's. De igual manera, permite ver los parámetros medidos, establece los ciclos de riego, comprueba las conexiones, almacena información sobre los árboles y captura datos taxonómicos.
-                        <br>
-                    </p>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <a class="btn btn-primary boton-inicio" role="button" href="Visualizar/visualizar.html" >Ver información</a>
-                            </div>
-                            <div class="col">
-                                <a class="btn btn-primary boton-inicio" role="button" href="Registrar/registrar.html" >Registrar</a>
-                            </div>
+            <div class="bg-light border rounded border-light jumbotron py-5 px-4" id="prono" style="background: #ebe5e5;">
+                <p style="text-align: center;font-size: 18px;">
+                    El Sistema Informático del Sistema de Monitoreo y Control (SISMyC) se encarga de comunicar al usuario y los SSF's. De igual manera, permite ver los parámetros medidos, establece los ciclos de riego, comprueba las conexiones, almacena información sobre los árboles y captura datos taxonómicos.
+                    <br>
+                </p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col" id="boton_informacion">
+                            <a class="btn btn-primary boton-inicio" id="visualizar" role="button">Ver información</a>
+                        </div>
+                        <div class="col">
+                            <a class="btn btn-primary boton-inicio" id="registrar" role="button">Registrar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="registrar">
+        <section class="seccion seleccion">
+            <div style="height: 480px;background: #909b8f;">
+                <h1 style="background: #4f604d;height: 122px;text-align: center;color: #ebe5e5;font-size: 30px;padding-top: 65px;transform: translate(0px);">¿Qué quieres <div id="accion"></div>?</h1>
+                <p style="text-align: center;padding-top: 66px;">
+                    <a class="btn btn-primary boton-circular" id="boton-arbol" role="button" >
+                        Un Árbol
+                        <img style="margin: 32px;width: 93px;margin-top: 8px;" src="./assets/img/Arbol%202.jpg">
+                    </a>
+                    <a class="btn btn-primary boton-circular" id="boton-anillo" role="button" style="height: 200px;width: 200px;border-radius: 125px;color: #3c3c3c;background: #ebe5e5;font-size: 26px;font-weight: bold;margin-left: 160px;">
+                        Un Anillo
+                        <img style="margin: 32px;height: 78px;margin-left: 11px;margin-top: 33px;" src="./assets/img/Anillo.jpg">
+                    </a>
+                </p>
+                <div>
+                    <section style="background: rgb(203,25,25);"></section>
+                </div>
+            </div>
         </section>
-        <section class="visualizar">
+        <!-- Esto se puede complementar más -->
+        <section class="seccion registrar">
+        </section>
+        <section class="seccion visualizar">
         </section>
     </div>
+    <!-- /Contenido -->
+
+    <!-- Footer -->
     <div class="abajo">
         <div class="col" style="opacity: 0.5;"></div>
     </div>
