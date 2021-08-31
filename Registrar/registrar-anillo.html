@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
-<body>
+<body style="background: #c8d1c7;">
     <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: rgb(235,229,229);height: 89px;">
         <div class="container"><img src="../assets/img/Arbol%201.jpg" style="width: 70px;margin: 0px;margin-right: 20px;"><a class="navbar-brand" href="#" style="font-size: 25px;font-weight: bold;">SISMyC</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -30,7 +30,7 @@
                 <div class="col-md-6" style="width: 262px;"><a class="btn btn-primary" role="button" href="#" style="height: 200px;width: 200px;border-radius: 125px;background: #4f604d;font-size: 24px;font-weight: bold;color: #ebe5e5;border-color: #4f604d;">Anillo<img style="margin: 17px;width: 170px;margin-left: 2px;" src="../assets/img/Anillo%20verde.jpg"></a></div>
                 <div class="col-md-6" style="width: 654px;">
                     <h1 style="font-weight: bold;">Instrucciones de registro</h1>
-                    <h1 style="font-size: 22px;">&nbsp;Para registrar un árbol:<br>&nbsp; &nbsp; &nbsp; 1.- Especifica el tipo de árbol que quieres cuidar<br>&nbsp; &nbsp; &nbsp; 2.-Especifica el tipo de cuidado que debe tener<br>&nbsp; &nbsp; &nbsp; 3.-Especifica la cantidad de agua que requiere el árbol<br><br></h1>
+                    <h1 style="font-size: 22px;">&nbsp;Para registrar un anillo:<br>&nbsp; &nbsp; &nbsp; 1.- Introduce el ID del anillo<br>&nbsp; &nbsp; &nbsp; 2.- Introduce los datos generales<br>&nbsp; &nbsp; &nbsp; 3.- Introduce el árbol con el que el anillo se relaciona<br><br></h1>
                 </div>
             </div>
         </div>
@@ -39,16 +39,24 @@
                 <div class="col-md-3" style="height: 66px;width: 263px;opacity: 0;"></div>
                 <div class="col-md-3" style="width: 327px;">
                     <h1 style="font-size: 26px;">Datos generales:</h1>
+                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">ID del anillo:</label><input type="text"></div>
+                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">Fecha del registro:</label><input type="text"></div>
+                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">Registrante:</label><input type="text"></div>
                     <div></div>
                 </div>
                 <div class="col-md-3" style="width: 327px;">
                     <h1 style="font-size: 26px;">Datos específicos:</h1>
-                    <div></div>
+                    <div></div><label class="form-label" style="width: 130px;">Árbol relacionado:</label><input type="text">
+                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">Ubicación:</label><input type="text"></div>
+                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">No. de conexión:</label><input type="text"></div>
+                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">Modo operación:</label>
+                        <div class="dropdown" style="text-align: left;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 182px;text-align: left;background: #4f604d;border-color: #4f604d;">Modo Operación</button>
+                            <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
-                    <div><a class="btn btn-warning btn-floating" role="button"><i class="fa fa-heart"></i></a><a class="btn btn-warning btn-floating" role="button"><i class="fa fa-heart"></i></a>
-                        <div></div>
-                    </div><a class="btn btn-warning btn-floating" role="button" style="width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;border-color: #4f604d;"><i class="fa fa-heart"></i></a>
+                    <div style="text-align: center;height: 264px;width: 125px;"><a class="btn btn-warning btn-floating" role="button" style="width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;margin-top: 10px;margin-bottom: 10px;border-color: #4f604d;"><i class="fa fa-heart"></i></a><a class="btn btn-warning btn-floating" role="button" style="width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;margin-top: 10px;margin-bottom: 10px;border-color: #4f604d;"><i class="fa fa-heart"></i></a><a class="btn btn-warning btn-floating" role="button" style="width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;margin-top: 10px;margin-bottom: 10px;border-color: #4f604d;"><i class="fa fa-heart"></i></a></div>
                 </div>
             </div>
         </div>
