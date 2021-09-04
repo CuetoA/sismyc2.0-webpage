@@ -1,3 +1,5 @@
+/*General styles */
+
 .header {
   background: rgb(235,229,229);
   height: 89px;
@@ -28,7 +30,22 @@
   font-weight: bold;
 }
 
+/*Background styles */
 
+.bckg-gray {
+  background: #3c3c3c;
+}
+
+.bckg-green {
+  background: #4f604d;
+}
+
+.bckg-gray-low {
+  background: #ebe5e5;
+}
+
+
+/*Index styles */
 
 .window-title {
   text-align: center;
@@ -39,9 +56,6 @@
   margin: auto;
 }
 
-.bckg-gray {
-  background: #3c3c3c;
-}
 
 .prgh-center {
   text-align: center;
@@ -61,4 +75,64 @@
   border-color: rgba(255,255,255,0);
   color: #ebe5e5;
 }
+
+
+/*Registrar styles */
+
+.reg-window {
+  height: 480px
+}
+
+.reg-window .title {
+  background: #4f604d;
+  height: 122px;
+  text-align: center;
+  color: #ebe5e5;font-size: 30px;
+  padding-top: 65px;
+  transform: translate(0px);
+}
+
+
+.reg-window .div {
+  text-align: center;
+  padding-top: 66px;
+}
+
+.reg-window .div .btn {
+  height: 200px;  
+  width: 200px;  
+  border-radius: 125px;  
+  color: #3c3c3c;  
+  background: #ebe5e5;  
+  font-size: 26px;  
+  font-weight: bold;
+  margin-left: 6%;
+  margin-right: 6%;
+  border-color: #ebe5e5;
+}
+
+.reg-window .div .btn .img-arbol{
+  margin: 32px;
+  width: 93px;
+  margin-top: 8px;
+}
+
+.reg-window .div .btn .img-anillo{
+  margin: 32px;
+  height: 78px;
+  margin-left: 11px;
+  margin-top: 33px;
+}
+
+.line4px {
+  height: 4px;
+}
+
+.line37px {
+  height: 37px;
+}
+
+
+
+
 
