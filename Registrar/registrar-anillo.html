@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>sismyc</title>
+    <title>sismyc - registrar anillo</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
-<body style="background: #c8d1c7;">
+<body class="bckg-green-low">
     <nav class="navbar navbar-light navbar-expand-md navigation-clean header">
         <div class="container">
             <img class="logo" src="../assets/img/Arbol%201.jpg" >
@@ -38,34 +38,80 @@
     </nav>
 
 
-    <div style="height: 480px;background: #c8d1c7;padding-top: 30px;">
+    <div  class="main-div" >
         <div class="container">
             <div class="row" style="width: 1160px;">
-                <div class="col-md-6" style="width: 262px;"><a class="btn btn-primary" role="button" href="#" style="height: 200px;width: 200px;border-radius: 125px;background: #4f604d;font-size: 24px;font-weight: bold;color: #ebe5e5;border-color: #4f604d;">Anillo<img style="margin: 17px;width: 170px;margin-left: 2px;" src="../assets/img/Anillo%20verde.jpg"></a></div>
+                <div class="col-md-6" style="width: 262px;">
+                    <a class="btn btn-primary circle" role="button" href="#" >
+                        Anillo
+                        <img class="img-anillo " src="../assets/img/Anillo%20verde.jpg">    
+                    </a>
+                </div>
+
                 <div class="col-md-6" style="width: 654px;">
-                    <h1 style="font-weight: bold;">Instrucciones de registro</h1>
-                    <h1 style="font-size: 22px;">&nbsp;Para registrar un anillo:<br>&nbsp; &nbsp; &nbsp; 1.- Introduce el ID del anillo<br>&nbsp; &nbsp; &nbsp; 2.- Introduce los datos generales<br>&nbsp; &nbsp; &nbsp; 3.- Introduce el árbol con el que el anillo se relaciona<br><br></h1>
+                    <h1 class="rv-title">
+                        Instrucciones de registro
+                    </h1>
+                    <h1 class="rv-text">
+                        &nbsp;Para registrar un anillo:
+                        <br>&nbsp; &nbsp; &nbsp; 1.- Introduce el ID del anillo
+                        <br>&nbsp; &nbsp; &nbsp; 2.- Introduce los datos generales
+                        <br>&nbsp; &nbsp; &nbsp; 3.- Introduce el árbol con el que el anillo se relaciona
+                    </h1>
                 </div>
             </div>
         </div>
+
+
         <div class="container">
-            <div class="row" style="width: 1160px;">
-                <div class="col-md-3" style="height: 66px;width: 263px;opacity: 0;"></div>
-                <div class="col-md-3" style="width: 327px;">
-                    <h1 style="font-size: 26px;">Datos generales:</h1>
-                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">ID del anillo:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">Fecha del registro:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">Registrante:</label><input type="text"></div>
-                    <div></div>
+            <div class="row">
+                <div class="col-md-3 col4"></div>
+                <div class="col-md-3 col4">
+                    <h1 class="rv-subtitle">Datos generales:</h1>
+                    <div>
+                        <label class="form-label text label" >ID del anillo:</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label class="form-label text label">Fecha del registro:</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label class="form-label text label">Registrante:</label>
+                        <input type="text">
+                    </div>
                 </div>
-                <div class="col-md-3" style="width: 327px;">
-                    <h1 style="font-size: 26px;">Datos específicos:</h1>
-                    <div></div><label class="form-label" style="width: 130px;">Árbol relacionado:</label><input type="text">
-                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">Ubicación:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">No. de conexión:</label><input type="text"></div>
+
+                <div class="col-md-3 col4">
+                    <h1 class="rv-subtitle">Datos específicos:</h1>
+                    <div>
+                        <label class="form-label text label">Árbol relacionado:</label>
+                        <input type="text">
+                    </div>
+
+                    <div>
+                        <label class="form-label text label">Ubicación:</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label class="form-label text left">No. de conexión:</label>
+                        <input type="text">
+                    </div>
                 </div>
-                <div class="col">
-                    <div style="text-align: center;height: 264px;width: 125px;"><a class="btn btn-warning btn-floating" role="button" style="width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;margin-top: 10px;margin-bottom: 10px;border-color: #4f604d;"><i class="fa fa-heart"></i></a><a class="btn btn-warning btn-floating" role="button" style="width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;margin-top: 10px;margin-bottom: 10px;border-color: #4f604d;"><i class="fa fa-heart"></i></a><a class="btn btn-warning btn-floating" role="button" style="width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;margin-top: 10px;margin-bottom: 10px;border-color: #4f604d;"><i class="fa fa-heart"></i></a></div>
+
+                <div class="col col4">
+                    <div style="text-align: center;height: 264px;width: 125px;">
+                        <a class="btn btn-warning btn-floating cicle-small" role="button">
+                            <i class="fa fa-heart"></i>
+                            <img class="img-anillo " src="../assets/img/Anillo%20verde.jpg"> 
+                        </a>
+                        <a class="btn btn-warning btn-floating cicle-small" role="button">
+                            <i class="fa fa-heart"></i>
+                        </a>
+                        <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                <i class="fa fa-heart"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

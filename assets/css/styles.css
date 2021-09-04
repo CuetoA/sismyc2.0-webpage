@@ -30,6 +30,20 @@
   font-weight: bold;
 }
 
+.img-anillo {
+  margin: 32px;
+  height: 78px;
+  margin-left: 11px;
+  margin-top: 33px;
+}
+
+.img-arbol{
+  margin: 32px;
+  width: 93px;
+  margin-top: 8px;
+}
+
+
 /*Background styles */
 
 .bckg-gray {
@@ -43,6 +57,12 @@
 .bckg-gray-low {
   background: #ebe5e5;
 }
+
+.bckg-green-low {
+  background: #c8d1c7;
+}
+
+
 
 
 /*Index styles */
@@ -111,18 +131,6 @@
   border-color: #ebe5e5;
 }
 
-.reg-window .div .btn .img-arbol{
-  margin: 32px;
-  width: 93px;
-  margin-top: 8px;
-}
-
-.reg-window .div .btn .img-anillo{
-  margin: 32px;
-  height: 78px;
-  margin-left: 11px;
-  margin-top: 33px;
-}
 
 .line4px {
   height: 4px;
@@ -133,6 +141,44 @@
 }
 
 
+/*Registrar anillo styles */
+.main-div {
+  height: 480px;
+  padding-top: 30px;
+}
+
+.main-div .circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 125px;
+  background: #4f604d;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ebe5e5;
+  border-color: #4f604d;
+}
+
+.rv-title {
+  font-weight: bold;
+}
+.rv-subtitle {
+  font-size: 26px;
+}
+
+.rv-text {
+  font-size: 22px;
+}
+
+.col4 {
+  height: 66px;
+  width: 25%;
+}
 
 
+.text.label {
+  width: 130px;
+}
 
+.cicle-small {
+  width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;margin-top: 10px;margin-bottom: 10px;border-color: #4f604d;
+}
