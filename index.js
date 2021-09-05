@@ -1,41 +1,34 @@
-const secciones = document.getElementsByClassName("seccion")
-const visualizarButton = document.getElementsById("visualizar")
-const registrarButton = document.getElementsById("registrar")
-const arbolButton =          document.getElementById("boton-arbol")
-const anilloButton =         document.getElementById("boton-anillo")
-const visualizarLink =    document.getElementById("e-visualizar")
-const registrarLink =     document.getElementById("e-registrar")
+const secciones =           document.getElementsByClassName("seccion")
+const botonVisualizar =     document.getElementById("visualizar")
+const botonRegistrar =      document.getElementById("registrar")
+const botonArbol =          document.getElementById("boton-arbol")
+const botonAnillo =         document.getElementById("boton-anillo")
+const enlaceVisualizar =    document.getElementById("e-visualizar")
+const enlaceRegistrar =     document.getElementById("e-registrar")
 let verORegistrar =         document.getElementById('accion')
 
 mostrarSolo(secciones, 1)
 
-// Visualizar actions
-visualizarButton.addEventListener('click', () => {
+botonVisualizar.addEventListener('click', () => {
     verORegistrar.innerHTML = "visualizar"
     menu("visualizar")
 })
-registrarLink.addEventListener('click', () => {
+enlaceVisualizar.addEventListener('click', () => {
     verORegistrar.innerHTML = "visualizar"
     menu("visualizar")
 })
-
-// Registrar actions
-registrarButton.addEventListener('click', () => {
+botonRegistrar.addEventListener('click', () => {
     verORegistrar.innerHTML = "registrar"
     menu("registrar")
 })
-registrarLink.addEventListener('click', () => {
+enlaceRegistrar.addEventListener('click', () => {
     verORegistrar.innerHTML = "registrar"
     menu("registrar")
 })
-
-
-
-
-// Main Menu
+// Menu principal
 function menu(seleccion) {
     mostrarSolo(secciones, 2)
-    arbolButton.addEventListener('click', () =>{
+    botonArbol.addEventListener('click', () =>{
         if (verORegistrar.innerHTML === "registrar") {
             window.location.href = './Registrar/registrar-arbol.html'
         }
@@ -43,7 +36,7 @@ function menu(seleccion) {
             window.location.href = './Visualizar/visualizar-arbol.html'
         }
     })
-    anilloButton.addEventListener('click', () =>{
+    botonAnillo.addEventListener('click', () =>{
         if (verORegistrar.innerHTML === "registrar") {
             window.location.href = './Registrar/registrar-anillo.html'
         }
@@ -52,6 +45,8 @@ function menu(seleccion) {
         }
     })
 
+}
+
 // Función para esconder todas las secciones y mostrar sólo una
 function mostrarSolo(vectorEl, index) {
     let arrayEl = Array.prototype.filter.call(vectorEl, elem => {
@@ -59,4 +54,3 @@ function mostrarSolo(vectorEl, index) {
     })
     arrayEl.forEach( element => {element.style.display = 'none'});
     arrayEl[index-1].style.display = 'block'
-}
