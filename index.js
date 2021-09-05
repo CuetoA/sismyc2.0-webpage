@@ -1,3 +1,5 @@
+console.log("holi chimpi bb <3")
+
 const secciones =           document.getElementsByClassName("seccion")
 const botonVisualizar =     document.getElementById("visualizar")
 const botonRegistrar =      document.getElementById("registrar")
@@ -53,4 +55,4 @@ function mostrarSolo(vectorEl, index) {
         return elem.nodeName === 'SECTION'
     })
     arrayEl.forEach( element => {element.style.display = 'none'});
-    arrayEl[index-1].style.display = 'block'
+    arrayEl[index-1].style.display = 'block'}
