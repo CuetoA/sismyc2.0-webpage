@@ -9,9 +9,13 @@
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/trash.css">
+    <link rel="stylesheet" href="../assets/css/check-o.css">
+    <link rel="stylesheet" href="../assets/css/close-o.css">
 </head>
 
-<body>
+<body style="background: #c8d1c7;">
+
     <nav class="navbar navbar-light navbar-expand-md navigation-clean header">
         <div class="container">
             <img class="logo" src="../assets/img/Arbol%201.jpg" >
@@ -23,38 +27,439 @@
                 <span class="visually-hidden">
                     Toggle navigation
                 </span>
-                <span class="navbar-toggler-icon">
-                    
-                </span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto barra-nav">
                     <li class="nav-item"><a class="nav-link enlace" href="../index.html" >Inicio</a></li>
                     <li class="nav-item"><a class="nav-link enlace" href="../Registrar/registrar.html">Registrar</a></li>
-                    <li class="nav-item"><a class="nav-link enlace principal" href="Visualizar/visualizar.html">Visualizar</a></li>
+                    <li class="nav-item"><a class="nav-link enlace principal" href="../Visualizar/visualizar.html">Visualizar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <div class="reg-window bckg-green">
-        <h1 class="title">
-            ¿Qué quieres visualizar?
-        </h1>
-        <div class="div ">
-            <a class="btn btn-primary" role="button" href="visualizar-arbol.html" >
-                Un Árbol
-                <img class="img-arbol" src="../assets/img/Arbol%202.jpg">
-            </a>
-            <a class="btn btn-primary" role="button" href="visualizar-anillo.html">Un Anillo
-                <img class="img-anillo" src="../assets/img/Anillo.jpg">
-            </a>
-        </div>
-    </div>
-
-    <div class="col line4px bckg-gray-low"></div>
-    <div class="col line37px bckg-green"></div>
     
+    <div><!-- Sections-->
+        <section class="seccion visualizar-arbol">
+            
+
+
+            <div class="bckg-green-low main-div">
+                <div class="container">
+                    <div class="row" style="margin-bottom: 40px">
+                        <div class="col-md-6" style="width: 262px;">
+                            <a class="btn btn-primary circle" role="button">
+                                Árbol
+                                <img class="img-arbol" src="../assets/img/Arbol%20verde.jpg">
+                            </a>
+                        </div>
+
+                        <div class="col-md-6" style="width: 654px;">
+                            <h1 class="rv-title">Visualiza un árbol</h1>
+
+                                <div class="dropdown" style="text-align: left;">
+                                    <button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 582.75px;text-align: left;background: #4f604d;border-color: #4f604d;">
+                                        Selecciona un árbol
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">
+                                            First Item
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            Second Item
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            Third Item
+                                        </a>
+                                    </div>
+                                </div>
+
+                            <h1 class="rv-text">
+                                &nbsp;Para visualizar un árbol:
+                                <br>&nbsp; &nbsp; &nbsp; 1.- Los botones te permiten interactuar con tu anillo
+                                <br>&nbsp; &nbsp; &nbsp; 2.- Puedes modificar los datos de tu árbol
+                                <br>&nbsp; &nbsp; &nbsp; 3.- Ingrese las horas en formato 24hr
+                            </h1>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="row" style="width: 1160px;">
+                        <div class="col-md-3 col4">
+                            <div class="btn-div">
+                                <button class="btn btn-primary sqr-btn" type="button">Modificar</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h1 class="rv-subtitle">Datos de Registro:</h1>
+                            <div >
+                                <label class="form-label text label">ID del árbol:</label>
+                                <input type="text">
+                            </div>
+                            <div >
+                                <label class="form-label text label">Fecha del registro:</label>
+                                <input type="text">
+                            </div>
+                            <div >
+                                <label class="form-label text label">Edad de ingreso:</label>
+                                <input type="text">
+                            </div>
+                            <div >
+                                <label class="form-label text label">Registrante:</label>
+                                <input type="text">
+                            </div>
+                            <div >
+                                <label class="form-label text label">Altura de registro:</label>
+                                <input type="text">
+                            </div>
+                            <div >
+                                <label class="form-label text label">Diámetro de registro:</label>
+                                <input type="text">
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3 col4">
+                            <h1 class="rv-subtitle">Información:</h1>
+                            <div >
+                                <label class="form-label text label">Anillo relacionado:</label>
+                                <input type="text">
+                            </div>
+                            <div >
+                                <label class="form-label text label">Familia:</label>
+                                <input type="text">
+                            </div>
+                            <div >
+                                <label class="form-label text label">Género:</label>
+                                <input type="text">
+                            </div>
+                            <div >
+                                <label class="form-label text label">Especie:</label>
+                                <input type="text">
+                            </div>
+                            <div >
+                                <label class="form-label text label">Ubicación:</label>
+                                <input type="text">
+                            </div>
+                            <div></div>
+                        </div>
+
+
+                        <div class="col col4">
+                            <div class="col-btns">
+                                <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                    <i class="gg-trash"></i>
+                                </a>
+                                <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                    <i class="gg-check-o"></i>
+                                </a>
+                                <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                        <i class="gg-close-o"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="text-align: center;">
+                    <div style="margin: 40px">
+                        <h1 class="rv-subtitle">Datos de Riego:</h1>
+                        <div class="container" style="margin-left: auto;margin-right: auto;">
+                            <div class="row">
+                                <div class="col-md-6 col2">
+                                    <div style="text-align: center;">
+                                        <label class="form-label sml-text">Rango de temperaturas:</label>
+                                        <input class="input-sml" type="text">
+                                        <label class="form-label char3-txt">-</label>
+                                        <input class="input-sml" type="text">
+                                        <label class="form-label char3-txt">°C</label>
+                                    </div>
+
+                                    <div style="text-align: center;">
+                                        <label class="form-label sml-text">Rango de humedad:</label>
+                                        <input class="input-sml" type="text">
+                                        <label class="form-label char3-txt">-</label>
+                                        <input class="input-sml" type="text">
+                                        <label class="form-label char3-txt">%</label>
+                                    </div>
+
+                                    
+
+                                    <div style="text-align: center;">
+                                        <label class="form-label sml-text">Ciclos de Medición:</label>
+                                        <input class="input-sml" type="text">
+                                        <label class="form-label char3-txt">:</label>
+                                        <div class="dropdown sml-text" style=" display: inline-block;">
+                                            <button class="btn dropdown-toggle sml-tgl" aria-expanded="false" data-bs-toggle="dropdown" type="button">día
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Día</a>
+                                                <a class="dropdown-item" href="#">Semana</a>
+                                                <a class="dropdown-item" href="#">Mes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 col2">
+                                    <div style="text-align: center;">
+                                        <label class="form-label sml-text">Fertilizante por riego:</label>
+                                        <input class="input-sml" type="text">
+                                        <label class="form-label char3-txt">L</label>
+                                    </div>
+
+                                    <div style="text-align: center;">
+                                        <label class="form-label sml-text">Agua por riego:</label>
+                                        <input class="input-sml" type="text">
+                                        <label class="form-label char3-txt">L</label>
+                                    </div>
+
+                                    <div style="text-align: center;">
+                                        <label class="form-label sml-text">Ciclos de Riego:</label>
+                                        <input class="input-sml" type="text">
+                                        <label class="form-label char3-txt">:</label>
+                                        <div class="dropdown sml-text" style=" display: inline-block;">
+                                            <button class="btn dropdown-toggle sml-tgl" aria-expanded="false" data-bs-toggle="dropdown" type="button">día
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Día</a>
+                                                <a class="dropdown-item" href="#">Semana</a>
+                                                <a class="dropdown-item" href="#">Mes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="text-align: center;">
+                    <div class="mrg-auto">
+                        <h1 class="rv-subtitle high bckg-gray-low">Datos de Telemetría:</h1>
+                        <div class="container rv-subtitle high bckg-gray-low" style="margin-bottom: 42px;">
+                            <div class="row mrg-auto" >
+                                <div class="col-md-3 table-element"><h1 class="text">Fecha y hora</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">Temperatura</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">Humedad</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">Nutrientes</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">PH</h1></div>
+                            </div>
+
+                            <div class="row mrg-auto">
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                            </div>
+
+                            <div class="row mrg-auto">
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                            </div>
+
+                            <div class="row mrg-auto">
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                            </div>
+
+                            <div class="row mrg-auto">
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                            </div>
+
+                            <div class="row mrg-auto">
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                            </div>
+
+                            <div class="row mrg-auto">
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                            </div>
+
+                            <div class="row mrg-auto">
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                            </div>
+
+                            <div class="row  mrg-auto">
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                            </div>
+                            <div class="row mrg-auto">
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                                <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-bottom: 40px">
+                        <button class="btn sqr-btn bckg-green" type="button">10 muestras atrás</button>
+                        <button class="btn sqr-btn bckg-green" type="button">10 muestras adelante<br></button>
+                    </div>
+                </div>
+            </div><!-- Section Visualizar árbol-->
+        </section><!-- /Section Visualizar árbol-->
+
+        <section class="seccion visualizar-anillo" style="margin-top: 900px;">
+            <div class="main-div">
+                <div class="container" style="margin-bottom: 20px;">
+                    <div class="row">
+                        <div class="col-md-6" style="width: 26%; margin-left: auto; margin-right: auto;">
+                            <a class="btn btn-primary circle" role="button" href="#" >
+                                Anillo
+                                <img class="img-anillo " src="../assets/img/Anillo%20verde.jpg">    
+                            </a>
+                        </div>
+
+                        <div class="col-md-6" style="width: 72%; margin-left: auto; margin-right: auto">
+                            <h1 class="rv-title">
+                                Visualiza un anillo
+                            </h1>
+
+                            <div class="dropdown" style="text-align: left;">
+                                    <button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 582.75px;text-align: left;background: #4f604d;border-color: #4f604d;">
+                                        Selecciona un dispositivo
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">
+                                            First Item
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            Second Item
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            Third Item
+                                        </a>
+                                    </div>
+                            </div>
+
+                            <h1 class="rv-text">
+                                &nbsp;Para registrar un anillo:
+                                <br>&nbsp; &nbsp; &nbsp; 1.- Los botones te permiten interactuar con tu anillo
+                                <br>&nbsp; &nbsp; &nbsp; 2.- Puedes modificar los datos de tu SSF
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="row" style="width: 1160px;">
+                        <div class="col-md-3 col4" >
+                            <div class="btn-div">
+                                <button class="btn btn-primary sqr-btn" type="button">Modificar</button>
+                                <button class="btn btn-primary sqr-btn" type="button" >Comprobar conexión</button>
+                                <button class="btn btn-primary sqr-btn" type="button" >Abrir agua</button>
+                                <button class="btn btn-primary sqr-btn" type="button" >Abrir fertilizante</button>
+                                <button class="btn btn-primary sqr-btn" type="button" >Tomar medidas</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col4">
+                            <h1 class="rv-subtitle">Datos de Registro:</h1>
+                            <div>
+                                <label class="form-label text label">ID del anillo:</label>
+                                <input type="text">
+                            </div>
+                            <div>
+                                <label class="form-label text label">Fecha del registro:</label>
+                                <input type="text">
+                            </div>
+                            <div>
+                                <label class="form-label text label">Registrante:</label>
+                                <input type="text">
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3 col4" style="width: 327px;">
+                            <h1 class="rv-subtitle">Información:</h1>
+                            <div>
+                                <label class="form-label text label">Árbol relacionado:</label>
+                                <input type="text">
+                            </div>
+                            <div>
+                                <label class="form-label text label">Ubicación:</label>
+                                <input type="text">
+                            </div>
+                            <div>
+                                <label class="form-label text label">No. de conexión:</label>
+                                <input type="text">
+                            </div>
+                            <div>
+                                <label class="form-label text label">Modo operación:</label>
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle tgl bckg-green" aria-expanded="false" data-bs-toggle="dropdown" type="button">
+                                        Modo Operación
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item">Automático</a>
+                                        <a class="dropdown-item">Semiautomático</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col col4">
+                            <div class="col-btns">
+                                <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                    <i class="gg-trash"></i>
+                                </a>
+                                <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                    <i class="gg-check-o"></i>
+                                </a>
+                                <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                        <i class="gg-close-o"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!-- Section Visualizar anillo-->
+        </section><!-- /Section Visualizar anillo-->
+
+    </div><!-- /Sections-->
+
+    
+
+
+
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
