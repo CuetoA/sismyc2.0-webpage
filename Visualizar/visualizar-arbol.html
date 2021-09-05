@@ -4,274 +4,330 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>sismyc</title>
+    <title>sismyc - visualizar árbol</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/trash.css">
+    <link rel="stylesheet" href="../assets/css/check-o.css">
+    <link rel="stylesheet" href="../assets/css/close-o.css">
 </head>
 
 <body style="background: #c8d1c7;">
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: rgb(235,229,229);height: 89px;">
-        <div class="container"><img src="../assets/img/Arbol%201.jpg" style="width: 70px;margin: 0px;margin-right: 20px;"><a class="navbar-brand" href="#" style="font-size: 25px;font-weight: bold;">SISMyC</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean header">
+        <div class="container">
+            <img class="logo" src="../assets/img/Arbol%201.jpg" >
+            <a class="navbar-brand brand">
+                SISMyC
+            </a>
+
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                <span class="visually-hidden">
+                    Toggle navigation
+                </span>
+                <span class="navbar-toggler-icon">
+                    
+                </span>
+            </button>
             <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav ms-auto" style="width: 334.922px;">
-                    <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html" style="color: rgb(0,0,0);font-size: 20px;">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../Registrar/registrar.html" style="color: rgb(0,0,0);font-size: 20px;">Registrar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="visualizar.html" style="color: rgb(0,0,0);font-size: 20px;font-weight: bold;text-decoration:  underline;">Visualizar</a></li>
+                <ul class="navbar-nav ms-auto barra-nav">
+                    <li class="nav-item"><a class="nav-link enlace" href="../index.html" >Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link enlace" href="../Registrar/registrar.html">Registrar</a></li>
+                    <li class="nav-item"><a class="nav-link enlace principal" href="../Visualizar/visualizar.html">Visualizar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div style="height: 480px;background: #c8d1c7;padding-top: 30px;">
+
+
+    <div class="bckg-green-low main-div">
         <div class="container">
-            <div class="row" style="width: 1160px;">
-                <div class="col-md-6" style="width: 262px;"><a class="btn btn-primary" role="button" href="#" style="height: 200px;width: 200px;border-radius: 125px;background: #4f604d;font-size: 24px;font-weight: bold;color: #ebe5e5;border-color: #4f604d;">Árbol<img src="../assets/img/Arbol%20verde.jpg" style="width: 105px;margin: 4px;"></a></div>
+            <div class="row" style="margin-bottom: 40px">
+                <div class="col-md-6" style="width: 262px;">
+                    <a class="btn btn-primary circle" role="button">
+                        Árbol
+                        <img class="img-arbol" src="../assets/img/Arbol%20verde.jpg">
+                    </a>
+                </div>
+
                 <div class="col-md-6" style="width: 654px;">
-                    <h1 style="font-weight: bold;">Visualiza un árbol</h1>
-                    <div style="text-align: left;">
-                        <div class="dropdown" style="text-align: left;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 582.75px;text-align: left;background: #4f604d;border-color: #4f604d;">Selecciona un árbol</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                    <h1 class="rv-title">Visualiza un árbo</h1>
+
+                        <div class="dropdown" style="text-align: left;">
+                            <button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 582.75px;text-align: left;background: #4f604d;border-color: #4f604d;">
+                                Selecciona un árbol
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">
+                                    First Item
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Second Item
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Third Item
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <h1 style="font-size: 22px;"><br>&nbsp; &nbsp; &nbsp; 1.-&nbsp; Los botones te permiten interactuar con tu anillo<br>&nbsp; &nbsp; &nbsp; 2.- Puedes modificar los datos de tu árbol<br>&nbsp; &nbsp; &nbsp; 3.- Ingrese las horas en formato 24hr</h1>
+
+                    <h1 class="rv-text">
+                        &nbsp;Para visualizar un árbol:
+                        <br>&nbsp; &nbsp; &nbsp; 1.- Los botones te permiten interactuar con tu anillo
+                        <br>&nbsp; &nbsp; &nbsp; 2.- Puedes modificar los datos de tu árbol
+                        <br>&nbsp; &nbsp; &nbsp; 3.- Ingrese las horas en formato 24hr
+                    </h1>
                 </div>
+
             </div>
         </div>
+
+
         <div class="container">
             <div class="row" style="width: 1160px;">
-                <div class="col-md-3" style="height: 66px;width: 263px;opacity: 1;">
-                    <div style="text-align: center;background: #ebe5e5;border-top-left-radius: 15px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;border-bottom-left-radius: 15px;"><button class="btn btn-primary" type="button" style="background: #4f604d;width: 186px;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;height: 50px;margin: 10px;border-color: #4f604d;">Modificar</button></div>
+                <div class="col-md-3 col4">
+                    <div class="btn-div">
+                        <button class="btn btn-primary sqr-btn" type="button">Modificar</button>
+                    </div>
                 </div>
-                <div class="col-md-3" style="width: 327px;">
-                    <h1 style="font-size: 26px;">Datos de Registro:</h1>
-                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">ID del árbol:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">Fecha del registro:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">Edad de ingreso:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 223px;">Registrante:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 130px;">Altura de registro:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 223px;">Diámetro de registro:</label><input type="text"></div>
+
+                <div class="col-md-3">
+                    <h1 class="rv-subtitle">Datos de Registro:</h1>
+                    <div >
+                        <label class="form-label text label">ID del árbol:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Fecha del registro:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Edad de ingreso:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Registrante:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Altura de registro:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Diámetro de registro:</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 col4">
+                    <h1 class="rv-subtitle">Información:</h1>
+                    <div >
+                        <label class="form-label text label">Anillo relacionado:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Familia:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Género:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Especie:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Ubicación:</label>
+                        <input type="text">
+                    </div>
                     <div></div>
                 </div>
-                <div class="col-md-3" style="width: 327px;">
-                    <h1 style="font-size: 26px;">Información:</h1>
-                    <div style="text-align: left;"><label class="form-label" style="width: 223px;">Anillo relacionado:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 223px;">Familia:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 223px;">Género:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 223px;">Especie:</label><input type="text"></div>
-                    <div style="text-align: left;"><label class="form-label" style="width: 223px;">Ubicación:</label><input type="text"></div>
-                    <div></div>
-                </div>
-                <div class="col" style="text-align: center;">
-                    <div style="text-align: center;height: 264px;width: 125px;"><a class="btn btn-warning btn-floating" role="button" style="width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;margin-top: 10px;margin-bottom: 10px;border-color: #4f604d;"><i class="fa fa-heart"></i></a><a class="btn btn-warning btn-floating" role="button" style="width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;margin-top: 10px;margin-bottom: 10px;border-color: #4f604d;"><i class="fa fa-heart"></i></a><a class="btn btn-warning btn-floating" role="button" style="width: 70px;height: 70px;margin: 5x;border-radius: 46px;background: #4f604d;margin-top: 10px;margin-bottom: 10px;border-color: #4f604d;"><i class="fa fa-heart"></i></a></div>
+
+
+                <div class="col col4">
+                    <div class="col-btns">
+                        <a class="btn btn-warning btn-floating cicle-small" role="button">
+                            <i class="gg-trash"></i>
+                        </a>
+                        <a class="btn btn-warning btn-floating cicle-small" role="button">
+                            <i class="gg-check-o"></i>
+                        </a>
+                        <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                <i class="gg-close-o"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+
+
         <div style="text-align: center;">
-            <div style="margin-left: auto;margin-right: auto;">
-                <h1 style="font-size: 26px;text-align: center;background: rgba(235,229,229,0);border-radius: 27px;margin-top: 40px;width: 680px;margin-left: auto;margin-right: auto;">Datos de Riego:</h1>
-                <div class="container" style="width: 982px;margin-left: auto;margin-right: auto;">
-                    <div class="row" style="width: 982;">
-                        <div class="col-md-6" style="width: 491px;">
-                            <div style="text-align: center;"><label class="form-label" style="width: 170px;margin-left: auto;margin-right: auto;">Rango de temperaturas:</label><input type="text" style="margin-left: auto;margin-right: auto;width: 91px;"><label class="form-label" style="width: 10px;margin-left: auto;margin-right: auto;">-</label><input type="text" style="margin-left: auto;margin-right: auto;width: 91px;"><label class="form-label" style="width: 91px;margin-left: auto;margin-right: auto;">°C</label></div>
-                            <div style="text-align: center;"><label class="form-label" style="width: 170px;margin-left: auto;margin-right: auto;">Rango de humedad:</label><input type="text" style="margin-left: auto;margin-right: auto;width: 91px;"><label class="form-label" style="width: 10px;margin-left: auto;margin-right: auto;">-</label><input type="text" style="margin-left: auto;margin-right: auto;width: 91px;"><label class="form-label" style="width: 91px;margin-left: auto;margin-right: auto;">%</label></div>
-                            <div style="text-align: center;"><label class="form-label" style="width: 160px;margin-left: auto;margin-right: auto;">Fertilizante por riego:</label><input type="text" style="margin-left: auto;margin-right: auto;width: 91px;"><label class="form-label" style="width: 91px;margin-left: auto;margin-right: auto;">litros</label></div>
+            <div style="margin: 40px">
+                <h1 class="rv-subtitle">Datos de Riego:</h1>
+                <div class="container" style="margin-left: auto;margin-right: auto;">
+                    <div class="row">
+                        <div class="col-md-6 col2">
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Rango de temperaturas:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">-</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">°C</label>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Rango de humedad:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">-</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">%</label>
+                            </div>
+
+                            
+
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Ciclos de Medición:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">:</label>
+                                <div class="dropdown sml-text" style=" display: inline-block;">
+                                    <button class="btn dropdown-toggle sml-tgl" aria-expanded="false" data-bs-toggle="dropdown" type="button">día
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Día</a>
+                                        <a class="dropdown-item" href="#">Semana</a>
+                                        <a class="dropdown-item" href="#">Mes</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6" style="width: 491px;">
-                            <div style="text-align: center;"><label class="form-label" style="width: 160px;margin-left: auto;margin-right: auto;">Agua por riego:</label><input type="text" style="margin-left: auto;margin-right: auto;width: 91px;"><label class="form-label" style="width: 91px;margin-left: auto;margin-right: auto;">litros</label></div>
-                            <div style="text-align: center;"><label class="form-label" style="width: 160px;margin-left: auto;margin-right: auto;">Ciclos de riego:</label><input type="text" style="margin-left: auto;margin-right: auto;width: 91px;"><label class="form-label" style="width: 10px;margin-left: auto;margin-right: auto;">:</label>
-                                <div class="dropdown" style="text-align: left;width: 91px;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 91px;text-align: center;background: #4f604d;border-color: #4f604d;">día</button>
-                                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+
+
+                        <div class="col-md-6 col2">
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Fertilizante por riego:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">L</label>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Agua por riego:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">L</label>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Ciclos de Riego:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">:</label>
+                                <div class="dropdown sml-text" style=" display: inline-block;">
+                                    <button class="btn dropdown-toggle sml-tgl" aria-expanded="false" data-bs-toggle="dropdown" type="button">día
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Día</a>
+                                        <a class="dropdown-item" href="#">Semana</a>
+                                        <a class="dropdown-item" href="#">Mes</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div style="text-align: center;"><label class="form-label" style="width: 160px;margin-left: auto;margin-right: auto;">Ciclos de Medición:</label><input type="text" style="margin-left: auto;margin-right: auto;width: 91px;"><label class="form-label" style="width: 10px;margin-left: auto;margin-right: auto;">:</label>
-                                <div class="dropdown" style="text-align: left;width: 91px;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 91px;text-align: center;background: #4f604d;border-color: #4f604d;">día</button>
-                                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                                </div>
-                            </div>
+
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
         <div style="text-align: center;">
-            <div style="margin-left: auto;margin-right: auto;">
-                <h1 style="font-size: 26px;text-align: center;background: #ebe5e5;border-radius: 27px;margin-top: 40px;width: 680px;margin-left: auto;margin-right: auto;">Datos de Telemetría:</h1>
-                <div class="container" style="width: 680px;margin-left: auto;margin-right: auto;background: #ebe5e5;margin-bottom: 42px;border-radius: 20px;">
-                    <div class="row" style="width: 652px;margin-left: auto;margin-right: auto;">
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">Fecha y hora</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">Temperatura</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">Humedad</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">Nutrientes</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">PH</h1>
-                        </div>
+            <div class="mrg-auto">
+                <h1 class="rv-subtitle high bckg-gray-low">Datos de Telemetría:</h1>
+                <div class="container rv-subtitle high bckg-gray-low" style="margin-bottom: 42px;">
+                    <div class="row mrg-auto" >
+                        <div class="col-md-3 table-element"><h1 class="text">Fecha y hora</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">Temperatura</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">Humedad</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">Nutrientes</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">PH</h1></div>
                     </div>
-                    <div class="row" style="width: 652px;margin-left: auto;margin-right: auto;">
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
+
+                    <div class="row mrg-auto">
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                     </div>
-                    <div class="row" style="width: 652px;margin-left: auto;margin-right: auto;">
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
+
+                    <div class="row mrg-auto">
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                     </div>
-                    <div class="row" style="width: 652px;margin-left: auto;margin-right: auto;">
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
+
+                    <div class="row mrg-auto">
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                     </div>
-                    <div class="row" style="width: 652px;margin-left: auto;margin-right: auto;">
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
+
+                    <div class="row mrg-auto">
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                     </div>
-                    <div class="row" style="width: 652px;margin-left: auto;margin-right: auto;">
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
+
+                    <div class="row mrg-auto">
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                     </div>
-                    <div class="row" style="width: 652px;margin-left: auto;margin-right: auto;">
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
+
+                    <div class="row mrg-auto">
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                     </div>
-                    <div class="row" style="width: 652px;margin-left: auto;margin-right: auto;">
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
+
+                    <div class="row mrg-auto">
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                     </div>
-                    <div class="row" style="width: 652px;margin-left: auto;margin-right: auto;">
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
+
+                    <div class="row  mrg-auto">
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                     </div>
-                    <div class="row" style="width: 652px;margin-left: auto;margin-right: auto;">
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
-                        <div class="col-md-3" style="width: 130px;">
-                            <h1 style="font-size: 16px;width: 130px;">-</h1>
-                        </div>
+                    <div class="row mrg-auto">
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
+                        <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                     </div>
                 </div>
             </div>
-            <div><button class="btn btn-primary" type="button" style="background: #4f604d;width: 186px;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;height: 50px;margin: 10px;border-color: #4f604d;">10 muestras atrás</button><button class="btn btn-primary" type="button" style="background: #4f604d;width: 186px;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;height: 50px;margin: 10px;border-color: #4f604d;">10 muestras adelante<br></button></div>
+            <div style="padding-bottom: 40px">
+                <button class="btn sqr-btn bckg-green" type="button">10 muestras atrás</button>
+                <button class="btn sqr-btn bckg-green" type="button">10 muestras adelante<br></button>
+            </div>
         </div>
     </div>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
