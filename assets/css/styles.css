@@ -172,6 +172,14 @@
 .col4 {
   height: 66px;
   width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col-btns {
+  text-align: center;
+  height: 264px;
+  width: 125px;
 }
 
 
@@ -192,3 +200,30 @@
 
 
 
+.btn-div {
+  text-align: center;
+  background: #ebe5e5;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.btn-div .sqr-btn {
+  background: #4f604d;
+  width: 186px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 50px;
+  margin: 10px;
+  border-color: #4f604d;
+}
+
+.tgl {
+  width: 182px;
+  text-align: left;
+  background: #4f604d;
+  border-color: #4f604d;
+}
