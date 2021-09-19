@@ -1,0 +1,290 @@
+/*General styles */
+
+.header {
+  background: rgb(235,229,229);
+  height: 89px;
+}
+
+.header .logo {  
+  width: 70px; 
+  margin: 0px;  
+  margin-right: 20px;
+}
+
+.header .brand{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header .barra-nav{
+  width: 335px;
+}
+
+.header .barra-nav .enlace {
+  color: rgb(254,254,254);
+  font-size: 20px;
+}
+
+.header .barra-nav .enlace.principal{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.img-anillo {
+  margin: 32px;
+  height: 78px;
+  margin-left: 11px;
+  margin-top: 33px;
+}
+
+.img-arbol{
+  margin: 32px;
+  width: 93px;
+  margin-top: 8px;
+}
+
+
+/*Background styles */
+
+.bckg-gray {
+  background: #3c3c3c;
+}
+
+.bckg-green {
+  background: #4f604d;
+  color: #ebe5e5;
+}
+
+.bckg-gray-low {
+  background: #ebe5e5;
+}
+
+.bckg-green-low {
+  background: #c8d1c7;
+}
+
+
+
+
+/*Index styles */
+
+.window-title {
+  text-align: center;
+  padding-top: 72px;
+  color: #ebe5e5;
+  font-weight: bold;
+  font-size: 65px;
+  margin: auto;
+}
+
+
+.prgh-center {
+  text-align: center;
+  font-size: 18px;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index-btn {
+  background: #7f9751;
+  height: 65px;
+  width: 260px;
+  font-size: 22px;
+  margin-right: 4.5%;
+  margin-left: 4.5%;
+  border-color: rgba(255,255,255,0);
+  color: #ebe5e5;
+}
+
+
+/*Registrar styles */
+
+.reg-window {
+  height: 480px
+}
+
+.reg-window .title {
+  background: #4f604d;
+  height: 122px;
+  text-align: center;
+  color: #ebe5e5;font-size: 30px;
+  padding-top: 65px;
+  transform: translate(0px);
+}
+
+
+.reg-window .div {
+  text-align: center;
+  padding-top: 66px;
+}
+
+.reg-window .div .btn {
+  height: 200px;  
+  width: 200px;  
+  border-radius: 125px;  
+  color: #3c3c3c;  
+  background: #ebe5e5;  
+  font-size: 26px;  
+  font-weight: bold;
+  margin-left: 6%;
+  margin-right: 6%;
+  border-color: #ebe5e5;
+}
+
+
+.line4px {
+  height: 4px;
+}
+
+.line37px {
+  height: 37px;
+}
+
+
+/*Registrar anillo styles */
+.main-div {
+  height: 480px;
+  padding-top: 30px;
+}
+
+.main-div .circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 125px;
+  background: #4f604d;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ebe5e5;
+  border-color: #4f604d;
+}
+
+.rv-title {
+  font-weight: bold;
+}
+.rv-subtitle {
+  font-size: 26px;
+}
+
+.rv-subtitle.high {
+  text-align: center;
+  border-radius: 27px;
+  width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rv-text {
+  font-size: 22px;
+}
+
+.col4 {
+  height: 66px;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col2 {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col-btns {
+  text-align: center;
+  height: 264px;
+  width: 125px;
+}
+
+
+.text.label {
+  width: 223px;
+}
+
+.-text {
+  width: 170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.char3-txt {
+  width: 10px;margin-left: auto;margin-right: auto;
+}
+
+.input-sml {
+  margin-left: auto;
+  margin-right: auto;
+  width: 91px;
+}
+
+.cicle-small {
+  width: 70px;
+  height: 70px;
+  margin: 5x;
+  border-radius: 46px;
+  background: #4f604d;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-color: #4f604d;
+}
+
+
+
+.btn-div {
+  text-align: center;
+  background: #ebe5e5;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.btn-div .sqr-btn {
+  background: #4f604d;
+  width: 186px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 50px;
+  margin: 10px;
+  border-color: #4f604d;
+}
+
+.tgl {
+  width: 182px;
+  text-align: left;
+  background: #4f604d;
+  border-color: #4f604d;
+}
+
+.sml-tgl {
+  width: 91px;
+  text-align: center;
+  background: #4f604d;
+  border-color: #4f604d;
+}
+
+.row-sze {
+  width: 1160px;
+}
+
+.mrg-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-element {
+  width: 130px;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.table-element .text {
+  font-size: 16px;
+}
+
+.abajo {
+  background: url('../img/SISMyC.png');
+}
