@@ -4,40 +4,61 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>sismyc</title>
+    <title>sismyc - visualizar</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
-<body><nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: rgb(235,229,229);height: 89px;">
-        <div class="container"><img src="../assets/img/Arbol%201.jpg" style="width: 70px;margin: 0px;margin-right: 20px;"><a class="navbar-brand" href="#" style="font-size: 25px;font-weight: bold;">SISMyC</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean header">
+        <div class="container">
+            <img class="logo" src="../assets/img/Arbol%201.jpg" >
+            <a class="navbar-brand brand">
+                SISMyC
+            </a>
+
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                <span class="visually-hidden">
+                    Toggle navigation
+                </span>
+                <span class="navbar-toggler-icon">
+                    
+                </span>
+            </button>
+
             <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav ms-auto" style="width: 334.922px;">
-                    <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html" style="color: rgb(0,0,0);font-size: 20px;">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../Registrar/registrar.html" style="color: rgb(0,0,0);font-size: 20px;">Registrar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="visualizar.html" style="color: rgb(0,0,0);font-size: 20px;font-weight: bold;text-decoration:  underline;">Visualizar</a></li>
+                <ul class="navbar-nav ms-auto barra-nav">
+                    <li class="nav-item"><a class="nav-link enlace" href="../index.html" >Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link enlace" href="../Registrar/registrar.html">Registrar</a></li>
+                    <li class="nav-item"><a class="nav-link enlace principal" href="Visualizar/visualizar.html">Visualizar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div style="height: 480px;background: #4f604d;">
-        <h1 style="background: #4f604d;height: 122px;text-align: center;color: #ebe5e5;font-size: 30px;padding-top: 65px;transform: translate(0px);">¿Qué quieres visualizar?</h1>
-        <p style="text-align: center;padding-top: 66px;">
-            <a class="btn btn-primary boton-circular" role="button" href="visualizar-anillo.html" style="height: 200px;width: 200px;border-radius: 125px;color: #3c3c3c;background: #ebe5e5;font-size: 26px;font-weight: bold;">Un Árbol<img style="margin: 32px;width: 93px;margin-top: 8px;" src="../assets/img/Arbol%202.jpg"></a>
-            <a class="btn btn-primary boton-circular" role="button" href="visualizar-anillo.html" style="height: 200px;width: 200px;border-radius: 125px;color: #3c3c3c;background: #ebe5e5;font-size: 26px;font-weight: bold;margin-left: 160px;">Un Anillo<img style="margin: 32px;height: 78px;margin-left: 11px;margin-top: 33px;" src="../assets/img/Anillo.jpg"></a></p>
-        <div>
-            <section style="background: rgb(203,25,25);"></section>
+
+
+    <div class="reg-window bckg-green">
+        <h1 class="title">
+            ¿Qué quieres visualizar?
+        </h1>
+        <div class="div ">
+            <a class="btn btn-primary" role="button" href="visualizar-arbol.html" >
+                Un Árbol
+                <img class="img-arbol" src="../assets/img/Arbol%202.jpg">
+            </a>
+            <a class="btn btn-primary" role="button" href="visualizar-anillo.html">Un Anillo
+                <img class="img-anillo" src="../assets/img/Anillo.jpg">
+            </a>
+
         </div>
     </div>
-    <div style="background: #ebe5e5;">
-        <div class="col" style="opacity: 0;height: 4px;"></div>
-    </div>
-    <div style="background: #4f604d;height: 27px;">
-        <div class="col" style="opacity: 0;height: 10px;"></div>
-    </div>
+
+    <div class="col line4px bckg-gray-low"></div>
+    <div class="col line37px bckg-green"></div>
+    
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/index.js"></script>

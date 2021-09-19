@@ -4,49 +4,222 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>sismyc</title>
+    <title>sismyc - registrar árbol</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/trash.css">
+    <link rel="stylesheet" href="../assets/css/check-o.css">
+    <link rel="stylesheet" href="../assets/css/close-o.css">
 </head>
 
-<body><nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: rgb(235,229,229);height: 89px;">
-        <div class="container"><img src="../assets/img/Arbol%201.jpg" style="width: 70px;margin: 0px;margin-right: 20px;"><a class="navbar-brand" href="#" style="font-size: 25px;font-weight: bold;">SISMyC</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+
+<body class="bckg-green-low">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean header">
+        <div class="container">
+            <img class="logo" src="../assets/img/Arbol%201.jpg" >
+            <a class="navbar-brand brand">
+                SISMyC
+            </a>
+
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                <span class="visually-hidden">
+                    Toggle navigation
+                </span>
+                <span class="navbar-toggler-icon">
+                    
+                </span>
+            </button>
+            
             <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav ms-auto" style="width: 334.922px;">
-                    <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html" style="color: rgb(0,0,0);font-size: 20px;">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="registrar.html" style="color: rgb(0,0,0);font-size: 20px;font-weight: bold;text-decoration:  underline;">Registrar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../Visualizar/visualizar.html" style="color: rgb(0,0,0);font-size: 20px;">Visualizar</a></li>
+                <ul class="navbar-nav ms-auto barra-nav">
+                    <li class="nav-item"><a class="nav-link enlace" href="../index.html" >Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link enlace principal" href="../Registrar/registrar.html">Registrar</a></li>
+                    <li class="nav-item"><a class="nav-link enlace" href="../Visualizar/visualizar.html">Visualizar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div style="height: 480px;background: #c8d1c7;padding-top: 30px;">
+
+
+    <div class="main-div" >
         <div class="container">
-            <div class="row" style="width: 1160px;">
-                <div class="col-md-6" style="width: 262px;"><a class="btn btn-primary" role="button" href="#" style="height: 200px;width: 200px;border-radius: 125px;background: #4f604d;font-size: 24px;font-weight: bold;color: #ebe5e5;border-color: #4f604d;">Árbol<img style="margin: 17px;height: 134px;margin-top: -7px;" src="../assets/img/Arbol%20verde.jpg"></a></div>
+            <div class="row"">
+                <div class="col-md-6" style="width: 262px;">
+                    <a class="btn btn-primary circle" role="button">
+                        Árbol
+                        <img class="img-arbol" src="../assets/img/Arbol%20verde.jpg">
+                    </a>
+                </div>
                 <div class="col-md-6" style="width: 654px;">
-                    <h1 style="font-weight: bold;">Instrucciones de registro</h1>
-                    <h1 style="font-size: 22px;">&nbsp;Para registrar un árbol:<br>&nbsp; &nbsp; &nbsp; 1.- Especifica el tipo de árbol que quieres cuidar<br>&nbsp; &nbsp; &nbsp; 2.-Especifica el tipo de cuidado que debe tener<br>&nbsp; &nbsp; &nbsp; 3.-Especifica la cantidad de agua que requiere el árbol<br><br></h1>
+                    <h1 class="rv-title">Instrucciones de registro</h1>
+                    <h1 class="rv-text">
+                        &nbsp;Para registrar un árbol:
+                        <br>&nbsp; &nbsp; &nbsp; 1.- Especifica el tipo de árbol que quieres cuidar
+                        <br>&nbsp; &nbsp; &nbsp; 2.- Especifica el tipo de cuidado que debe tener
+                        <br>&nbsp; &nbsp; &nbsp; 3.- Especifica la cantidad de agua que requiere el árbol
+                    </h1>
                 </div>
             </div>
         </div>
+
+
         <div class="container">
-            <div class="row" style="width: 1160px;">
-                <div class="col-md-3" style="height: 66px;width: 263px;opacity: 0;"></div>
-                <div class="col-md-3" style="width: 327px;">
-                    <h1 style="font-size: 26px;">Datos generales:</h1>
+            <div class="row">
+                <div class="col-md-3 col4">
+                </div>
+                <div class="col-md-3">
+                    <h1 class="rv-subtitle">Datos de Registro:</h1>
+                    <div >
+                        <label class="form-label text label">ID del árbol:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Fecha del registro:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Edad de ingreso:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Registrante:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Altura de registro:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Diámetro de registro:</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 col4">
+                    <h1 class="rv-subtitle">Información:</h1>
+                    <div >
+                        <label class="form-label text label">Anillo relacionado:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Familia:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Género:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Especie:</label>
+                        <input type="text">
+                    </div>
+                    <div >
+                        <label class="form-label text label">Ubicación:</label>
+                        <input type="text">
+                    </div>
                     <div></div>
                 </div>
-                <div class="col-md-3" style="width: 327px;">
-                    <h1 style="font-size: 26px;">Datos específicos:</h1>
-                    <div></div>
+
+
+                <div class="col col4">
+                    <div class="col-btns">
+                        <a class="btn btn-warning btn-floating cicle-small" role="button">
+                            <i class="gg-trash"></i>
+                        </a>
+                        <a class="btn btn-warning btn-floating cicle-small" role="button">
+                            <i class="gg-check-o"></i>
+                        </a>
+                        <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                <i class="gg-close-o"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="col"><a class="btn btn-warning btn-floating" role="button"><i class="fa fa-heart"></i></a><a class="btn btn-warning btn-floating" role="button"><i class="fa fa-heart"></i></a></div>
             </div>
         </div>
+
+
+        <div style="text-align: center;">
+            <div style="margin: 40px">
+                <h1 class="rv-subtitle">Datos de Riego:</h1>
+                <div class="container" style="margin-left: auto;margin-right: auto;">
+                    <div class="row">
+                        <div class="col-md-6 col2">
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Rango de temperaturas:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">-</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">°C</label>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Rango de humedad:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">-</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">%</label>
+                            </div>
+
+                            
+
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Ciclos de Medición:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">:</label>
+                                <div class="dropdown sml-text" style=" display: inline-block;">
+                                    <button class="btn dropdown-toggle sml-tgl bckg-green" aria-expanded="false" data-bs-toggle="dropdown" type="button">día
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Día</a>
+                                        <a class="dropdown-item" href="#">Semana</a>
+                                        <a class="dropdown-item" href="#">Mes</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col2">
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Fertilizante por riego:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">L</label>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Agua por riego:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">L</label>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <label class="form-label sml-text">Ciclos de Riego:</label>
+                                <input class="input-sml" type="text">
+                                <label class="form-label char3-txt">:</label>
+                                <div class="dropdown sml-text" style=" display: inline-block;">
+                                    <button class="btn dropdown-toggle sml-tgl bckg-green" aria-expanded="false" data-bs-toggle="dropdown" type="button">día
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Día</a>
+                                        <a class="dropdown-item" href="#">Semana</a>
+                                        <a class="dropdown-item" href="#">Mes</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col line4px bckg-gray-low"></div>
+    <div class="col line37px bckg-green-low"></div>
     </div>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
