@@ -10,21 +10,21 @@ const io = require('socket.io')(server);
 // Instalando servidor
 app.use(express.static(__dirname + '/')); // Main path
 server.listen(8080, () => {
-	console.log('Server lsitening on http://localhost:8080')
+	console.log('Server listening on http://localhost:8080')
 });
 
 
 // socket está escuchando
 io.on("connection", (socket) => {
-	console.log("connected to the socket!");
+	console.log("connected to the web-socket!");
 
 	// Eventos que detonarán el envío
-	socket.on('encender', (valor) => {
-		enviarDatos(valor);
+	socket.on('ir-a-registrar', (valor) => {
+		app.get('/', function (req, res) { res.sendFile(__dirname + '/registrar.html') });
 	});
 
 	socket.on('apagar', (valor) => {
-		enviarDatos(valor);
+		
 	});
 });
 
