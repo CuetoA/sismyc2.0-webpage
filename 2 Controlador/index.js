@@ -31,7 +31,7 @@ enlaceRegistrar.addEventListener('click', () => {
 function menu(seleccion) {
     mostrarSolo(secciones, 2)
     botonArbol.addEventListener('click', () =>{
-        if (verORegistrar.innerHTML === "registrar") {
+        if (verORegistrar.innerHTML === "registrar") {  
             window.location.href = '1 Interfaz/registrar.html#seccion-registrar-arbol'
         }
         else if (verORegistrar.innerHTML === "visualizar") {
