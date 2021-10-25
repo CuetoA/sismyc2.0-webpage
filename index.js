@@ -7,6 +7,12 @@ const enlaceVisualizar =    document.getElementById("e-visualizar")
 const enlaceRegistrar =     document.getElementById("e-registrar")
 let verORegistrar =         document.getElementById('accion')
 
+
+const express = require('express');
+const app = express();
+const socket = io();
+
+
 mostrarSolo(secciones, 1)
 
 botonVisualizar.addEventListener('click', () => {
@@ -30,18 +36,26 @@ function menu(seleccion) {
     mostrarSolo(secciones, 2)
     botonArbol.addEventListener('click', () =>{
         if (verORegistrar.innerHTML === "registrar") {
-            window.location.href = './Registrar/registrar-arbol.html'
+            //window.location.href = './Registrar/registrar-arbol.html'
+            console.log('enviando a servidor 1');
+            socket.emit('ir-a-registrar');
         }
         else if (verORegistrar.innerHTML === "visualizar") {
-            window.location.href = './Visualizar/visualizar-arbol.html'
+            //window.location.href = './Visualizar/visualizar-arbol.html'
+            console.log('enviando a servidor 2');
+            socket.emit('ir-a-registrar');
         }
     })
     botonAnillo.addEventListener('click', () =>{
         if (verORegistrar.innerHTML === "registrar") {
-            window.location.href = './Registrar/registrar-anillo.html'
+            //window.location.href = './Registrar/registrar-anillo.html'
+            console.log('enviando a servidor 3');
+            socket.emit('ir-a-registrar');
         }
         else if (verORegistrar.innerHTML === "visualizar") {
-            window.location.href = './Visualizar/visualizar-anillo.html'
+            //window.location.href = './Visualizar/visualizar-anillo.html'
+            console.log('enviando a servidor 4');
+            socket.emit('ir-a-registrar');
         }
     })
 
