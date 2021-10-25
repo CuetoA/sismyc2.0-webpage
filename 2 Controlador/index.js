@@ -32,7 +32,8 @@ function menu(seleccion) {
     mostrarSolo(secciones, 2)
     botonArbol.addEventListener('click', () =>{
         if (verORegistrar.innerHTML === "registrar") {
-            window.location.href = './Registrar/registrar-arbol.html'
+            //window.location.href = './Registrar/registrar-arbol.html'
+            window.location.href = './1_Interfaz/registrar.html#pablito_eres_hermoso'
         }
         else if (verORegistrar.innerHTML === "visualizar") {
             window.location.href = './Visualizar/visualizar-arbol.html'
