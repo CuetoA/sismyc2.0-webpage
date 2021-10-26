@@ -72,27 +72,27 @@
                             <h1 class="rv-subtitle">Datos de Registro:</h1>
                             <div >
                                 <label class="form-label text label">ID del árbol:</label>
-                                <input type="text">
+                                <input type="text" id='idArbol' placeholder="CL26102021">
                             </div>
                             <div >
                                 <label class="form-label text label">Fecha del registro:</label>
-                                <input type="text">
+                                <input type="text" id='fechaRegistroArbol' placeholder="DD/MM/AAAA">
                             </div>
                             <div >
                                 <label class="form-label text label">Edad de ingreso:</label>
-                                <input type="text">
+                                <input type="text" id="edadIngresoArbol" placeholder="45 días">
                             </div>
                             <div >
                                 <label class="form-label text label">Registrante:</label>
-                                <input type="text">
+                                <input type="text" id="registranteArbol" placeholder="Andrés Cueto">
                             </div>
                             <div >
                                 <label class="form-label text label">Altura de registro:</label>
-                                <input type="text">
+                                <input type="text" id='alturaRegistroArbol' placeholder="25 cm">
                             </div>
                             <div >
                                 <label class="form-label text label">Diámetro de registro:</label>
-                                <input type="text">
+                                <input type="text" id="diametroRegistroArbol" placeholder="2 cm">
                             </div>
                         </div>
 
@@ -101,23 +101,23 @@
                             <h1 class="rv-subtitle">Información:</h1>
                             <div >
                                 <label class="form-label text label">Anillo relacionado:</label>
-                                <input type="text">
+                                <input type="text" id="anilloRelacionado" placeholder="A000.000.001">
                             </div>
                             <div >
                                 <label class="form-label text label">Familia:</label>
-                                <input type="text">
+                                <input type="text" id="familiaArbol" placeholder="Cupressaceae">
                             </div>
                             <div >
                                 <label class="form-label text label">Género:</label>
-                                <input type="text">
+                                <input type="text" id="generoArbol" placeholder="Cipreses">
                             </div>
                             <div >
                                 <label class="form-label text label">Especie:</label>
-                                <input type="text">
+                                <input type="text" id="especieArbol" placeholder="Cupressus lusitanica">
                             </div>
                             <div >
                                 <label class="form-label text label">Ubicación:</label>
-                                <input type="text">
+                                <input type="text" id="ubicacionArbol" placeholder="Colima 26, Santa María Acatitla, Iztapalapa, CDMX">
                             </div>
                             <div></div>
                         </div>
@@ -125,14 +125,14 @@
 
                         <div class="col col4">
                             <div class="col-btns">
-                                <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                <a class="btn btn-warning btn-floating cicle-small" role="button" id="botonEliminar">
                                     <i class="gg-trash"></i>
                                 </a>
-                                <a class="btn btn-warning btn-floating cicle-small" role="button">
+                                <a class="btn btn-warning btn-floating cicle-small" role="button" id="botonConfirmar">
                                     <i class="gg-check-o"></i>
                                 </a>
-                                <a class="btn btn-warning btn-floating cicle-small" role="button">
-                                        <i class="gg-close-o"></i>
+                                <a class="btn btn-warning btn-floating cicle-small" role="button" id="botonCancelar">
+                                    <i class="gg-close-o"></i>
                                 </a>
                             </div>
                         </div>
@@ -148,17 +148,17 @@
                                 <div class="col-md-6 col2">
                                     <div style="text-align: center;">
                                         <label class="form-label sml-text">Rango de temperaturas:</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="rangoTemperaturaInferior" placeholder="25">
                                         <label class="form-label char3-txt">-</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="rangoTemperaturaSuperior" placeholder="35">
                                         <label class="form-label char3-txt">°C</label>
                                     </div>
 
                                     <div style="text-align: center;">
                                         <label class="form-label sml-text">Rango de humedad:</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="rangoHumedadInferior" placeholder="50">
                                         <label class="form-label char3-txt">-</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="rangoHumedadSuperior" placeholder="70">
                                         <label class="form-label char3-txt">%</label>
                                     </div>
 
@@ -166,12 +166,12 @@
 
                                     <div style="text-align: center;">
                                         <label class="form-label sml-text">Ciclos de Medición:</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="ciclosMedicionNumero" placeholder="21">
                                         <label class="form-label char3-txt">:</label>
                                         <div class="dropdown sml-text" style=" display: inline-block;">
-                                            <button class="btn dropdown-toggle sml-tgl bckg-green" aria-expanded="false" data-bs-toggle="dropdown" type="button">día
+                                            <button class="btn dropdown-toggle sml-tgl bckg-green" aria-expanded="false" data-bs-toggle="dropdown" type="button" >Día
                                             </button>
-                                            <div class="dropdown-menu">
+                                            <div class="dropdown-menu" id="dropdownArbol">
                                                 <a class="dropdown-item" href="#">Día</a>
                                                 <a class="dropdown-item" href="#">Semana</a>
                                                 <a class="dropdown-item" href="#">Mes</a>
@@ -303,7 +303,8 @@
         </section><!-- /Registrar anillo sección-->
     </div><!-- /Sections-->
 
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="assets/bootstrap/js/bootstrap.min.js"></script-->
+    <script src="../2 Controlador/registrar.js"></script>
 </body>
 
 </html>

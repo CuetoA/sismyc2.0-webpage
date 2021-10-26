@@ -32,18 +32,18 @@ function menu(seleccion) {
     mostrarSolo(secciones, 2)
     botonArbol.addEventListener('click', () =>{
         if (verORegistrar.innerHTML === "registrar") {  
-            window.location.href = '1 Interfaz/registrar.html#seccion-registrar-arbol'
+            window.location.href = '1_Interfaz/registrar.html#seccion-registrar-arbol'
         }
         else if (verORegistrar.innerHTML === "visualizar") {
-            window.location.href = '1 Interfaz/visualizar.html#seccion-visualizar-arbol'
+            window.location.href = '1_Interfaz/visualizar.html#seccion-visualizar-arbol'
         }
     })
     botonAnillo.addEventListener('click', () =>{
         if (verORegistrar.innerHTML === "registrar") {
-            window.location.href = '1 Interfaz/registrar.html#seccion-registrar-anillo'
+            window.location.href = '1_Interfaz/registrar.html#seccion-registrar-anillo'
         }
         else if (verORegistrar.innerHTML === "visualizar") {
-            window.location.href = '1 Interfaz/visualizar.html#seccion-visualizar-anillo' 
+            window.location.href = '1_Interfaz/visualizar.html#seccion-visualizar-anillo' 
         }
     })
 
