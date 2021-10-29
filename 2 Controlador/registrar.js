@@ -1,7 +1,7 @@
 // Botones
-const botonConfirmar = document.getElementById("botonConfirmar");
-const botonCancelar = document.getElementById("botonCancelar");
-const botonEliminar = document.getElementById("botonEliminar");
+var botonConfirmar = document.getElementById("botonConfirmar");
+var botonCancelar = document.getElementById("botonCancelar");
+var botonEliminar = document.getElementById("botonEliminar");
 // Recuadros de información
 const idArbol = document.getElementById("idArbol");
 const fechaRegistroArbol = document.getElementById("fechaRegistroArbol");
@@ -19,7 +19,7 @@ const rangoTemperaturaSuperior = document.getElementById("rangoTemperaturaSuperi
 const rangoHumedadInferior = document.getElementById("rangoHumedadInferior");
 const rangoHumedadSuperior = document.getElementById("rangoHumedadSuperior");
 const ciclosMedicionNumero = document.getElementById("ciclosMedicionNumero");
-const dropdownArbol = document.getElementById("dropdownArbol");
+//const dropdownArbol = document.getElementById("dropdownArbol");
 
 
 //const idArbol = document.getElementById("idArbol");
@@ -27,14 +27,16 @@ const dropdownArbol = document.getElementById("dropdownArbol");
 
 
 
-
 function enviarDatos(){
 	valor = idArbol.value;
-	console.log('idArbol: ', valor);
+	//valor = dropdownArbol.value;
+	console.log('dropdown: ', valor);
 };
 
 
 botonConfirmar.addEventListener('click', enviarDatos(), console.log('ewfq'));
 botonEliminar.addEventListener('click', console.log('Elimando'));
 console.log( 'Valor drop: ' ,dropdownArbol.value)
+
+botonConfirmar.onclick = () => {enviarDatos()};
 
