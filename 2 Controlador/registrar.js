@@ -1,7 +1,10 @@
 // Botones
-var botonConfirmar = document.getElementById("botonConfirmar");
-var botonCancelar = document.getElementById("botonCancelar");
-var botonEliminar = document.getElementById("botonEliminar");
+var botonConfirmarArbol = document.getElementById("botonConfirmarArbol");
+var botonCancelarArbol = document.getElementById("botonCancelarArbol");
+var botonEliminarArbol = document.getElementById("botonEliminarArbol");
+var botonConfirmarAnillo = document.getElementById("botonConfirmarAnillo");
+var botonCancelarAnillo = document.getElementById("botonCancelarAnillo");
+var botonEliminarAnillo = document.getElementById("botonEliminarAnillo");
 // Recuadros de información
 const idArbol = document.getElementById("idArbol");
 const fechaRegistroArbol = document.getElementById("fechaRegistroArbol");
@@ -19,24 +22,38 @@ const rangoTemperaturaSuperior = document.getElementById("rangoTemperaturaSuperi
 const rangoHumedadInferior = document.getElementById("rangoHumedadInferior");
 const rangoHumedadSuperior = document.getElementById("rangoHumedadSuperior");
 const ciclosMedicionNumero = document.getElementById("ciclosMedicionNumero");
-//const dropdownArbol = document.getElementById("dropdownArbol");
-
-
+const dropdownArbol = document.getElementById("dropdownArbol");
+const fertilizantePorRiego = document.getElementById("fertilizantePorRiego");
+const aguaPorRiego = document.getElementById("aguaPorRiego");
+const ciclosDeRiego = document.getElementById("ciclosDeRiego");
+const dropdownArbol2 = document.getElementById("dropdownArbol2");
+const idAnillo = document.getElementById("idAnillo");
+const fechaDeRegistro = document.getElementById("fechaDeRegistro");
+const registranteAnillo = document.getElementById("registranteAnillo");
+const registranteAnillo = document.getElementById("registranteAnillo");
+const numeroConexion = document.getElementById("numeroConexion");
 //const idArbol = document.getElementById("idArbol");
 
 
 
 
-function enviarDatos(){
+function enviarDatosArbol(){
 	valor = idArbol.value;
-	//valor = dropdownArbol.value;
-	console.log('dropdown: ', valor);
+	
 };
 
 
-botonConfirmar.addEventListener('click', enviarDatos(), console.log('ewfq'));
-botonEliminar.addEventListener('click', console.log('Elimando'));
-console.log( 'Valor drop: ' ,dropdownArbol.value)
+
+
+botonConfirmarArbol.addEventListener('click');
+botonCancelarArbol.addEventListener('click');
+botonEliminarArbol.addEventListener('click');
+
+botonConfirmarAnillo.addEventListener('click');
+botonCancelarAnillo.addEventListener('click');
+botonEliminarAnillo.addEventListener('click');
+
+
 
 botonConfirmar.onclick = () => {enviarDatos()};
 
