@@ -30,7 +30,6 @@ const dropdownArbol2 = document.getElementById("dropdownArbol2");
 const idAnillo = document.getElementById("idAnillo");
 const fechaDeRegistro = document.getElementById("fechaDeRegistro");
 const registranteAnillo = document.getElementById("registranteAnillo");
-const registranteAnillo = document.getElementById("registranteAnillo");
 const numeroConexion = document.getElementById("numeroConexion");
 //const idArbol = document.getElementById("idArbol");
 
@@ -39,21 +38,11 @@ const numeroConexion = document.getElementById("numeroConexion");
 
 function enviarDatosArbol(){
 	valor = idArbol.value;
+	console.log('funcionando');
 	
 };
 
 
 
-
-botonConfirmarArbol.addEventListener('click');
-botonCancelarArbol.addEventListener('click');
-botonEliminarArbol.addEventListener('click');
-
-botonConfirmarAnillo.addEventListener('click');
-botonCancelarAnillo.addEventListener('click');
-botonEliminarAnillo.addEventListener('click');
-
-
-
-botonConfirmar.onclick = () => {enviarDatos()};
+botonConfirmarArbol.onclick = () => {enviarDatosArbol()};
 
