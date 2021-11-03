@@ -33,6 +33,9 @@ const registranteAnillo = document.getElementById("registranteAnillo");
 const numeroConexion = document.getElementById("numeroConexion");
 //const idArbol = document.getElementById("idArbol");
 
+//Objetos
+//import {arbol} from './3 Modelo/Objetos.js';
+
 
 
 
@@ -42,7 +45,9 @@ function enviarDatosArbol(){
 	
 };
 
+function crearObjeto(){
 
+};
 
 botonConfirmarArbol.onclick = () => {enviarDatosArbol()};
 
