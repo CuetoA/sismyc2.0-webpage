@@ -5,7 +5,7 @@ var botonEliminarArbol = document.getElementById("botonEliminarArbol");
 var botonConfirmarAnillo = document.getElementById("botonConfirmarAnillo");
 var botonCancelarAnillo = document.getElementById("botonCancelarAnillo");
 var botonEliminarAnillo = document.getElementById("botonEliminarAnillo");
-// Recuadros de información
+// Recuadros de información árbol
 const idArbol = document.getElementById("idArbol");
 const fechaRegistroArbol = document.getElementById("fechaRegistroArbol");
 const edadIngresoArbol = document.getElementById("edadIngresoArbol");
@@ -22,36 +22,57 @@ const rangoTemperaturaSuperior = document.getElementById("rangoTemperaturaSuperi
 const rangoHumedadInferior = document.getElementById("rangoHumedadInferior");
 const rangoHumedadSuperior = document.getElementById("rangoHumedadSuperior");
 const ciclosMedicionNumero = document.getElementById("ciclosMedicionNumero");
-const dropdownArbol = document.getElementById("dropdownArbol");
+const ciclosMedicionUnidad = document.getElementById("dropdownArbol");
 const fertilizantePorRiego = document.getElementById("fertilizantePorRiego");
 const aguaPorRiego = document.getElementById("aguaPorRiego");
 const ciclosDeRiego = document.getElementById("ciclosDeRiego");
-const dropdownArbol2 = document.getElementById("dropdownArbol2");
+const ciclosDeRiegoUnidad = document.getElementById("dropdownArbol2");
+// Recuadros de información anillo
 const idAnillo = document.getElementById("idAnillo");
 const fechaDeRegistro = document.getElementById("fechaDeRegistro");
 const registranteAnillo = document.getElementById("registranteAnillo");
 const numeroConexion = document.getElementById("numeroConexion");
-//const idArbol = document.getElementById("idArbol");
 
 //Objetos
-import {arbol} from '../3 Modelo/Objetos.js';
-//import {sayhi} from 'test.js';
-//alert(sayhi);
-//sayhi('Andrés');
+import {arbol, anillo} from '../3 Modelo/Objetos.js';
 
-import {sayhi} from './test.js';
-sayhi('scarlette')
+function recolectarDatosArbol(){
+	let dicTemp = new Map();
+	dicTemp.set('id', idArbol.value);
+	dicTemp.set('fecha de registro', fechaRegistroArbol.value);
+	dicTemp.set('edad de ingreso', edadIngresoArbol.value);
+	dicTemp.set('registrante', registranteArbol.value);
+	dicTemp.set('altura de registro', alturaRegistroArbol.value);
+	dicTemp.set('diametro de registro', diametroRegistroArbol.value);
+	dicTemp.set('anillo relacionado', anilloRelacionado.value);
+	dicTemp.set('familia', familiaArbol.value);
+	dicTemp.set('genero', generoArbol.value);
+	dicTemp.set('especie', especieArbol.value);
+	dicTemp.set('ubicacion', ubicacionArbol.value);
+	dicTemp.set('rango temperatura inferior', rangoTemperaturaInferior.value);
+	dicTemp.set('rango temperatura superior', rangoTemperaturaSuperior.value);
+	dicTemp.set('rango humedad inferior', rangoHumedadInferior.value);
+	dicTemp.set('rango humedad superior', rangoHumedadSuperior.value);
+	dicTemp.set('ciclos medicion numero', ciclosMedicionNumero.value);
+	dicTemp.set('ciclos medicion unidad', ciclosMedicionUnidad.value);
+	dicTemp.set('fertilizante por riego', fertilizantePorRiego.value);
+	dicTemp.set('agia por riego', aguaPorRiego.value);
+	dicTemp.set('ciclos de riego', ciclosDeRiego.value);
+	dicTemp.set('ciclos de riego unidad', ciclosDeRiegoUnidad.value);	
 
+	console.log(dicTemp);
+};
 
 function enviarDatosArbol(){
 	valor = idArbol.value;
 	console.log('funcionando');
-	
 };
+	
 
 function crearObjeto(){
 
+
 };
 
-botonConfirmarArbol.onclick = () => {enviarDatosArbol()};
+botonConfirmarArbol.onclick = () => {recolectarDatosArbol()};
 

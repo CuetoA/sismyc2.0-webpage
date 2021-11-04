@@ -1,4 +1,6 @@
-export class objeto {
+export{arbol, anillo};
+
+class objeto {
 
   constructor(){
     this.identificacion = " empty ",
@@ -42,7 +44,7 @@ export class objeto {
 
 
 
-export class arbol extends objeto {
+class arbol extends objeto {
   constructor(){
     super()
     this.datosDeRiego = []
@@ -57,7 +59,7 @@ export class arbol extends objeto {
 }
 
 
-export class anillo extends objeto{
+class anillo extends objeto{
   constructor(){
     this.numeroDeConexion = ''
     this.modoDeOperacion = ''
@@ -79,4 +81,3 @@ export class anillo extends objeto{
 
 
 
-//export{objeto, arbol, anillo};
