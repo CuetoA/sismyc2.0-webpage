@@ -1,48 +1,48 @@
-class objeto {
+export class objeto {
 
   constructor(){
-    this.identificacion: " empty ",
-    this.fechaDeRegistro: " empty",
-    this.responsableDeRegistro: " empty",
-    this.objetoRelacionado: objeto,
-    this.ubicacion: " empty ";
+    this.identificacion = " empty ",
+    this.fechaDeRegistro = " empty",
+    this.responsableDeRegistro = " empty",
+    this.objetoRelacionado = objeto,
+    this.ubicacion = " empty ";
   }
  
 
 
-  confirmarCreacion: function(){
+  confirmarCreacion(){
     // Confirma la creación del objeto
-  }, 
+  } 
 
-  establecerDatos: function(){
+  establecerDatos(){
     // Constructor
-  },
+  }
 
-  comprobarDatosObligatorios: function(){
+  comprobarDatosObligatorios(){
     // Cofnirma que los datos ingresados sean los requeridos
-  },
+  }
 
-  obtenerDatos: function(){
+  obtenerDatos(){
     // Lee los datos de la página
-  },
+  }
 
-  confirmarOperacion: function(){
+  confirmarOperacion(){
     // confirma cualquier operación generada
-  },
+  }
 
-  harakiri: function(){
+  harakiri(){
     // Elimina el objeto de la BD
-  },
+  }
 
-  obtenerDatos: function(){
+  obtenerDatos(){
     // Obtiene los datos de la BD
-  },
+  }
 
 };
 
 
 
-class arbol extends objeto {
+export class arbol extends objeto {
   constructor(){
     super()
     this.datosDeRiego = []
@@ -57,7 +57,7 @@ class arbol extends objeto {
 }
 
 
-class anillo extends objeto{
+export class anillo extends objeto{
   constructor(){
     this.numeroDeConexion = ''
     this.modoDeOperacion = ''
@@ -79,7 +79,4 @@ class anillo extends objeto{
 
 
 
-
-const x = new arbol ();
-
-console.log(x.ubicacion)
+//export{objeto, arbol, anillo};

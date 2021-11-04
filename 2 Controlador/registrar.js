@@ -34,9 +34,13 @@ const numeroConexion = document.getElementById("numeroConexion");
 //const idArbol = document.getElementById("idArbol");
 
 //Objetos
-//import {arbol} from './3 Modelo/Objetos.js';
+import {arbol} from '../3 Modelo/Objetos.js';
+//import {sayhi} from 'test.js';
+//alert(sayhi);
+//sayhi('Andrés');
 
-
+import {sayhi} from './test.js';
+sayhi('scarlette')
 
 
 function enviarDatosArbol(){
