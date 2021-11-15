@@ -39,41 +39,84 @@ import {arbol, anillo} from '../3 Modelo/Objetos.js';
 function recolectarDatosArbol(){
 	let dicTemp = new Map();
 	dicTemp.set('id', idArbol.value);
-	dicTemp.set('fecha de registro', fechaRegistroArbol.value);
-	dicTemp.set('edad de ingreso', edadIngresoArbol.value);
+	dicTemp.set('fechaDeRegistro', fechaRegistroArbol.value);
+	dicTemp.set('edadDeIngreso', edadIngresoArbol.value);
 	dicTemp.set('registrante', registranteArbol.value);
-	dicTemp.set('altura de registro', alturaRegistroArbol.value);
-	dicTemp.set('diametro de registro', diametroRegistroArbol.value);
-	dicTemp.set('anillo relacionado', anilloRelacionado.value);
+	dicTemp.set('alturaDeRegistro', alturaRegistroArbol.value);
+	dicTemp.set('diametroDeRegistro', diametroRegistroArbol.value);
+	dicTemp.set('anilloRelacionado', anilloRelacionado.value);
 	dicTemp.set('familia', familiaArbol.value);
 	dicTemp.set('genero', generoArbol.value);
 	dicTemp.set('especie', especieArbol.value);
 	dicTemp.set('ubicacion', ubicacionArbol.value);
-	dicTemp.set('rango temperatura inferior', rangoTemperaturaInferior.value);
-	dicTemp.set('rango temperatura superior', rangoTemperaturaSuperior.value);
-	dicTemp.set('rango humedad inferior', rangoHumedadInferior.value);
-	dicTemp.set('rango humedad superior', rangoHumedadSuperior.value);
-	dicTemp.set('ciclos medicion numero', ciclosMedicionNumero.value);
-	dicTemp.set('ciclos medicion unidad', ciclosMedicionUnidad.value);
-	dicTemp.set('fertilizante por riego', fertilizantePorRiego.value);
-	dicTemp.set('agia por riego', aguaPorRiego.value);
-	dicTemp.set('ciclos de riego', ciclosDeRiego.value);
-	dicTemp.set('ciclos de riego unidad', ciclosDeRiegoUnidad.value);	
+	dicTemp.set('rangoTemperaturaInferior', rangoTemperaturaInferior.value);
+	dicTemp.set('rangoTemperaturaSuperior', rangoTemperaturaSuperior.value);
+	dicTemp.set('rangoHumedadInferior', rangoHumedadInferior.value);
+	dicTemp.set('rangoHumedadSuperior', rangoHumedadSuperior.value);
+	dicTemp.set('ciclosMedicionNumero', ciclosMedicionNumero.value);
+	dicTemp.set('ciclosMedicionUnidad', ciclosMedicionUnidad.value);
+	dicTemp.set('fertilizantePorRiego', fertilizantePorRiego.value);
+	dicTemp.set('aguaPorRiego', aguaPorRiego.value);
+	dicTemp.set('ciclosDeRiego', ciclosDeRiego.value);
+	dicTemp.set('ciclosDeRiegoUnidad', ciclosDeRiegoUnidad.value);	
 
 	return dicTemp
 };
 
+function ordenarDatosArbolSSF(diccionario, contenidoMensaje){
+
+	contenidoMensaje.push( parseInt( diccionario.get('anilloRelacionado') ) ); 			 //R17
+	contenidoMensaje.push(1);												  			 //R18
+	contenidoMensaje.push(0);												  			 //R19
+	contenidoMensaje.push(1);												  			 //R20
+	contenidoMensaje.push(parseInt( diccionario.get('id') ) );				  			 //R21
+	contenidoMensaje.push(0);												  			 //R22
+	contenidoMensaje.push(0);												   			 //R23
+	contenidoMensaje.push(0);												  			 //R24
+	contenidoMensaje.push(parseInt( diccionario.get('ciclosDeRiego') ) );	 		     //R25
+	contenidoMensaje.push(0);												   	    	 //R26 ESTÁ EN DÍAS POR DEFAULT
+	contenidoMensaje.push(parseInt( diccionario.get('ciclosMedicionNumero') ) );	     //R27
+	contenidoMensaje.push(0);												   	    	 //R28 ESTÁ EN DÍAS POR DEFAULT
+	contenidoMensaje.push(parseInt( diccionario.get('aguaPorRiego') ) );			     //R29
+	contenidoMensaje.push(parseInt( diccionario.get('fertilizantePorRiego') ) );	     //R30
+	contenidoMensaje.push(parseInt( diccionario.get('rangoTemperaturaInferior') ) );     //R31
+	contenidoMensaje.push(parseInt( diccionario.get('rangoTemperaturaSuperior') ) );     //R32
+	contenidoMensaje.push(parseInt( diccionario.get('rangoHumedadInferior') ) );         //R33
+	contenidoMensaje.push(parseInt( diccionario.get('rangoHumedadSuperior') ) );         //R34
+
+	return contenidoMensaje
+}
+
+function enviarDatosArbolSSF(diccionario){
+
+	let registroInicial = 17;
+	let registroFinal = 34;
+
+	let contenidoMensaje = [registroInicial, registroFinal]
+	contenidoMensaje = ordenarDatosArbolSSF(diccionario, contenidoMensaje)
+
+	let contenidoMensajeStr = ''
+	for (let elemento in contenidoMensaje){
+		contenidoMensajeStr += contenidoMensaje[elemento] + ','
+	} // Termina for elemento in conenidoMensaje
+
+	console.log('Mensaje generado: ', contenidoMensajeStr);
+};
+
+
 
 function enviarDatosArbol(){
-	//console.log('funcionando');
-	diccionario = recolectarDatosArbol();
-
-	enviarDatosArbolSSF();
+	//console.log('test enviarDatosArbol funcion en registrar.js linea 110');
+	let diccionario = recolectarDatosArbol();
+	console.log(diccionario)
+	enviarDatosArbolSSF(diccionario);
 };
 
-function enviarDatosArbolSSF(){
 
-};
+
+function enviarDatosSSF(){
+
+}
 	
 
 function crearObjeto(){
@@ -81,5 +124,6 @@ function crearObjeto(){
 
 };
 
-botonConfirmarArbol.onclick = () => {recolectarDatosArbol()};
+//botonConfirmarArbol.onclick = () => {recolectarDatosArbol()};
+botonConfirmarArbol.onclick = () => {enviarDatosArbol()};
 
