@@ -60,12 +60,19 @@ function recolectarDatosArbol(){
 	dicTemp.set('ciclos de riego', ciclosDeRiego.value);
 	dicTemp.set('ciclos de riego unidad', ciclosDeRiegoUnidad.value);	
 
-	console.log(dicTemp);
+	return dicTemp
 };
 
+
 function enviarDatosArbol(){
-	valor = idArbol.value;
-	console.log('funcionando');
+	//console.log('funcionando');
+	diccionario = recolectarDatosArbol();
+
+	enviarDatosArbolSSF();
+};
+
+function enviarDatosArbolSSF(){
+
 };
 	
 
