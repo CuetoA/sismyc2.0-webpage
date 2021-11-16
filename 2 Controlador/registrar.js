@@ -1,3 +1,5 @@
+// Socket
+const socket = io();
 // Botones
 var botonConfirmarArbol = document.getElementById("botonConfirmarArbol");
 var botonCancelarArbol = document.getElementById("botonCancelarArbol");
@@ -63,6 +65,8 @@ function ordenarDatosArbolSSF(diccionario, contenidoMensaje){
 }
 
 
+
+
 function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, contenidoMensaje){
 
 
@@ -78,7 +82,7 @@ function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, cont
 	let mensajeSerial = comando + ' ' + registroInicio + s + noRegistros + s + nodoDirigido + s;
 	mensajeSerial += contenidoMensaje;
 
-	
+	socket.emit('enviarSerial', valor );
 }
 
 
