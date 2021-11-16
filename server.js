@@ -3,7 +3,7 @@ const http = require('http')
 const express = require('express');
 const app = express();
 const server = http.createServer(app);
-console.log('pasando por aquí');
+console.log('pasando por servidor');
 const io = require('socket.io')(server);
 
 // Constantes para abrir el puerto serial

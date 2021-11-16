@@ -1,3 +1,4 @@
+const socket = io();
 const secciones =           document.getElementsByClassName("seccion")
 const botonVisualizar =     document.getElementById("visualizar")
 const botonRegistrar =      document.getElementById("registrar")
@@ -6,7 +7,7 @@ const botonAnillo =         document.getElementById("boton-anillo")
 const enlaceVisualizar =    document.getElementById("e-visualizar")
 const enlaceRegistrar =     document.getElementById("e-registrar")
 let verORegistrar =         document.getElementById('accion')
-//const socket = io();
+
 
 mostrarSolo(secciones, 1)
 
