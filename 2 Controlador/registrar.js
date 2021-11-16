@@ -36,6 +36,72 @@ const numeroConexion = document.getElementById("numeroConexion");
 //Objetos
 import {arbol, anillo} from '../3 Modelo/Objetos.js';
 
+
+
+function ordenarDatosArbolSSF(diccionario, contenidoMensaje){
+
+	contenidoMensaje.push( parseInt( diccionario.get('anilloRelacionado') ) ); 			 //R17
+	contenidoMensaje.push(1);												  			 //R18
+	contenidoMensaje.push(0);												  			 //R19
+	contenidoMensaje.push(1);												  			 //R20
+	contenidoMensaje.push(parseInt( diccionario.get('id') ) );				  			 //R21
+	contenidoMensaje.push(0);												  			 //R22
+	contenidoMensaje.push(0);												   			 //R23
+	contenidoMensaje.push(0);												  			 //R24
+	contenidoMensaje.push(parseInt( diccionario.get('ciclosDeRiego') ) );	 		     //R25
+	contenidoMensaje.push(0);												   	    	 //R26 ESTÁ EN DÍAS POR DEFAULT
+	contenidoMensaje.push(parseInt( diccionario.get('ciclosMedicionNumero') ) );	     //R27
+	contenidoMensaje.push(0);												   	    	 //R28 ESTÁ EN DÍAS POR DEFAULT
+	contenidoMensaje.push(parseInt( diccionario.get('aguaPorRiego') ) );			     //R29
+	contenidoMensaje.push(parseInt( diccionario.get('fertilizantePorRiego') ) );	     //R30
+	contenidoMensaje.push(parseInt( diccionario.get('rangoTemperaturaInferior') ) );     //R31
+	contenidoMensaje.push(parseInt( diccionario.get('rangoTemperaturaSuperior') ) );     //R32
+	contenidoMensaje.push(parseInt( diccionario.get('rangoHumedadInferior') ) );         //R33
+	contenidoMensaje.push(parseInt( diccionario.get('rangoHumedadSuperior') ) );         //R34
+
+	return contenidoMensaje
+}
+
+
+function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, contenidoMensaje){
+
+
+	let comando = ''
+
+	// Header del mensaje
+	if (inOrOut == 'envio'){ comando = 'CMD0004'}
+	else if (inOrOut == 'recepcion'){ comando = 'CMD0003'}
+	else{ console.log('Error en registrar.js función enviarDatosSSF() línea 73')};
+
+	// Concatenando mensaje
+	let s = ','
+	let mensajeSerial = comando + ' ' + registroInicio + s + noRegistros + s + nodoDirigido + s;
+	mensajeSerial += contenidoMensaje;
+
+	
+}
+
+
+function enviarDatosArbolSSF(diccionario){
+
+	// Generando lista de datos
+	let contenidoMensaje = [];
+	contenidoMensaje = ordenarDatosArbolSSF(diccionario, contenidoMensaje);
+
+	// Concatenando lista de datos en una string
+	let contenidoMensajeStr = ''
+	for (let elemento in contenidoMensaje){
+		contenidoMensajeStr += contenidoMensaje[elemento] + ','
+	};
+
+	// Preparando mensaje
+	let registroInicio = 17;
+	let noRegistros = contenidoMensaje.length;
+	let nodoDirigido = parseInt( diccionario.get('anilloRelacionado') );
+	enviarDatosSSF('envio', registroInicio, noRegistros, nodoDirigido, contenidoMensaje);
+};
+
+
 function recolectarDatosArbol(){
 	let dicTemp = new Map();
 	dicTemp.set('id', idArbol.value);
@@ -63,64 +129,12 @@ function recolectarDatosArbol(){
 	return dicTemp
 };
 
-function ordenarDatosArbolSSF(diccionario, contenidoMensaje){
-
-	contenidoMensaje.push( parseInt( diccionario.get('anilloRelacionado') ) ); 			 //R17
-	contenidoMensaje.push(1);												  			 //R18
-	contenidoMensaje.push(0);												  			 //R19
-	contenidoMensaje.push(1);												  			 //R20
-	contenidoMensaje.push(parseInt( diccionario.get('id') ) );				  			 //R21
-	contenidoMensaje.push(0);												  			 //R22
-	contenidoMensaje.push(0);												   			 //R23
-	contenidoMensaje.push(0);												  			 //R24
-	contenidoMensaje.push(parseInt( diccionario.get('ciclosDeRiego') ) );	 		     //R25
-	contenidoMensaje.push(0);												   	    	 //R26 ESTÁ EN DÍAS POR DEFAULT
-	contenidoMensaje.push(parseInt( diccionario.get('ciclosMedicionNumero') ) );	     //R27
-	contenidoMensaje.push(0);												   	    	 //R28 ESTÁ EN DÍAS POR DEFAULT
-	contenidoMensaje.push(parseInt( diccionario.get('aguaPorRiego') ) );			     //R29
-	contenidoMensaje.push(parseInt( diccionario.get('fertilizantePorRiego') ) );	     //R30
-	contenidoMensaje.push(parseInt( diccionario.get('rangoTemperaturaInferior') ) );     //R31
-	contenidoMensaje.push(parseInt( diccionario.get('rangoTemperaturaSuperior') ) );     //R32
-	contenidoMensaje.push(parseInt( diccionario.get('rangoHumedadInferior') ) );         //R33
-	contenidoMensaje.push(parseInt( diccionario.get('rangoHumedadSuperior') ) );         //R34
-
-	return contenidoMensaje
-}
-
-function enviarDatosArbolSSF(diccionario){
-
-	// Posición inicial y final de registros
-	let registroInicial = 17;
-
-	// Generando lista de datos en orden
-	let contenidoMensaje = [registroInicial, 0];
-	contenidoMensaje = ordenarDatosArbolSSF(diccionario, contenidoMensaje);
-	contenidoMensaje[1] = contenidoMensaje.length;
-
-	// Concatenando lista de datos en una string
-	let contenidoMensajeStr = ''
-	for (let elemento in contenidoMensaje){
-		contenidoMensajeStr += contenidoMensaje[elemento] + ','
-	} // Termina for elemento in conenidoMensaje
-
-	console.log('Mensaje generado: ', contenidoMensajeStr);
-};
-
-
 
 function enviarDatosArbol(){
-	//console.log('test enviarDatosArbol funcion en registrar.js linea 110');
 	let diccionario = recolectarDatosArbol();
-	console.log(diccionario)
 	enviarDatosArbolSSF(diccionario);
 };
 
-
-
-function enviarDatosSSF(){
-
-}
-	
 
 function crearObjeto(){
 
