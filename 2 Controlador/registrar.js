@@ -89,12 +89,15 @@ function ordenarDatosArbolSSF(diccionario, contenidoMensaje){
 
 function enviarDatosArbolSSF(diccionario){
 
+	// Posición inicial y final de registros
 	let registroInicial = 17;
-	let registroFinal = 34;
 
-	let contenidoMensaje = [registroInicial, registroFinal]
-	contenidoMensaje = ordenarDatosArbolSSF(diccionario, contenidoMensaje)
+	// Generando lista de datos en orden
+	let contenidoMensaje = [registroInicial, 0];
+	contenidoMensaje = ordenarDatosArbolSSF(diccionario, contenidoMensaje);
+	contenidoMensaje[1] = contenidoMensaje.length;
 
+	// Concatenando lista de datos en una string
 	let contenidoMensajeStr = ''
 	for (let elemento in contenidoMensaje){
 		contenidoMensajeStr += contenidoMensaje[elemento] + ','
