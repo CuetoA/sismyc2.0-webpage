@@ -3,13 +3,8 @@ const http = require('http')
 const express = require('express');
 const app = express();
 const server = http.createServer(app);
+console.log('pasando por aquí');
 const io = require('socket.io')(server);
-
-// Instalando servidor
-app.use(express.static(__dirname + '/')); // Main path
-server.listen(8080, () => {
-	console.log('Server listening on http://localhost:8080')
-});
 
 // Constantes para abrir el puerto serial
 const Serialport = require("serialport");
@@ -18,7 +13,11 @@ const port = new Serialport('COM3', { baudRate: 9600, databits: 8, parity: 'none
 const parser = port.pipe(new Readline());
 
 
-
+// Instalando servidor
+app.use(express.static(__dirname + '/')); // Main path
+server.listen(8080, () => {
+	console.log('Server listening on http://localhost:8080')
+});
 
 // socket está escuchando
 io.on("connection", (socket) => {
@@ -33,7 +32,7 @@ io.on("connection", (socket) => {
 		
 	});
 
-	socket.on('enviarSerial', (mensaje) => port.write(mensaje)});
+	socket.on('enviarSerial', (mensaje) => {port.write(mensaje)});
 });
 
 
