@@ -80,8 +80,9 @@ function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, cont
 	// Concatenando mensaje
 	let s = ','
 	let mensajeSerial = comando + ' ' + registroInicio + s + noRegistros + s + nodoDirigido + s;
-	mensajeSerial += contenidoMensaje;
+	mensajeSerial += '0,0' + s + contenidoMensaje;
 
+	console.log(mensajeSerial)
 	socket.emit('enviarSerial', mensajeSerial );
 }
 
