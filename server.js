@@ -9,7 +9,7 @@ const io = require('socket.io')(server);
 // Constantes para abrir el puerto serial
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
-const port = new Serialport('COM3', { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 });
+const port = new Serialport('COM6', { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 });
 const parser = port.pipe(new Readline());
 
 
@@ -33,6 +33,10 @@ io.on("connection", (socket) => {
 	});
 
 	socket.on('enviarSerial', (mensaje) => {port.write(mensaje)});
+});
+
+parser.on('data', function(data){
+	console.log('Se ha recibido: ', data)
 });
 
 
