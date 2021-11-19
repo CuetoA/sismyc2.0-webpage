@@ -31,7 +31,7 @@ enlaceRegistrar.addEventListener('click', () => {
 })
 
 
-// Menu principal
+// Menu de selección
 function menu(seleccion) {
     mostrarSolo(secciones, 2)
     botonArbol.addEventListener('click', () =>{
