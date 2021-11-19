@@ -1,3 +1,4 @@
+// Declaración de constantes
 const socket = io();
 const secciones =           document.getElementsByClassName("seccion")
 const botonVisualizar =     document.getElementById("visualizar")
@@ -8,9 +9,10 @@ const enlaceVisualizar =    document.getElementById("e-visualizar")
 const enlaceRegistrar =     document.getElementById("e-registrar")
 let verORegistrar =         document.getElementById('accion')
 
-
+// Mostrando sección de inicio
 mostrarSolo(secciones, 1)
 
+// Declaración de eventos
 botonVisualizar.addEventListener('click', () => {
     verORegistrar.innerHTML = "visualizar"
     menu("visualizar")
@@ -27,7 +29,9 @@ enlaceRegistrar.addEventListener('click', () => {
     verORegistrar.innerHTML = "registrar"
     menu("registrar")
 })
-// Menu principal
+
+
+// Menu de selección
 function menu(seleccion) {
     mostrarSolo(secciones, 2)
     botonArbol.addEventListener('click', () =>{

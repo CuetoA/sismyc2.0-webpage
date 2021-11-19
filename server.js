@@ -16,10 +16,22 @@ const parser = port.pipe(new Readline());
 // Instalando servidor
 app.use(express.static(__dirname + '/')); // Main path
 server.listen(8080, () => {
-	console.log('Server listening on http://localhost:8080')
+	console.log('Servidor escuchando en http://localhost:8080')
 });
 
-// socket está escuchando
+
+// Envío de datos externo
+function escribiendoEnPuerto(mensaje){
+	port.write(mensaje);
+}
+
+// Envío de datos interno
+function enviandoInternamente(evento, ){
+
+}
+
+
+// Recepción de datos internos
 io.on("connection", (socket) => {
 	console.log("connected to the web-socket!");
 
@@ -32,12 +44,16 @@ io.on("connection", (socket) => {
 		
 	});
 
-	socket.on('enviarSerial', (mensaje) => {port.write(mensaje)});
+	socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
 });
 
+
+// Recepción de datos externos
 parser.on('data', function(data){
 	console.log('Se ha recibido: ', data)
 });
+
+
 
 
 
