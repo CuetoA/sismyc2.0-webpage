@@ -1,6 +1,6 @@
 // Socket
 const socket = io();
-export{enviarDatosArbolSSF};
+
 
 
 // Funciones para enviar datos del árbol al SSF
@@ -70,3 +70,6 @@ function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, cont
 	console.log(mensajeSerial)
 	socket.emit('enviarSerial', mensajeSerial );
 }
+
+
+export{enviarDatosArbolSSF};

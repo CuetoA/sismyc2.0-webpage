@@ -12,12 +12,20 @@ const Readline = Serialport.parsers.Readline;
 const port = new Serialport('COM6', { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 });
 const parser = port.pipe(new Readline());
 
+//import {maquinaDeEstados} from '/3 Modelo/Comunicaciones S7/recepcionDatosS7.js';
+const recepcion = require('./3 Modelo/Comunicaciones S7/recepcionDatosS7');
+recepcion.maquinaDeEstados(10000);
+
 
 // Instalando servidor
 app.use(express.static(__dirname + '/')); // Main path
 server.listen(8080, () => {
 	console.log('Servidor escuchando en http://localhost:8080')
 });
+
+
+// Utilizando máquina de estados
+//maquinaDeEstados(10000);
 
 
 // Envío de datos externo
