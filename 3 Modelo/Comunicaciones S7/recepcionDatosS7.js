@@ -1,12 +1,15 @@
 // Socket
-const socket = io();
+//const socket = io.connect('http://localhost:8080');
+//const socket = io();
 
 //export {maquinaDeEstados}
 
 function maquinaDeEstados(tiempo){
+	console.log('entrando');
 	mensaje = 'CMD0001 1,16,0,0,0';
-	socket.emit('enviarSerial', mensaje );
-	console.log('hola')
+	//socket.emit('enviarSerial', mensaje );
+	port.write(mensaje);
+	console.log('esto: ', port.write(mensaje))
 	setTimeout(() => maquinaDeEstados(tiempo), tiempo);
 };
 

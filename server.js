@@ -6,6 +6,7 @@ const server = http.createServer(app);
 console.log('pasando por servidor');
 const io = require('socket.io')(server);
 
+
 // Constantes para abrir el puerto serial
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
@@ -13,8 +14,10 @@ const port = new Serialport('COM6', { baudRate: 9600, databits: 8, parity: 'none
 const parser = port.pipe(new Readline());
 
 //import {maquinaDeEstados} from '/3 Modelo/Comunicaciones S7/recepcionDatosS7.js';
-const recepcion = require('./3 Modelo/Comunicaciones S7/recepcionDatosS7');
-recepcion.maquinaDeEstados(10000);
+//const recepcion = require('./3 Modelo/Comunicaciones S7/recepcionDatosS7');
+//recepcion.maquinaDeEstados(10000);
+
+//const recepcion = require('./2 Controlador/registrar.js');
 
 
 // Instalando servidor
@@ -25,7 +28,18 @@ server.listen(8080, () => {
 
 
 // Utilizando máquina de estados
-//maquinaDeEstados(10000);
+maquinaDeEstados(10000);
+function maquinaDeEstados(tiempo){
+	//console.log('entrando');
+	let mensaje = 'CMD0001 1,16,0,0,0';
+	let complemento = ''
+	let bandera = port.write(mensaje);
+	if (bandera){ complemento = 'Mensaje enviado correctamente: ' + mensaje}
+		else{ complemento = 'Mensaje fallido: ' + mensaje}
+	console.log(complemento)
+
+	setTimeout(() => maquinaDeEstados(tiempo), tiempo);
+};
 
 
 // Envío de datos externo
