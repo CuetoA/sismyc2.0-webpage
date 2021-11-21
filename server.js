@@ -32,7 +32,7 @@ setTimeout(() => maquinaDeEstados(10000), 60 * 1000 * 2);
 //maquinaDeEstados(10000);
 function maquinaDeEstados(tiempo){
 	//console.log('entrando');
-	let mensaje = 'CMD0001 1,16,199,0,0';
+	let mensaje = 'CMD0001 1,16,199,0,0\r';
 	let complemento = ''
 	let bandera = port.write(mensaje);
 	if (bandera){ complemento = 'Mensaje enviado correctamente: ' + mensaje}
