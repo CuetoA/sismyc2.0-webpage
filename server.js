@@ -10,7 +10,7 @@ const io = require('socket.io')(server);
 // Constantes para abrir el puerto serial
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
-const port = new Serialport('COM6', { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 });
+const port = new Serialport('COM3', { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 });
 const parser = port.pipe(new Readline());
 
 //import {maquinaDeEstados} from '/3 Modelo/Comunicaciones S7/recepcionDatosS7.js';
@@ -31,7 +31,7 @@ server.listen(8080, () => {
 maquinaDeEstados(10000);
 function maquinaDeEstados(tiempo){
 	//console.log('entrando');
-	let mensaje = 'CMD0001 1,16,0,0,0';
+	let mensaje = 'CMD0001 1,16,199,0,0';
 	let complemento = ''
 	let bandera = port.write(mensaje);
 	if (bandera){ complemento = 'Mensaje enviado correctamente: ' + mensaje}
