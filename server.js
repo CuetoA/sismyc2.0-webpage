@@ -28,7 +28,7 @@ server.listen(8080, () => {
 
 
 // Utilizando máquina de estados
-setTimeout(() => maquinaDeEstados(10000);, 60 * 1000 * 2);
+setTimeout(() => maquinaDeEstados(10000), 60 * 1000 * 2);
 //maquinaDeEstados(10000);
 function maquinaDeEstados(tiempo){
 	//console.log('entrando');
