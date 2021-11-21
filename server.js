@@ -28,7 +28,8 @@ server.listen(8080, () => {
 
 
 // Utilizando máquina de estados
-maquinaDeEstados(10000);
+setTimeout(() => maquinaDeEstados(10000);, 60 * 1000 * 2);
+//maquinaDeEstados(10000);
 function maquinaDeEstados(tiempo){
 	//console.log('entrando');
 	let mensaje = 'CMD0001 1,16,0,0,0';
