@@ -61,6 +61,7 @@ io.on("connection", (socket) => {
 // Recepción de datos externos
 parser.on('data', function(data){
 	console.log('Se ha recibido: ', data)
+	recepcion.recibiendoDatos(data, port);
 });
 
 
