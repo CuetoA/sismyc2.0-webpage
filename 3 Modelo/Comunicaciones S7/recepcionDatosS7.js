@@ -3,17 +3,17 @@
 //const socket = io();
 
 //export {maquinaDeEstados}
+function maquinaDeEstados(tiempo, port){
+	//console.log('entrando');
+	let mensaje = 'CMD0001 1,16,199,0,0\r';
+	let complemento = ''
+	let bandera = port.write(mensaje);
+	if (bandera){ complemento = 'Mensaje enviado correctamente: ' + mensaje}
+		else{ complemento = 'Mensaje fallido: ' + mensaje}
+	console.log(complemento)
 
-function maquinaDeEstados(tiempo){
-	console.log('entrando');
-	mensaje = 'CMD0001 1,16,0,0,0';
-	//socket.emit('enviarSerial', mensaje );
-	port.write(mensaje);
-	console.log('esto: ', port.write(mensaje))
-	setTimeout(() => maquinaDeEstados(tiempo), tiempo);
+	setTimeout(() => maquinaDeEstados(tiempo, port), tiempo);
 };
-
-
 
 function recibiendoDatos(datos){
 

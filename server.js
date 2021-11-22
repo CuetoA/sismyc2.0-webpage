@@ -13,11 +13,9 @@ const Readline = Serialport.parsers.Readline;
 const port = new Serialport('COM3', { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 });
 const parser = port.pipe(new Readline());
 
-//import {maquinaDeEstados} from '/3 Modelo/Comunicaciones S7/recepcionDatosS7.js';
-//const recepcion = require('./3 Modelo/Comunicaciones S7/recepcionDatosS7');
-//recepcion.maquinaDeEstados(10000);
+// Constantes de bibliotecas
+const recepcion = require('./3 Modelo/Comunicaciones S7/recepcionDatosS7');
 
-//const recepcion = require('./2 Controlador/registrar.js');
 
 
 // Instalando servidor
@@ -28,19 +26,8 @@ server.listen(8080, () => {
 
 
 // Utilizando máquina de estados
-setTimeout(() => maquinaDeEstados(10000), 60 * 1000 * 2);
-//maquinaDeEstados(10000);
-function maquinaDeEstados(tiempo){
-	//console.log('entrando');
-	let mensaje = 'CMD0001 1,16,199,0,0\r';
-	let complemento = ''
-	let bandera = port.write(mensaje);
-	if (bandera){ complemento = 'Mensaje enviado correctamente: ' + mensaje}
-		else{ complemento = 'Mensaje fallido: ' + mensaje}
-	console.log(complemento)
+setTimeout(() => recepcion.maquinaDeEstados(10000, port), 60 * 1000 * 2);
 
-	setTimeout(() => maquinaDeEstados(tiempo), tiempo);
-};
 
 
 // Envío de datos externo
