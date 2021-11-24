@@ -19,20 +19,27 @@ function recibiendoDatos(datos, port){
 
 	datos = datos.toString()
 	let notFound = -1;
+	console.log('Recibiendo: ', datos.search('RSP') != notFound)
 
 	if (datos.search('RSP') != notFound) {
 		// Qué pasa cuando la cadena contiene RSP
 		let mensaje = datos
 		datosArr = procesandoDatos(datos);
 		limpiarDatos(datosArr, port);
+		console.log('');
+		console.log('Mensaje recibido: ', mensaje);
+		console.log('Transformado a: ', datosArr);
 
 	}else if (datos.search('Reg') != notFound){
 		// Qué pasa cuando la cadena contiene Reg
-		console.log('Confirmando comunicación: ', datos)
+		console.log('');
+		console.log('Confirmando comunicación: ', datos);
 	}else if (datos.search('-Net') != notFound){
 		// Que pasa cuando la carena contiene Net
-		console.log('Negociando comunicación, mensaje: ', datos)
+		console.log('');
+		console.log('Negociando comunicación, mensaje: ', datos);
 	}else{
+		console.log('');
 		console.log('Recibiendo datos no programados: ', datos);
 	}
 }
@@ -51,7 +58,7 @@ function limpiarDatos(datosArr, port){
 	let numeroNodo = 12;
 
 	//Creando mensaje
-	let comando = 'CMD0004 '
+	let comando = 'CMD0002 '
 	let mensaje = comando + registroInicio + ',' + registrosNumero + ',' + numeroNodo +',0,0'
 
 	for (let i = 1; i < datosArr.length; i++){
