@@ -10,7 +10,7 @@ const io = require('socket.io')(server);
 // Constantes para abrir el puerto serial
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
-const port = new Serialport('COM14', { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 });
+const port = new Serialport('COM7', { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 });
 const parser = port.pipe(new Readline());
 
 // Constantes de bibliotecas
@@ -26,7 +26,7 @@ server.listen(8080, () => {
 
 
 // Utilizando máquina de estados
-setTimeout(() => recepcion.maquinaDeEstados(10000, port), 60 * 1000 * 2);
+setTimeout(() => recepcion.maquinaDeEstados(10000, port), 60 )// * 1000 * 2);
 
 
 
@@ -60,7 +60,7 @@ io.on("connection", (socket) => {
 
 // Recepción de datos externos
 parser.on('data', function(data){
-	console.log('Se ha recibido: ', data)
+	//console.log('Se ha recibido: ', data)
 	recepcion.recibiendoDatos(data, port);
 });
 
