@@ -17,30 +17,28 @@ function maquinaDeEstados(tiempo, port){
 
 function recibiendoDatos(datos, port){
 
-	datos = datos.toString()
 	let notFound = -1;
+	datos = datos.toString()
 	console.log('');
-	//console.log('Recibiendo: ', datos.search('RSP') != notFound)
-	console.log('Recibiendo: ', datos);
 
 	if(datos.search('-Net') != notFound){
-		// Que pasa cuando la carena contiene Net
-		console.log('Negociando comunicación, mensaje: ', datos);
+		console.log('Negociando comunicación, mensaje');
 	}else if (datos.search('Reg') != notFound){
-		// Qué pasa cuando la cadena contiene Reg
-		console.log('Confirmando comunicación: ', datos);
+		console.log('Confirmando comunicación');
 	}else if (datos.search('RSP0001') != notFound) {
-		// Qué pasa cuando la cadena contiene RSP
 		let mensaje = datos
 		let datosArr = procesandoDatos(datos);
 		limpiarDatos(datosArr, port);
-		console.log('Mensaje recibido: ', mensaje);
 		console.log('Transformado a: ', datosArr);
-
 	}else{
-		console.log('Recibiendo datos no programados: ', datos);
+		console.log('Recibiendo datos no programados');
 	}
+	console.log('Mensaje recibido: ', datos);
 }
+
+
+
+
 function procesandoDatos(datos){
 	let comando = 'RSP00011  ';
 	let pinit = datos.search(comando) + comando.length
