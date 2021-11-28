@@ -26,10 +26,14 @@ function recibiendoDatos(datos, port){
 	}else if (datos.search('Reg') != notFound){
 		console.log('Confirmando comunicación');
 	}else if (datos.search('RSP0001') != notFound) {
-		let mensaje = datos
 		let datosArr = procesandoDatos(datos);
-		limpiarDatos(datosArr, port);
 		console.log('Transformado a: ', datosArr);
+		let bandera = distintoDeCero(datosArr);
+		if (bandera){
+			limpiarDatos(datosArr, port);
+			guardarDatos();	
+		}
+		
 	}else{
 		console.log('Recibiendo datos no programados');
 	}
@@ -37,6 +41,21 @@ function recibiendoDatos(datos, port){
 }
 
 
+function distintoDeCero(lista){
+	let bandera = false
+	for (let elemento in lista){
+		if (lista[elemento] != 0){
+			bandera = true
+			break
+		}
+	}
+	return bandera
+}
+
+function guardarDatos(){
+	//console.log('')
+	console.log('Guardando datos por ser distintos de cero')
+}
 
 
 function procesandoDatos(datos){
