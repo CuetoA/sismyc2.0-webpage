@@ -1,6 +1,6 @@
 // Socket
 const socket = io();
-export{enviarDatosArbolSSF};
+
 
 
 // Funciones para enviar datos del árbol al SSF
@@ -58,8 +58,8 @@ function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, cont
 	let comando = ''
 
 	// Header del mensaje
-	if (inOrOut == 'envio'){ comando = 'CMD0004'}
-	else if (inOrOut == 'recepcion'){ comando = 'CMD0003'}
+	if (inOrOut == 'envio'){ comando = 'CMD0002'}
+	else if (inOrOut == 'recepcion'){ comando = 'CMD0001'}
 	else{ console.log('Error en registrar.js función enviarDatosSSF() línea 73')};
 
 	// Concatenando mensaje
@@ -70,3 +70,6 @@ function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, cont
 	console.log(mensajeSerial)
 	socket.emit('enviarSerial', mensajeSerial );
 }
+
+
+export{enviarDatosArbolSSF};

@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/CuetoA/web-serial/issues"
   },
-  "homepage": "https://github.com/CuetoA/web-serial#readme"
+  "homepage": "https://github.com/CuetoA/web-serial#readme",
+  "devDependencies": {}
 }
