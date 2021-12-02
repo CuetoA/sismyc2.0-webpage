@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const esquema = mongoose.Schema;
 
-import {arbol, anillo} from '/Objetos.js';
+import {arbol, anillo} from './Objetos.js';
 
 const arbolSchema = new Schema({
 	objeto: arbol

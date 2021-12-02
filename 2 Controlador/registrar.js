@@ -35,6 +35,9 @@ const fechaDeRegistro = document.getElementById("fechaDeRegistro");
 const registranteAnillo = document.getElementById("registranteAnillo");
 const numeroConexion = document.getElementById("numeroConexion");
 
+// Base de datos
+const mongoose = require('mongoose')
+
 //Importando objetos
 import {arbol, anillo} from '../3 Modelo/Objetos.js';
 import {enviarDatosArbolSSF} from '../3 Modelo/Comunicaciones S7/envioDatosS7.js'
@@ -77,6 +80,9 @@ function recolectarDatosArbol(){
 	return dicTemp
 };
 
+function crearObjetoDB(){
+	
+}
 
 function crearObjeto(){
 

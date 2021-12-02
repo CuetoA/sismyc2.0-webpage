@@ -10,7 +10,14 @@ const io = require('socket.io')(server);
 // Constantes para abrir el puerto serial
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
-const port = new Serialport('COM14', { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 });
+const puertoSerie = 'COM14'
+const port = new Serialport(puertoSerie, { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 })
+	/*.then((result) => {
+		console.log('Conectado correctamente al ', puertoSerie);
+	})
+	.catch((err) => {
+		console.log('No se pudo conectar al ', puertoSerie);
+	});*/
 const parser = port.pipe(new Readline());
 
 // Constantes de bibliotecas
@@ -22,6 +29,39 @@ const mdburi = 'mongodb+srv://andres-cueto:amox1.0@cluster0.uur9i.mongodb.net/si
 mongoose.connect(mdburi)
 	.then((result) => console.log('connected to moongo db'))
 	.catch((err) => console.log(err))
+
+
+// INICIANDO ESPACIO PRUEBA DB
+//const Objeto = require('./3 Modelo/Esquemas')
+//console.log('antes de entrar al blog')
+// Se genera la conexión desde que se importa el módulo
+const Test = require('./3 Modelo/Esquemas-test')
+console.log('Test se ve así: ' ,Test)
+/*app.get('/add-scarlette', (req , res) => {
+
+	console.log('entrando al blog')
+
+	const test = new Test({
+		nombre: 'Jorge',
+		edad: '25'
+	})
+		.catch((err) => {
+			console.log('ha habido un error');
+		})
+
+	test.save()
+		.then((results) => {
+			console.log('resultado mongo: ' , result );
+		})
+		.catch((err) => {
+			console.log('error mongo: ' , err);
+		});
+})
+
+*/
+
+// TERMINANDO ESPACIO PRUEBA DB
+
 
 // Instalando servidor
 app.use(express.static(__dirname + '/')); // Main path
