@@ -33,7 +33,16 @@ mongoose.connect(mdburi)
 // Se genera la conexión desde que se importa el módulo
 const Test = require('./3 Modelo/Esquemas-test')
 console.log('Test se ve así: ' ,Test)
-/*app.get('/add-scarlette', (req , res) => {
+
+const Sca = new Test({
+	nombre: 'Bello',
+	edad: '40'
+})
+Sca.save()
+	.then(() => console.log('Creada la Sca'))
+	.catch((err) => console.log('No ceada la Sca'));
+
+/*app.get('/add-data', (req , res) => {
 
 	console.log('entrando al blog')
 
@@ -52,9 +61,9 @@ console.log('Test se ve así: ' ,Test)
 		.catch((err) => {
 			console.log('error mongo: ' , err);
 		});
-})
+})*/
 
-*/
+
 
 // TERMINANDO ESPACIO PRUEBA DB
 
