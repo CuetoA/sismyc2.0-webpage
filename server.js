@@ -34,21 +34,36 @@ mongoose.connect(mdburi)
 const Test = require('./3 Modelo/Esquemas-test')
 console.log('Test se ve así: ' ,Test)
 
+
 const Sca = new Test({
 	nombre: 'Bello',
-	edad: '40'
+	edad: '40',
 })
 Sca.save()
 	.then(() => console.log('Creada la Sca'))
 	.catch((err) => console.log('No ceada la Sca'));
 
-/*app.get('/add-data', (req , res) => {
+
+/*
+// register view engine
+app.set('view engine', 'ejs');
+
+// middleware & static files
+const morgan = require('morgan');
+app.use(express.static('public'));
+app.use(morgan('dev'));
+app.use((req, res, next) => {
+  res.locals.path = req.path;
+  next();
+});
+
+app.get('/add-data', (req , res) => {
 
 	console.log('entrando al blog')
 
 	const test = new Test({
-		nombre: 'Jorge',
-		edad: '25'
+		nombre: 'Barrón',
+		edad: '30'
 	})
 		.catch((err) => {
 			console.log('ha habido un error');
@@ -61,8 +76,8 @@ Sca.save()
 		.catch((err) => {
 			console.log('error mongo: ' , err);
 		});
-})*/
-
+})
+*/
 
 
 // TERMINANDO ESPACIO PRUEBA DB
