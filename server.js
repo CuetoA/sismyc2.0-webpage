@@ -16,7 +16,12 @@ const parser = port.pipe(new Readline());
 // Constantes de bibliotecas
 const recepcion = require('./3 Modelo/Comunicaciones S7/recepcionDatosS7');
 
-
+// Constantes para MongodB
+const mongoose = require('mongoose')
+const mdburi = 'mongodb+srv://andres-cueto:amox1.0@cluster0.uur9i.mongodb.net/sismyc-db'
+mongoose.connect(mdburi)
+	.then((result) => console.log('connected to moongo db'))
+	.catch((err) => console.log(err))
 
 // Instalando servidor
 app.use(express.static(__dirname + '/')); // Main path
