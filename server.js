@@ -10,15 +10,11 @@ const io = require('socket.io')(server);
 // Constantes para abrir el puerto serial
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
+/*
 const puertoSerie = 'COM14'
 const port = new Serialport(puertoSerie, { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 })
-	/*.then((result) => {
-		console.log('Conectado correctamente al ', puertoSerie);
-	})
-	.catch((err) => {
-		console.log('No se pudo conectar al ', puertoSerie);
-	});*/
 const parser = port.pipe(new Readline());
+*/
 
 // Constantes de bibliotecas
 const recepcion = require('./3 Modelo/Comunicaciones S7/recepcionDatosS7');
@@ -69,10 +65,10 @@ server.listen(8080, () => {
 	console.log('Servidor escuchando en http://localhost:8080')
 });
 
-
+/*
 // Utilizando máquina de estados
 setTimeout(() => recepcion.maquinaDeEstados(10000, port), 60 )// * 1000 * 2);
-
+*/
 
 
 // Envío de datos externo
@@ -99,16 +95,16 @@ io.on("connection", (socket) => {
 		
 	});
 
-	socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
+	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
 });
 
-
+/*
 // Recepción de datos externos
 parser.on('data', function(data){
 	//console.log('Se ha recibido: ', data)
 	recepcion.recibiendoDatos(data, port);
 });
-
+*/
 
 
 
