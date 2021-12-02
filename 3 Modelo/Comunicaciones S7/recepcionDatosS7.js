@@ -30,7 +30,7 @@ function recibiendoDatos(datos, port){
 		console.log('Transformado a: ', datosArr);
 		let bandera = distintoDeCero(datosArr);
 		if (bandera){
-			limpiarDatos(datosArr, port);
+			limpiarDatos(datos, datosArr, port);
 			guardarDatos();	
 		}
 		
@@ -66,10 +66,12 @@ function procesandoDatos(datos){
 	return datosArr
 }
 
-function limpiarDatos(datosArr, port){
+function limpiarDatos(datos, datosArr, port){
 	// Deberemos enviar un mensaje, perio primero, arreglar socket
-	let registroInicio = datosArr[0];
+	let registroInicio = datos[7];
+	//console.log('Registro: ', registroInicio)
 	let registrosNumero = datosArr.length - 1;
+	//console.log('Número de registros: ', registrosNumero)
 	let numeroNodo = 12;
 
 	//Creando mensaje
