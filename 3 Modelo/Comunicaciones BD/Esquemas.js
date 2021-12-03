@@ -39,13 +39,13 @@ const arbolSchema = new Schema({
 	},
 
     datosDeRegistro: {
-    	identificaciónDelArbol: {type: String, required: false},
+    	id: {type: String, required: false},
 		fechaDeRegistro: {type: String, required: false},
-		edadDeIngresoAlSistema: {type: String, required: false},
-		responsableDelRegistro: {type: String, required: false},
+		edadDeIngreso: {type: String, required: false},
+		registrante: {type: String, required: false},
 		tamañoDeIngresoAlSistema: {
-			alturaDeIngreso: {type: String, required: false},
-			diámetroDeIngreso: {type: String, required: false}
+			alturaDeRegistro: {type: String, required: false},
+			diametroDeRegistro: {type: String, required: false}
 		}
     },
 
