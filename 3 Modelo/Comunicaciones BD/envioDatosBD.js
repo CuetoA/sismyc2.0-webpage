@@ -1,11 +1,11 @@
 // Socket
-const socket = io();
-const Objeto = require('../Esquemas')
+//const socket = io();
+const ObjetoArbol = require('/Esquemas');
 
 function enviarDatosArbolBD(diccionario){
 	/*
 		
-		Importar objetos
+		- Importar objetos
 
 		Debemos recibir el diccionario y pasar esa información al esquema
 
@@ -15,4 +15,14 @@ function enviarDatosArbolBD(diccionario){
 
 		Enviar confirmación
 	*/
+
+	const arbolito = new ObjetoArbol({
+		identificacion : diccionario.get('id'),
+	    responsableDeRegistro : diccionario.get('registrante')
+	})
+	arbolito.save()
+		.then(() => console.log('Creando arbolito'))
+		.catch((err) => console.log('Sin crear el arbolito'));
 }
+
+export {enviarDatosArbolBD};

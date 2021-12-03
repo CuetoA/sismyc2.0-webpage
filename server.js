@@ -28,7 +28,10 @@ mongoose.connect(mdburi)
 
 
 // INICIANDO ESPACIO PRUEBA DB
-const Objeto = require('./3 Modelo/Esquemas')
+//const Objeto = require('./3 Modelo/Esquemas')
+const envioDatosBD = require('./3 Modelo/Comunicaciones BD/envioDatosBD')
+
+
 const Test = require('./3 Modelo/Esquemas-test')
 console.log('Test se ve así: ' ,Test)
 
@@ -47,7 +50,7 @@ Sca.save()
 
 // Instalando servidor
 app.use(express.static(__dirname + '/')); // Main path
-server.listen(8080, () => {
+server.listen(8080, () => {	
 	console.log('Servidor escuchando en http://localhost:8080')
 });
 
@@ -79,6 +82,10 @@ io.on("connection", (socket) => {
 
 	socket.on('apagar', (valor) => {
 		
+	});
+
+	socket.on('enviarBD', (diccionario) => {
+		envioDatosBD.enviarDatosArbolBD(diccionario)
 	});
 
 	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});

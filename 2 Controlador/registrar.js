@@ -80,11 +80,12 @@ function recolectarDatosArbol(){
 	return dicTemp
 };
 
-/*
-function crearObjetoDB(){
-	
+
+function crearObjetoDB(diccionario){
+	socket.emit('enviarBD', diccionario);
 }
 
+/*
 function crearObjeto(){
 
 
