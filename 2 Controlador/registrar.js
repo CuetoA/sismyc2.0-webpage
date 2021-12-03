@@ -80,6 +80,7 @@ function recolectarDatosArbol(){
 	return dicTemp
 };
 
+/*
 function crearObjetoDB(){
 	
 }
@@ -89,5 +90,5 @@ function crearObjeto(){
 
 };
 
-
+*/
 
