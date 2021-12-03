@@ -85,6 +85,7 @@ io.on("connection", (socket) => {
 	});
 
 	socket.on('enviarBD', (diccionario) => {
+		console.log('diccionario en server es: ', diccionario)
 		envioDatosBD.enviarDatosArbolBD(diccionario)
 	});
 
