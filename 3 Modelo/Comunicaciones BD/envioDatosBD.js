@@ -18,9 +18,17 @@ function enviarDatosArbolBD(diccionario){
 	console.log('diccionario en el enviardatos db: ', diccionario)
 
 	const arbolito = new ObjetoArbol({
-		identificacion : diccionario.get('id'),
-	    responsableDeRegistro : diccionario.get('registrante')
-	})
+	    datosDeRegistro: {
+	    	identificaciónDelArbol: diccionario.get('id'),
+			fechaDeRegistro: 'Test',
+			edadDeIngresoAlSistema: 'Test',
+			responsableDelRegistro: diccionario.get('registrante'),
+			tamañoDeIngresoAlSistema: {
+				alturaDeIngreso: 'Test',
+				diámetroDeIngreso: 'Test'
+			}
+		}
+	});
 	arbolito.save()
 		.then(() => console.log('Creando arbolito'))
 		.catch((err) => console.log('Sin crear el arbolito'));

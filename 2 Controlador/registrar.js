@@ -50,7 +50,9 @@ botonConfirmarArbol.onclick = () => {enviarDatosArbol()};
 function enviarDatosArbol(){
 	let diccionario = recolectarDatosArbol();
 	enviarDatosArbolSSF(diccionario);
-	crearObjetoDB(diccionario)
+	let arreglo = Array.from(diccionario);
+	console.log(arreglo);
+	crearObjetoDB(arreglo);
 };
 
 // Recolectando los datos a partir de sus id's
@@ -82,9 +84,9 @@ function recolectarDatosArbol(){
 };
 
 
-function crearObjetoDB(diccionario){
-	console.log('diccionario en entrando a enviar datos arbol a DB: ', diccionario);
-	socket.emit('enviarBD', diccionario);
+function crearObjetoDB(arreglo){
+	console.log('diccionario en entrando a enviar datos arbol a DB: ', arreglo);
+	socket.emit('enviarBD', arreglo);
 }
 
 /*

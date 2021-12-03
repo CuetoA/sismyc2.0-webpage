@@ -84,9 +84,10 @@ io.on("connection", (socket) => {
 		
 	});
 
-	socket.on('enviarBD', (diccionario) => {
-		console.log('diccionario en server es: ', diccionario)
-		envioDatosBD.enviarDatosArbolBD(diccionario)
+	socket.on('enviarBD', (arreglo) => {
+		console.log('arreglo en server es: ', arreglo);
+		diccionario = new Map(arreglo);
+		envioDatosBD.enviarDatosArbolBD(diccionario);
 	});
 
 	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
