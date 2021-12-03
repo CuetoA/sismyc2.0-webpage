@@ -57,8 +57,6 @@ function enviarDatosArbolBD(diccionario){
 				especie: diccionario.get('especie')
 			}
 	    },
-
-	    datosDeTelemetria: {type: [datosTelemetriaSchema], required: false}
 	});
 	arbolito.save()
 		.then(() => console.log('Creando arbolito'))
