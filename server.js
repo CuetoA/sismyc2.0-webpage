@@ -29,8 +29,9 @@ mongoose.connect(mdburi)
 
 // INICIANDO ESPACIO PRUEBA DB
 //const Objeto = require('./3 Modelo/Esquemas')
-//console.log('antes de entrar al blog')
-// Se genera la conexión desde que se importa el módulo
+const envioDatosBD = require('./3 Modelo/Comunicaciones BD/envioDatosBD')
+
+
 const Test = require('./3 Modelo/Esquemas-test')
 console.log('Test se ve así: ' ,Test)
 
@@ -44,48 +45,12 @@ Sca.save()
 	.catch((err) => console.log('No ceada la Sca'));
 
 
-/*
-// register view engine
-app.set('view engine', 'ejs');
-
-// middleware & static files
-const morgan = require('morgan');
-app.use(express.static('public'));
-app.use(morgan('dev'));
-app.use((req, res, next) => {
-  res.locals.path = req.path;
-  next();
-});
-
-app.get('/add-data', (req , res) => {
-
-	console.log('entrando al blog')
-
-	const test = new Test({
-		nombre: 'Barrón',
-		edad: '30'
-	})
-		.catch((err) => {
-			console.log('ha habido un error');
-		})
-
-	test.save()
-		.then((results) => {
-			console.log('resultado mongo: ' , result );
-		})
-		.catch((err) => {
-			console.log('error mongo: ' , err);
-		});
-})
-*/
-
-
 // TERMINANDO ESPACIO PRUEBA DB
 
 
 // Instalando servidor
 app.use(express.static(__dirname + '/')); // Main path
-server.listen(8080, () => {
+server.listen(8080, () => {	
 	console.log('Servidor escuchando en http://localhost:8080')
 });
 
@@ -117,6 +82,11 @@ io.on("connection", (socket) => {
 
 	socket.on('apagar', (valor) => {
 		
+	});
+
+	socket.on('enviarBD', (diccionario) => {
+		console.log('diccionario en server es: ', diccionario)
+		envioDatosBD.enviarDatosArbolBD(diccionario)
 	});
 
 	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
