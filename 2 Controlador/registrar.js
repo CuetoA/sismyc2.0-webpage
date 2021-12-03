@@ -35,6 +35,9 @@ const fechaDeRegistro = document.getElementById("fechaDeRegistro");
 const registranteAnillo = document.getElementById("registranteAnillo");
 const numeroConexion = document.getElementById("numeroConexion");
 
+// Base de datos
+//const mongoose = require('mongoose')
+
 //Importando objetos
 import {arbol, anillo} from '../3 Modelo/Objetos.js';
 import {enviarDatosArbolSSF} from '../3 Modelo/Comunicaciones S7/envioDatosS7.js'
@@ -47,6 +50,7 @@ botonConfirmarArbol.onclick = () => {enviarDatosArbol()};
 function enviarDatosArbol(){
 	let diccionario = recolectarDatosArbol();
 	enviarDatosArbolSSF(diccionario);
+	crearObjetoDB(diccionario)
 };
 
 // Recolectando los datos a partir de sus id's
@@ -78,10 +82,16 @@ function recolectarDatosArbol(){
 };
 
 
+function crearObjetoDB(diccionario){
+	console.log('diccionario en entrando a enviar datos arbol a DB: ', diccionario);
+	socket.emit('enviarBD', diccionario);
+}
+
+/*
 function crearObjeto(){
 
 
 };
 
-
+*/
 
