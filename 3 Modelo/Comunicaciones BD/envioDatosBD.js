@@ -18,16 +18,47 @@ function enviarDatosArbolBD(diccionario){
 	console.log('diccionario en el enviardatos db: ', diccionario)
 
 	const arbolito = new ObjetoArbol({
+	    
+		datosDeRiego: {
+			rangoTemperaturaInferior: diccionario.get('rangoTemperaturaInferior'),
+			rangoTemperaturaSuperior: diccionario.get('rangoTemperaturaSuperior'),
+			rangoHumedadInferior: diccionario.get('rangoHumedadInferior'),
+
+			rangoHumedadSuperior: diccionario.get('rangoHumedadSuperior'),
+			ciclosMedicionNumero: diccionario.get('ciclosMedicionNumero'),
+			ciclosMedicionUnidad: diccionario.get('ciclosMedicionUnidad'),
+
+			fertilizantePorRiego: diccionario.get('fertilizantePorRiego'),
+			aguaPorRiego: diccionario.get('aguaPorRiego'),
+			ciclosDeRiego: diccionario.get('ciclosDeRiego'),
+			ciclosDeRiegoUnidad: diccionario.get('ciclosDeRiegoUnidad')
+		},
+
+
+
 	    datosDeRegistro: {
-	    	identificaciónDelArbol: diccionario.get('id'),
-			fechaDeRegistro: 'Test',
-			edadDeIngresoAlSistema: 'Test',
-			responsableDelRegistro: diccionario.get('registrante'),
+	    	id: diccionario.get('id'),
+			fechaDeRegistro: diccionario.get('fechaDeRegistro'),
+			edadDeIngreso: diccionario.get('edadDeIngreso'),
+			registrante: diccionario.get('registrante'),
 			tamañoDeIngresoAlSistema: {
-				alturaDeIngreso: 'Test',
-				diámetroDeIngreso: 'Test'
+				alturaDeRegistro: diccionario.get('alturaDeRegistro'),
+				diametroDeRegistro: diccionario.get('diametroDeRegistro')
 			}
-		}
+	    },
+		
+
+	    informacionDelArbol:{
+	    	anilloRelacionado: diccionario.get('anilloRelacionado'),
+			ubicacion: diccionario.get('ubicacion'),
+			taxonomia: {
+				familia: diccionario.get('familia'),
+				genero: diccionario.get('genero'),
+				especie: diccionario.get('especie')
+			}
+	    },
+
+	    datosDeTelemetria: {type: [datosTelemetriaSchema], required: false}
 	});
 	arbolito.save()
 		.then(() => console.log('Creando arbolito'))

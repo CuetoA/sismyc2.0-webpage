@@ -28,14 +28,18 @@ const arbolSchema = new Schema({
 	objeto: {type: objetoSchema, required: false},
 
 	datosDeRiego: {
-		horaDeRiego: {type: String, required: false},
+		rangoTemperaturaInferior:  {type: String, required: false},
+		rangoTemperaturaSuperior: {type: String, required: false},
+		rangoHumedadInferior: {type: String, required: false},
+
+		rangoHumedadSuperior: {type: String, required: false},
+		ciclosMedicionNumero: {type: String, required: false},
+		ciclosMedicionUnidad: {type: String, required: false},
+
+		fertilizantePorRiego: {type: String, required: false},
+		aguaPorRiego: {type: String, required: false},
 		ciclosDeRiego: {type: String, required: false},
-		horaDeMedición: {type: String, required: false},
-		ciclosDeMedición: {type: String, required: false},
-		cantidadDeAguaPorRiego: {type: String, required: false},
-		cantidadDeFertilizantePorRiego: {type: String, required: false},
-		rangoDeTemperaturas: {type: String, required: false},
-		humedadMínima: {type: String, required: false}
+		ciclosDeRiegoUnidad: {type: String, required: false}
 	},
 
     datosDeRegistro: {
@@ -50,12 +54,12 @@ const arbolSchema = new Schema({
     },
 
     informacionDelArbol:{
-    	relacionConAnillo: {type: String, required: false},
+    	anilloRelacionado: {type: String, required: false},
 		ubicacion: {type: String, required: false},
 		taxonomia: {
 			familia: {type: String, required: false},
-			Género: {type: String, required: false},
-			Especie: {type: String, required: false}
+			genero: {type: String, required: false},
+			especie: {type: String, required: false}
 		}
     },
 

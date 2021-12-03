@@ -64,11 +64,13 @@ function recolectarDatosArbol(){
 	dicTemp.set('registrante', registranteArbol.value);
 	dicTemp.set('alturaDeRegistro', alturaRegistroArbol.value);
 	dicTemp.set('diametroDeRegistro', diametroRegistroArbol.value);
+
 	dicTemp.set('anilloRelacionado', anilloRelacionado.value);
+	dicTemp.set('ubicacion', ubicacionArbol.value);
 	dicTemp.set('familia', familiaArbol.value);
 	dicTemp.set('genero', generoArbol.value);
 	dicTemp.set('especie', especieArbol.value);
-	dicTemp.set('ubicacion', ubicacionArbol.value);
+	
 	dicTemp.set('rangoTemperaturaInferior', rangoTemperaturaInferior.value);
 	dicTemp.set('rangoTemperaturaSuperior', rangoTemperaturaSuperior.value);
 	dicTemp.set('rangoHumedadInferior', rangoHumedadInferior.value);
