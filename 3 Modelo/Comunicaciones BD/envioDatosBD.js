@@ -15,6 +15,7 @@ function enviarDatosArbolBD(diccionario){
 
 		Enviar confirmación
 	*/
+	let flag = false;
 	console.log('diccionario en el enviardatos db: ', diccionario)
 
 	const arbolito = new ObjetoArbol({
@@ -58,9 +59,26 @@ function enviarDatosArbolBD(diccionario){
 			}
 	    },
 	});
+
 	arbolito.save()
-		.then(() => console.log('Creando arbolito'))
-		.catch((err) => console.log('Sin crear el arbolito'));
+		.then(() => flag = confirmarCreacion(true))
+		.catch((err) => flag = confirmarCreacion(false));
+
+	return flag
+}
+
+function confirmarCreacion(flag){
+	if (flag){
+		console.log('')
+		console.logline('El arbolito se ha creado exitosamente')
+		console.log('')
+	}
+	else(flag){
+		console.log('')
+		console.logline('El arbolito NO se ha creado')
+		console.log('')	
+	}
+	return flag
 }
 
 //export {enviarDatosArbolBD};
