@@ -66,8 +66,8 @@ io.on("connection", (socket) => {
 		console.log('arreglo en server es: ', arreglo);
 		diccionario = new Map(arreglo);
 		let flag = envioDatosBD.enviarDatosArbolBD(diccionario);
-		envioDatosSSFTest(flag, diccionario)
-		
+		enviarDatosSSF.enviarDatosArbolSSF(diccionario, port)
+		//envioDatosSSFTest(flag, diccionario)
 	});
 
 	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
