@@ -1,8 +1,4 @@
-// Socket
-//const socket = io.connect('http://localhost:8080');
-//const socket = io();
 
-//export {maquinaDeEstados}
 function maquinaDeEstados(tiempo, port){
 	//console.log('entrando');
 	let mensaje = 'CMD0001 1,16,199,0,0\r';
@@ -69,9 +65,7 @@ function procesandoDatos(datos){
 function limpiarDatos(datos, datosArr, port){
 	// Deberemos enviar un mensaje, perio primero, arreglar socket
 	let registroInicio = datos[7];
-	//console.log('Registro: ', registroInicio)
 	let registrosNumero = datosArr.length - 1;
-	//console.log('Número de registros: ', registrosNumero)
 	let numeroNodo = 12;
 
 	//Creando mensaje
@@ -84,12 +78,6 @@ function limpiarDatos(datos, datosArr, port){
 	mensaje += '\r';
 	port.write(mensaje);
 }
-
-
-
-
-
-
 
 module.exports.maquinaDeEstados = maquinaDeEstados;
 module.exports.recibiendoDatos = recibiendoDatos;
