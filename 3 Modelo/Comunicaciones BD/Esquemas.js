@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//import {arbol, anillo} from './Objetos.js';
-
 const objetoSchema = new Schema({
 	identificacion : {type: String, required: true},
     fechaDeRegistro : {type: String, required: false},
@@ -28,45 +26,43 @@ const arbolSchema = new Schema({
 	objeto: {type: objetoSchema, required: false},
 
 	datosDeRiego: {
-		horaDeRiego: {type: String, required: false},
+		rangoTemperaturaInferior:  {type: String, required: false},
+		rangoTemperaturaSuperior: {type: String, required: false},
+		rangoHumedadInferior: {type: String, required: false},
+
+		rangoHumedadSuperior: {type: String, required: false},
+		ciclosMedicionNumero: {type: String, required: false},
+		ciclosMedicionUnidad: {type: String, required: false},
+
+		fertilizantePorRiego: {type: String, required: false},
+		aguaPorRiego: {type: String, required: false},
 		ciclosDeRiego: {type: String, required: false},
-		horaDeMedición: {type: String, required: false},
-		ciclosDeMedición: {type: String, required: false},
-		cantidadDeAguaPorRiego: {type: String, required: false},
-		cantidadDeFertilizantePorRiego: {type: String, required: false},
-		rangoDeTemperaturas: {type: String, required: false},
-		humedadMínima: {type: String, required: false}
+		ciclosDeRiegoUnidad: {type: String, required: false}
 	},
 
     datosDeRegistro: {
-    	identificaciónDelArbol: {type: String, required: false},
+    	id: {type: String, required: false},
 		fechaDeRegistro: {type: String, required: false},
-		edadDeIngresoAlSistema: {type: String, required: false},
-		responsableDelRegistro: {type: String, required: false},
+		edadDeIngreso: {type: String, required: false},
+		registrante: {type: String, required: false},
 		tamañoDeIngresoAlSistema: {
-			alturaDeIngreso: {type: String, required: false},
-			diámetroDeIngreso: {type: String, required: false}
+			alturaDeRegistro: {type: String, required: false},
+			diametroDeRegistro: {type: String, required: false}
 		}
     },
 
     informacionDelArbol:{
-    	relacionConAnillo: {type: String, required: false},
+    	anilloRelacionado: {type: String, required: false},
 		ubicacion: {type: String, required: false},
 		taxonomia: {
 			familia: {type: String, required: false},
-			Género: {type: String, required: false},
-			Especie: {type: String, required: false}
+			genero: {type: String, required: false},
+			especie: {type: String, required: false}
 		}
     },
 
     datosDeTelemetria: {type: [datosTelemetriaSchema], required: false}
 });
-
-/*
-const anilloSchema = new Schema({
-	objeto: anillo
-})
-*/
 
 const ObjetoArbol = mongoose.model('Objetos', arbolSchema)
 module.exports = ObjetoArbol;

@@ -40,7 +40,7 @@ const numeroConexion = document.getElementById("numeroConexion");
 
 //Importando objetos
 import {arbol, anillo} from '../3 Modelo/Objetos.js';
-import {enviarDatosArbolSSF} from '../3 Modelo/Comunicaciones S7/envioDatosS7.js'
+//import {enviarDatosArbolSSF} from '../3 Modelo/Comunicaciones S7/envioDatosS7.js'
 
 //botonConfirmarArbol.onclick = () => {recolectarDatosArbol()};
 botonConfirmarArbol.onclick = () => {enviarDatosArbol()};
@@ -49,9 +49,9 @@ botonConfirmarArbol.onclick = () => {enviarDatosArbol()};
 // Enviando los datos del árbol al SSF
 function enviarDatosArbol(){
 	let diccionario = recolectarDatosArbol();
-	enviarDatosArbolSSF(diccionario);
+	//enviarDatosArbolSSF(diccionario);
 	let arreglo = Array.from(diccionario);
-	console.log(arreglo);
+	//console.log(arreglo);
 	crearObjetoDB(arreglo);
 };
 
@@ -64,11 +64,13 @@ function recolectarDatosArbol(){
 	dicTemp.set('registrante', registranteArbol.value);
 	dicTemp.set('alturaDeRegistro', alturaRegistroArbol.value);
 	dicTemp.set('diametroDeRegistro', diametroRegistroArbol.value);
+
 	dicTemp.set('anilloRelacionado', anilloRelacionado.value);
+	dicTemp.set('ubicacion', ubicacionArbol.value);
 	dicTemp.set('familia', familiaArbol.value);
 	dicTemp.set('genero', generoArbol.value);
 	dicTemp.set('especie', especieArbol.value);
-	dicTemp.set('ubicacion', ubicacionArbol.value);
+	
 	dicTemp.set('rangoTemperaturaInferior', rangoTemperaturaInferior.value);
 	dicTemp.set('rangoTemperaturaSuperior', rangoTemperaturaSuperior.value);
 	dicTemp.set('rangoHumedadInferior', rangoHumedadInferior.value);
@@ -85,7 +87,7 @@ function recolectarDatosArbol(){
 
 
 function crearObjetoDB(arreglo){
-	console.log('diccionario en entrando a enviar datos arbol a DB: ', arreglo);
+	//console.log('diccionario en entrando a enviar datos arbol a DB: ', arreglo);
 	socket.emit('enviarBD', arreglo);
 }
 
