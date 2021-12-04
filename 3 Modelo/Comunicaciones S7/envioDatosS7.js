@@ -1,10 +1,10 @@
 // Socket
-const socket = io();
+//const socket = io();
 
 
 
 // Funciones para enviar datos del árbol al SSF
-function enviarDatosArbolSSF(diccionario){
+function enviarDatosArbolSSF(diccionario, port){
 
 	// Generando lista de datos
 	let contenidoMensaje = [];
@@ -20,7 +20,7 @@ function enviarDatosArbolSSF(diccionario){
 	let registroInicio = 17;
 	let noRegistros = contenidoMensaje.length;
 	let nodoDirigido = parseInt( diccionario.get('anilloRelacionado') );
-	enviarDatosSSF('envio', registroInicio, noRegistros, nodoDirigido, contenidoMensaje);
+	enviarDatosSSF('envio', registroInicio, noRegistros, nodoDirigido, contenidoMensaje, port);
 };
 
 
@@ -52,7 +52,7 @@ function ordenarDatosArbolSSF(diccionario, contenidoMensaje){
 
 
 
-function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, contenidoMensaje){
+function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, contenidoMensaje, port){
 
 
 	let comando = ''
@@ -68,8 +68,12 @@ function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, cont
 	mensajeSerial += '0,0' + s + contenidoMensaje;
 
 	console.log(mensajeSerial)
-	socket.emit('enviarSerial', mensajeSerial );
+
+	port.write(mensajeSerial);
+	// AQUÍ DEBEMOS PONER LA FORMA DE ENVIAR LOS DATOS POR EL PUERTO
+	//socket.emit('enviarSerial', mensajeSerial );
 }
 
 
-export{enviarDatosArbolSSF};
+//export{enviarDatosArbolSSF};
+module.exports.enviarDatosArbolSSF = enviarDatosArbolSSF;

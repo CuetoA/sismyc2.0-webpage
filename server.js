@@ -17,7 +17,8 @@ const parser = port.pipe(new Readline());
 
 // Constantes de bibliotecas
 const recepcion = require('./3 Modelo/Comunicaciones S7/recepcionDatosS7');
-const envioDatosBD = require('./3 Modelo/Comunicaciones BD/envioDatosBD')
+const envioDatosBD = require('./3 Modelo/Comunicaciones BD/envioDatosBD');
+const enviarDatosSSF = require('./3 Modelo/Comunicaciones S7/envioDatosS7.js');
 // Constantes para MongodB
 const mongoose = require('mongoose')
 const mdburi = 'mongodb+srv://andres-cueto:amox1.0@cluster0.uur9i.mongodb.net/sismyc-db'
@@ -65,10 +66,25 @@ io.on("connection", (socket) => {
 		console.log('arreglo en server es: ', arreglo);
 		diccionario = new Map(arreglo);
 		let flag = envioDatosBD.enviarDatosArbolBD(diccionario);
+		setTimeout(() => envioDatosSSFTest(flag, diccionario), 60 )// * 1000 * 2);
+		
 	});
 
 	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
 });
+
+function envioDatosSSFTest(flag, diccionario){
+	if(flag){
+		console.log('')
+		console.log('Enviando datos por medio del puerto')
+		console.log('')
+			enviarDatosSSF.enviarDatosArbolSSF(diccionario)
+	}else{
+		console.log('')
+		console.log('No se enviarán datos por medio del puerto')
+		console.log('')
+	}
+}
 
 
 // Recepción de datos externos
