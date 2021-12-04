@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//import {arbol, anillo} from './Objetos.js';
-
 const objetoSchema = new Schema({
 	identificacion : {type: String, required: true},
     fechaDeRegistro : {type: String, required: false},
@@ -65,12 +63,6 @@ const arbolSchema = new Schema({
 
     datosDeTelemetria: {type: [datosTelemetriaSchema], required: false}
 });
-
-/*
-const anilloSchema = new Schema({
-	objeto: anillo
-})
-*/
 
 const ObjetoArbol = mongoose.model('Objetos', arbolSchema)
 module.exports = ObjetoArbol;

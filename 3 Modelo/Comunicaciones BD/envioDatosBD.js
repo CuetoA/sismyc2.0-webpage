@@ -3,18 +3,7 @@
 const ObjetoArbol = require('./Esquemas');
 
 function enviarDatosArbolBD(diccionario){
-	/*
-		
-		- Importar objetos
-
-		Debemos recibir el diccionario y pasar esa información al esquema
-
-		Posteriormente debemos crear el objeto y salvarlo
-
-		Generar cofirmación
-
-		Enviar confirmación
-	*/
+	
 	let flag = false;
 	console.log('diccionario en el enviardatos db: ', diccionario)
 
@@ -62,7 +51,11 @@ function enviarDatosArbolBD(diccionario){
 
 	arbolito.save()
 		.then(() => flag = confirmarCreacion(true))
-		.catch((err) => flag = confirmarCreacion(false));
+		.catch((err) => {
+			flag = confirmarCreacion(false)
+			console.log(err)
+			console.log()
+			});
 
 	return flag
 }
@@ -70,16 +63,15 @@ function enviarDatosArbolBD(diccionario){
 function confirmarCreacion(flag){
 	if (flag){
 		console.log('')
-		console.logline('El arbolito se ha creado exitosamente')
+		console.log('El arbolito se ha creado exitosamente')
 		console.log('')
 	}
-	else(flag){
+	else{
 		console.log('')
-		console.logline('El arbolito NO se ha creado')
+		console.log('El arbolito NO se ha creado')
 		console.log('')	
 	}
 	return flag
 }
 
-//export {enviarDatosArbolBD};
 module.exports.enviarDatosArbolBD = enviarDatosArbolBD;
