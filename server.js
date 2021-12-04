@@ -66,7 +66,7 @@ io.on("connection", (socket) => {
 		console.log('arreglo en server es: ', arreglo);
 		diccionario = new Map(arreglo);
 		let flag = envioDatosBD.enviarDatosArbolBD(diccionario);
-		setTimeout(() => envioDatosSSFTest(flag, diccionario), 60 )// * 1000 * 2);
+		envioDatosSSFTest(flag, diccionario)
 		
 	});
 
