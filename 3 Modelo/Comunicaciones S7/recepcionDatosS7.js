@@ -53,11 +53,33 @@ function continuarProcesamiento(datosArr){
 }
 
 function guardarDatosBD(datosArr){
-	
+	let dict = seleccionDeDatos(datosArr);
+}
+
+
+function seleccionDeDatos(datosArr){
+
+	// Recordar que esta parte se programó bajo suposiciones de que el arreglo llega correctamente
+	let dict = new Map();
+	dict.set('id', datosArr[0])
+	dict.set('fechaDia', datosArr[5])
+	dict.set('fechaMes', datosArr[6])
+	dict.set('fechaAno', datosArr[7])
+	dict.set('fechaHora', datosArr[8])
+	dict.set('fechaMinuto', datosArr[9])
+	dict.set('temperatura', datosArr[10])
+	dict.set('humedad', datosArr[11])
+	dict.set('n', datosArr[12])
+	dict.set('p', datosArr[13])
+	dict.set('k', datosArr[14])
+	dict.set('ph', datosArr[15])
+
+
+	return dict
 }
 
 function confirmacionDeAcciones(){
-
+	console.log('En recepcionDatosS7 deberemos confirmar alguna acción aquí enviándola a través del socket');
 }
 
 
