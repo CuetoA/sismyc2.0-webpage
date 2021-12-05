@@ -25,15 +25,51 @@ function recibiendoDatos(datos, port){
 		let datosArr = procesandoDatos(datos);
 		console.log('Transformado a: ', datosArr);
 		let bandera = distintoDeCero(datosArr);
-		if (bandera){
+		let bandera2 = diferenciaDeEstados(datosArr);
+		if (bandera && bandera2){
 			limpiarDatos(datos, datosArr, port);
-			guardarDatos();	
+			//guardarDatos();	
+			continuarProcesamiento(datosArr)
+		}else if (bandera && (!bandera2)){
+			console.log()
+			console.log('Deteniendo procesamiento de datos por falta de diferencia de estados')
+			console.log()
 		}
 		
 	}else{
 		console.log('Recibiendo datos no programados');
 	}
 	console.log('Mensaje recibido: ', datos);
+}
+
+function continuarProcesamiento(datosArr){
+	if (datosArr[3] == 0){
+		// Semiatomático
+		confirmacionDeAcciones()
+	}else if (datosArr[4] == 1){
+		// Automático
+		guardarDatosBD(datosArr);
+	}
+}
+
+function guardarDatosBD(datosArr){
+	
+}
+
+function confirmacionDeAcciones(){
+
+}
+
+
+function diferenciaDeEstados(datosArr){
+	let bandera
+	if(datosArr[1] == datosArr[2]){
+		bandera = true
+	}else{
+		bandera = false
+	}
+
+	return bandera
 }
 
 
@@ -48,7 +84,7 @@ function distintoDeCero(lista){
 	return bandera
 }
 
-function guardarDatos(){
+function guardarDatosBD(){
 	//console.log('')
 	console.log('Guardando datos por ser distintos de cero')
 }
