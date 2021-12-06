@@ -15,21 +15,23 @@ function recibiendoDatos(datos, port){
 
 	let notFound = -1;
 	datos = datos.toString()
+	
 	console.log('');
-
 	if(datos.search('-Net') != notFound){
 		console.log('Negociando comunicación, mensaje');
 	}else if (datos.search('Reg') != notFound){
 		console.log('Confirmando comunicación');
 	}else if (datos.search('RSP0001') != notFound) {
+
 		let datosArr = procesandoDatos(datos);
-		console.log('Transformado a: ', datosArr);
+		//console.log('Transformado a: ', datosArr);
 		let bandera = distintoDeCero(datosArr);
 		let bandera2 = diferenciaDeEstados(datosArr);
 		if (bandera && bandera2){
+			//console.log('Entrando a limpieza de datos')
 			limpiarDatos(datos, datosArr, port);
 			//guardarDatos();	
-			continuarProcesamiento(datosArr)
+			deteccionDeModo(datosArr)
 		}else if (bandera && (!bandera2)){
 			console.log()
 			console.log('Deteniendo procesamiento de datos por falta de diferencia de estados')
@@ -42,17 +44,20 @@ function recibiendoDatos(datos, port){
 	console.log('Mensaje recibido: ', datos);
 }
 
-function continuarProcesamiento(datosArr){
+function deteccionDeModo(datosArr){
 	if (datosArr[3] == 0){
 		// Semiatomático
+		//console.log('Modo semiautomático')
 		confirmacionDeAcciones()
-	}else if (datosArr[4] == 1){
+	}else if (datosArr[3] == 1){
 		// Automático
+		//console.log('Modo automático')
 		guardarDatosBD(datosArr);
 	}
 }
 
 function guardarDatosBD(datosArr){
+	console.log('Guardando datos por ser distintos de cero')
 	let dict = seleccionDeDatos(datosArr);
 }
 
@@ -74,7 +79,7 @@ function seleccionDeDatos(datosArr){
 	dict.set('k', datosArr[14])
 	dict.set('ph', datosArr[15])
 
-
+	//console.log('El diccionario para la BD es:', dict)
 	return dict
 }
 
@@ -86,9 +91,11 @@ function confirmacionDeAcciones(){
 function diferenciaDeEstados(datosArr){
 	let bandera
 	if(datosArr[1] == datosArr[2]){
-		bandera = true
-	}else{
+		//console.log('Los estados son iguales')
 		bandera = false
+	}else{
+		//console.log('Los estados son distintos')
+		bandera = true
 	}
 
 	return bandera
@@ -103,20 +110,24 @@ function distintoDeCero(lista){
 			break
 		}
 	}
+	//console.log('Datos son distintos de cero?', bandera)
 	return bandera
 }
 
+/*
 function guardarDatosBD(){
 	//console.log('')
 	console.log('Guardando datos por ser distintos de cero')
-}
+}*/
 
 
 function procesandoDatos(datos){
-	let comando = 'RSP00011  ';
+	let comando = 'RSP00011,';
 	let pinit = datos.search(comando) + comando.length
 	datos = datos.slice(pinit, -1);
 	let datosArr = datos.split(',');
+
+	//console.log('El esplit se hizo: ', datosArr)
 	return datosArr
 }
 
