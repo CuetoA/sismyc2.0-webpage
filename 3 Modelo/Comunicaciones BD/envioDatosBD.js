@@ -60,14 +60,10 @@ function enviarDatosArbolBD(diccionario){
 
 function confirmarCreacion(flag){
 	if (flag){
-		console.log('')
-		console.log('El arbolito se ha creado exitosamente')
-		console.log('')
+		console.log('\n El arbolito se ha creado exitosamente \n')
 	}
 	else{
-		console.log('')
-		console.log('El arbolito NO se ha creado')
-		console.log('')	
+		console.log('\n El arbolito NO se ha creado \n')
 	}
 	return flag
 }
