@@ -1,5 +1,5 @@
 #include <Process.h>
-String R1 = "19,";  // No conexión
+String R1 = "20,";  // No conexión
 String R2 = "0,";   // Estado Actual
 String R3 = "1,";   // Estado Anterior
 String R4 = "1,";   // Modo 0=> semi, 1=> Auto
@@ -8,8 +8,8 @@ String R6 = "06,";  // Fecha (dd)
 String R7 = "12,";  // Fecha (mm)
 String R8 = "21,";  // Fecha (aa)
 String R9 = "01,";  // Hora (hh)
-String R10 = "02,"; // Hora (mm)
-String R11 = "28,"; // T°
+String R10 = "15,"; // Hora (mm)
+String R11 = "30,"; // T°
 String R12 = "91,"; // Humedad
 String R13 = "20,"; // Nutrientes (N)
 String R14 = "20,"; // Nutrientes (P)
