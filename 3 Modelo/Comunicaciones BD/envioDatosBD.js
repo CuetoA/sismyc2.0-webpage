@@ -84,14 +84,21 @@ function actualizarDatosTelemetricos(dict){
 }
 
 function actualizandoDatos(filtro , datos){
-	
+	console.log('Actualizando el objeto')
+	console.log('filtro: ', filtro)
+	console.log('datos: ', datos)
+	//let respuesta = ObjetoArbol.findOneAndUpdate(filtro, datos);
+	let done = function(err, result) {
+		console.log('No sé que hago')
+	}
+	//let respuesta = ObjetoArbol.update(filtro, datos, done);
+	ObjetoArbol.updateOne(filtro, datos, done);
+	//console.log('Viendo que regresa Objeto arbol: ', respuesta);
 }
 
 function generandoObjetosJsoon(dict){
 	//console.log('analizando entrada 2:', dict)
-	let filtro = {id: dict.get('id')};
-	let datos = { $push: {
-		datosDeTelemetria: {
+	let datosTelemetriaObj = {datosDeTelemetria: {
 			fechayHora: dict.get('fechayHora'),
 			temperatura: dict.get('temperatura'),
 			humedad: dict.get('humedad'),
@@ -101,9 +108,16 @@ function generandoObjetosJsoon(dict){
 				p: dict.get('p'),
 				k: dict.get('k')
 				} //nutrientes
-			} // telemetria 
+			} // telemetria
 		}
-	};
+
+	let edad = { datosDeRegistro: {edadDeIngreso: '2'} };
+
+	console.log('El tipo de id es: ', typeof(dict.get('id')))
+	console.log('y id es: ', dict.get('id'))
+	let filtro = {datosDeRegistro: {id: dict.get('id')}};
+	//let datos = { $push: edad };
+	let datos = edad ;
 
 	return [filtro, datos]
 }

@@ -65,4 +65,5 @@ const arbolSchema = new Schema({
 });
 
 const ObjetoArbol = mongoose.model('Objetos', arbolSchema)
+//module.exports.ObjetoArbol = ObjetoArbol;
 module.exports = ObjetoArbol;
