@@ -116,9 +116,9 @@ function generandoObjetosJsoon(dict){
 	console.log('El tipo de id es: ', typeof(dict.get('id')))
 	console.log('y id es: ', dict.get('id'));
 	//let filtro = {datosDeRegistro: {id: dict.get('id')}};
-	let filtro = {"datosDeRegistro.id": "Arbol prueba 17"} //dict.get('id')};
+	let filtro = {"datosDeRegistro.id": dict.get('id')}; //dict.get('id')};
 	//let datos = { $push: edad };
-	let datos = edad ;
+	let datos = { $push: datosTelemetriaObj };
 
 	return [filtro, datos]
 }
