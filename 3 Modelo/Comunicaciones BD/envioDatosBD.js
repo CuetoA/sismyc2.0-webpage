@@ -24,8 +24,6 @@ function enviarDatosArbolBD(diccionario){
 			ciclosDeRiegoUnidad: diccionario.get('ciclosDeRiegoUnidad')
 		},
 
-
-
 	    datosDeRegistro: {
 	    	id: diccionario.get('id'),
 			fechaDeRegistro: diccionario.get('fechaDeRegistro'),
@@ -76,28 +74,20 @@ function confirmarCreacion(flag){
 
 
 function actualizarDatosTelemetricos(dict){
-	//console.log('Si ves esto me debes un elote');
-	//console.log('analizando entrada:', dict)
+	//console.log('analizando entrada en envioDatosBD actualizarDatosTelemetricos():', dict)
 	let [filtro, datos] = generandoObjetosJsoon(dict);
 	actualizandoDatos(filtro , datos);
 
 }
 
 function actualizandoDatos(filtro , datos){
-	console.log('Actualizando el objeto')
-	console.log('filtro: ', filtro)
-	console.log('datos: ', datos)
-	//let respuesta = ObjetoArbol.findOneAndUpdate(filtro, datos);
-	let done = function(err, result) {
-		console.log('No sé que hago')
-	}
-	//let respuesta = ObjetoArbol.update(filtro, datos, done);
-	ObjetoArbol.updateOne(filtro, datos, done);
-	//console.log('Viendo que regresa Objeto arbol: ', respuesta);
+
+	ObjetoArbol.updateOne(filtro, datos)
+		.then( () => { console.log('El objeto se ha actualizado correctemente')})
+		.catch(() => { console.log('El objeto NO se ha actualizado correctemente')});
 }
 
 function generandoObjetosJsoon(dict){
-	//console.log('analizando entrada 2:', dict)
 	let datosTelemetriaObj = {datosDeTelemetria: {
 			fechayHora: dict.get('fechayHora'),
 			temperatura: dict.get('temperatura'),
@@ -108,45 +98,16 @@ function generandoObjetosJsoon(dict){
 				p: dict.get('p'),
 				k: dict.get('k')
 				} //nutrientes
-			} // telemetria
-		}
+			} // datosDeTelemetria
+		} // datosTelemetriaObj
 
-	//let edad = { "datosDeRegistro.edadDeIngreso": '69420' };
-
-	//console.log('El tipo de id es: ', typeof(dict.get('id')))
-	console.log('el diccionario es: ', dict);
-	//let filtro = {datosDeRegistro: {id: dict.get('id')}};
+	//console.log('el diccionario es: ', dict);
 	let filtro = {"informacionDelArbol.anilloRelacionado": dict.get('anilloRelacionado')}; //dict.get('id')};
-	//let datos = { $push: edad };
 	let datos = { $push: datosTelemetriaObj};
 
 	return [filtro, datos]
 }
 
-/*
-const datosTelemetriaSchema = new Schema({
-	fechayHora: {type: String, required: false},
-	temperatura: {type: String, required: false},
-	humedad: {type: String, required: false},
-	ph: {type: String, required: false},
-	nutrientes: {
-		n: {type: String, required: false},
-		p: {type: String, required: false},
-		k: {type: String, required: false}
-	}
-});
-
-
-dict.set('id', datosArr[0])
-	dict.set('fechayHora', concatenandoFecha(datosArr))
-	dict.set('temperatura', datosArr[10])
-	dict.set('humedad', datosArr[11])
-	dict.set('n', datosArr[12])
-	dict.set('p', datosArr[13])
-	dict.set('k', datosArr[14])
-	dict.set('ph', datosArr[15])
-
-*/
 
 module.exports.enviarDatosArbolBD = enviarDatosArbolBD;
 module.exports.actualizarDatosTelemetricos = actualizarDatosTelemetricos;

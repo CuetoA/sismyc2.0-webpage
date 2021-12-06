@@ -120,12 +120,6 @@ function distintoDeCero(lista){
 	return bandera
 }
 
-/*
-function guardarDatosBD(){
-	//console.log('')
-	console.log('Guardando datos por ser distintos de cero')
-}*/
-
 
 function procesandoDatos(datos){
 	let comando = 'RSP00011,';
@@ -138,7 +132,6 @@ function procesandoDatos(datos){
 }
 
 function limpiarDatos(datos, datosArr, port){
-	// Deberemos enviar un mensaje, perio primero, arreglar socket
 	let registroInicio = datos[7];
 	let registrosNumero = datosArr.length - 1;
 	let numeroNodo = 12;
