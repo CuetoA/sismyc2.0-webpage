@@ -4,8 +4,9 @@
 
 
 // Funciones para enviar datos del árbol al SSF
-function enviarDatosArbolSSF(diccionario, port){
+function ArbolSSF(diccionario, port){
 
+	console.log('Para enviar datos recibimos el objeto: ', diccionario)
 	// Generando lista de datos
 	let contenidoMensaje = [];
 	contenidoMensaje = ordenarDatosArbolSSF(diccionario, contenidoMensaje);
@@ -76,4 +77,4 @@ function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, cont
 
 
 //export{enviarDatosArbolSSF};
-module.exports.enviarDatosArbolSSF = enviarDatosArbolSSF;
+module.exports.enviarDatosArbolSSF = ArbolSSF;

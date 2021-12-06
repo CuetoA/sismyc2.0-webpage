@@ -1,5 +1,5 @@
 #include <Process.h>
-String R1 = "7,";  // No conexión
+String R1 = "19,";  // No conexión
 String R2 = "0,";   // Estado Actual
 String R3 = "1,";   // Estado Anterior
 String R4 = "1,";   // Modo 0=> semi, 1=> Auto
@@ -7,13 +7,13 @@ String R5 = "0,";   // Confirmación
 String R6 = "06,";  // Fecha (dd)
 String R7 = "12,";  // Fecha (mm)
 String R8 = "21,";  // Fecha (aa)
-String R9 = "12,";  // Hora (hh)
-String R10 = "26,"; // Hora (mm)
-String R11 = "30,"; // T°
-String R12 = "92,"; // Humedad
-String R13 = "15,"; // Nutrientes (N)
-String R14 = "15,"; // Nutrientes (P)
-String R15 = "15,"; // Nutrientes (K)
+String R9 = "01,";  // Hora (hh)
+String R10 = "02,"; // Hora (mm)
+String R11 = "28,"; // T°
+String R12 = "91,"; // Humedad
+String R13 = "20,"; // Nutrientes (N)
+String R14 = "20,"; // Nutrientes (P)
+String R15 = "20,"; // Nutrientes (K)
 String R16 = "7";   // pH
 String mensaje0 = "RSP00011," + R1 + R2 + R3 + R4 + R5 + R6 + R7 + R8 + R9;
 String mensaje = mensaje0 + R10 + R11 + R12 + R13 + R14 + R15 + R16;

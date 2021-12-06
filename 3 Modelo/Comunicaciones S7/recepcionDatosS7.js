@@ -70,7 +70,7 @@ function seleccionDeDatos(datosArr){
 
 	// Recordar que esta parte se programó bajo suposiciones de que el arreglo llega correctamente
 	let dict = new Map();
-	dict.set('id', datosArr[0])
+	dict.set('anilloRelacionado', datosArr[0])
 	dict.set('fechayHora', concatenandoFecha(datosArr))
 	dict.set('temperatura', datosArr[10])
 	dict.set('humedad', datosArr[11])

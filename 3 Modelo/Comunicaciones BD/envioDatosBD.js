@@ -111,14 +111,14 @@ function generandoObjetosJsoon(dict){
 			} // telemetria
 		}
 
-	let edad = { "datosDeRegistro.edadDeIngreso": '69420' };
+	//let edad = { "datosDeRegistro.edadDeIngreso": '69420' };
 
-	console.log('El tipo de id es: ', typeof(dict.get('id')))
-	console.log('y id es: ', dict.get('id'));
+	//console.log('El tipo de id es: ', typeof(dict.get('id')))
+	console.log('el diccionario es: ', dict);
 	//let filtro = {datosDeRegistro: {id: dict.get('id')}};
-	let filtro = {"datosDeRegistro.id": dict.get('id')}; //dict.get('id')};
+	let filtro = {"informacionDelArbol.anilloRelacionado": dict.get('anilloRelacionado')}; //dict.get('id')};
 	//let datos = { $push: edad };
-	let datos = { $push: datosTelemetriaObj };
+	let datos = { $push: datosTelemetriaObj};
 
 	return [filtro, datos]
 }
