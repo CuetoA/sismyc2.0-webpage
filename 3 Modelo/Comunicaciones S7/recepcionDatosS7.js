@@ -1,3 +1,5 @@
+const envioDatosBD = require('../Comunicaciones BD/envioDatosBD');
+
 
 function maquinaDeEstados(tiempo, port){
 	//console.log('entrando');
@@ -59,6 +61,8 @@ function deteccionDeModo(datosArr){
 function guardarDatosBD(datosArr){
 	console.log('Guardando datos por ser distintos de cero')
 	let dict = seleccionDeDatos(datosArr);
+	envioDatosBD.actualizarDatosTelemetricos(dict);
+
 }
 
 
@@ -67,11 +71,7 @@ function seleccionDeDatos(datosArr){
 	// Recordar que esta parte se programó bajo suposiciones de que el arreglo llega correctamente
 	let dict = new Map();
 	dict.set('id', datosArr[0])
-	dict.set('fechaDia', datosArr[5])
-	dict.set('fechaMes', datosArr[6])
-	dict.set('fechaAno', datosArr[7])
-	dict.set('fechaHora', datosArr[8])
-	dict.set('fechaMinuto', datosArr[9])
+	dict.set('fechayHora', concatenandoFecha(datosArr))
 	dict.set('temperatura', datosArr[10])
 	dict.set('humedad', datosArr[11])
 	dict.set('n', datosArr[12])
@@ -82,6 +82,12 @@ function seleccionDeDatos(datosArr){
 	//console.log('El diccionario para la BD es:', dict)
 	return dict
 }
+
+
+function concatenandoFecha(datosArr){
+	return  datosArr[5] + '/' + datosArr[6] + '/' + datosArr[7] + ' ' + datosArr[8] + ':' + datosArr[9];
+}
+
 
 function confirmacionDeAcciones(){
 	console.log('En recepcionDatosS7 deberemos confirmar alguna acción aquí enviándola a través del socket');

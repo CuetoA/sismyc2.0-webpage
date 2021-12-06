@@ -74,4 +74,64 @@ function confirmarCreacion(flag){
 	return flag
 }
 
+
+function actualizarDatosTelemetricos(dict){
+	//console.log('Si ves esto me debes un elote');
+	//console.log('analizando entrada:', dict)
+	let [filtro, datos] = generandoObjetosJsoon(dict);
+	actualizandoDatos(filtro , datos);
+
+}
+
+function actualizandoDatos(filtro , datos){
+	
+}
+
+function generandoObjetosJsoon(dict){
+	//console.log('analizando entrada 2:', dict)
+	let filtro = {id: dict.get('id')};
+	let datos = { $push: {
+		datosDeTelemetria: {
+			fechayHora: dict.get('fechayHora'),
+			temperatura: dict.get('temperatura'),
+			humedad: dict.get('humedad'),
+			ph: dict.get('ph'),
+			nutrientes: {
+				n: dict.get('n'),
+				p: dict.get('p'),
+				k: dict.get('k')
+				} //nutrientes
+			} // telemetria 
+		}
+	};
+
+	return [filtro, datos]
+}
+
+/*
+const datosTelemetriaSchema = new Schema({
+	fechayHora: {type: String, required: false},
+	temperatura: {type: String, required: false},
+	humedad: {type: String, required: false},
+	ph: {type: String, required: false},
+	nutrientes: {
+		n: {type: String, required: false},
+		p: {type: String, required: false},
+		k: {type: String, required: false}
+	}
+});
+
+
+dict.set('id', datosArr[0])
+	dict.set('fechayHora', concatenandoFecha(datosArr))
+	dict.set('temperatura', datosArr[10])
+	dict.set('humedad', datosArr[11])
+	dict.set('n', datosArr[12])
+	dict.set('p', datosArr[13])
+	dict.set('k', datosArr[14])
+	dict.set('ph', datosArr[15])
+
+*/
+
 module.exports.enviarDatosArbolBD = enviarDatosArbolBD;
+module.exports.actualizarDatosTelemetricos = actualizarDatosTelemetricos;

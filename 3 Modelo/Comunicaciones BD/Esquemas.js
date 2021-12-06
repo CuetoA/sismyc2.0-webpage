@@ -16,9 +16,9 @@ const datosTelemetriaSchema = new Schema({
 	humedad: {type: String, required: false},
 	ph: {type: String, required: false},
 	nutrientes: {
-		temperatura: {type: String, required: false},
-		humedad: {type: String, required: false},
-		nutrientes: {type: String, required: false}
+		n: {type: String, required: false},
+		p: {type: String, required: false},
+		k: {type: String, required: false}
 	}
 });
 
