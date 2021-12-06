@@ -72,15 +72,19 @@ function confirmarCreacion(flag){
 function actualizarDatosTelemetricos(dict){
 	//console.log('analizando entrada en envioDatosBD actualizarDatosTelemetricos():', dict)
 	let [filtro, datos] = generandoObjetosJsoon(dict);
-	actualizandoDatos(filtro , datos);
+	let bandera = actualizandoDatos(filtro , datos);
+	if (bandera){console.log('El objeto se ha actualizado correctemente')}
+		else{console.log('El objeto NO se ha actualizado correctemente')}
 
 }
 
-function actualizandoDatos(filtro , datos){
+async function actualizandoDatos(filtro , datos){
+	let bandera = false;
 
 	ObjetoArbol.updateOne(filtro, datos)
-		.then( () => { console.log('El objeto se ha actualizado correctemente')})
-		.catch(() => { console.log('El objeto NO se ha actualizado correctemente')});
+		.then( () => bandera = true)
+		.catch(() => bandera = false);
+	return await bandera
 }
 
 function generandoObjetosJsoon(dict){
