@@ -15,25 +15,90 @@ function recibiendoDatos(datos, port){
 
 	let notFound = -1;
 	datos = datos.toString()
+	
 	console.log('');
-
 	if(datos.search('-Net') != notFound){
 		console.log('Negociando comunicación, mensaje');
 	}else if (datos.search('Reg') != notFound){
 		console.log('Confirmando comunicación');
 	}else if (datos.search('RSP0001') != notFound) {
+
 		let datosArr = procesandoDatos(datos);
-		console.log('Transformado a: ', datosArr);
+		//console.log('Transformado a: ', datosArr);
 		let bandera = distintoDeCero(datosArr);
-		if (bandera){
+		let bandera2 = diferenciaDeEstados(datosArr);
+		if (bandera && bandera2){
+			//console.log('Entrando a limpieza de datos')
 			limpiarDatos(datos, datosArr, port);
-			guardarDatos();	
+			//guardarDatos();	
+			deteccionDeModo(datosArr)
+		}else if (bandera && (!bandera2)){
+			console.log()
+			console.log('Deteniendo procesamiento de datos por falta de diferencia de estados')
+			console.log()
 		}
 		
 	}else{
 		console.log('Recibiendo datos no programados');
 	}
 	console.log('Mensaje recibido: ', datos);
+}
+
+function deteccionDeModo(datosArr){
+	if (datosArr[3] == 0){
+		// Semiatomático
+		//console.log('Modo semiautomático')
+		confirmacionDeAcciones()
+	}else if (datosArr[3] == 1){
+		// Automático
+		//console.log('Modo automático')
+		guardarDatosBD(datosArr);
+	}
+}
+
+function guardarDatosBD(datosArr){
+	console.log('Guardando datos por ser distintos de cero')
+	let dict = seleccionDeDatos(datosArr);
+}
+
+
+function seleccionDeDatos(datosArr){
+
+	// Recordar que esta parte se programó bajo suposiciones de que el arreglo llega correctamente
+	let dict = new Map();
+	dict.set('id', datosArr[0])
+	dict.set('fechaDia', datosArr[5])
+	dict.set('fechaMes', datosArr[6])
+	dict.set('fechaAno', datosArr[7])
+	dict.set('fechaHora', datosArr[8])
+	dict.set('fechaMinuto', datosArr[9])
+	dict.set('temperatura', datosArr[10])
+	dict.set('humedad', datosArr[11])
+	dict.set('n', datosArr[12])
+	dict.set('p', datosArr[13])
+	dict.set('k', datosArr[14])
+	dict.set('ph', datosArr[15])
+
+	//console.log('El diccionario para la BD es:', dict)
+	return dict
+}
+
+function confirmacionDeAcciones(){
+	console.log('En recepcionDatosS7 deberemos confirmar alguna acción aquí enviándola a través del socket');
+}
+
+
+function diferenciaDeEstados(datosArr){
+	let bandera
+	if(datosArr[1] == datosArr[2]){
+		//console.log('Los estados son iguales')
+		bandera = false
+	}else{
+		//console.log('Los estados son distintos')
+		bandera = true
+	}
+
+	return bandera
 }
 
 
@@ -45,20 +110,24 @@ function distintoDeCero(lista){
 			break
 		}
 	}
+	//console.log('Datos son distintos de cero?', bandera)
 	return bandera
 }
 
-function guardarDatos(){
+/*
+function guardarDatosBD(){
 	//console.log('')
 	console.log('Guardando datos por ser distintos de cero')
-}
+}*/
 
 
 function procesandoDatos(datos){
-	let comando = 'RSP00011  ';
+	let comando = 'RSP00011,';
 	let pinit = datos.search(comando) + comando.length
 	datos = datos.slice(pinit, -1);
 	let datosArr = datos.split(',');
+
+	//console.log('El esplit se hizo: ', datosArr)
 	return datosArr
 }
 
