@@ -3,6 +3,7 @@ const socket = io();
 // Constantes de botones
 var dropdownArbol = document.getElementById("dropdownArbol");
 var dropdownMenu = document.getElementById("dropdown-menu");
+var idArbol = document.getElementById("idArbol");
 
 mostrarListadoArboles()
 // Eventos de botones
@@ -63,6 +64,7 @@ socket.on('datosSolicitados', (datos) =>{
 function colocarDatos(datos){
 	//console.log(datos[0])
 	//console.log(datos[0].datosDeRegistro.edadDeIngreso)
+	idArbol.setAttribute('value','Grecia');
 	
 }
 /*
@@ -152,5 +154,5 @@ function colocarDatos(datos){
     ],
     "__v": 0
 
-    */
-}
+    
+}*/
