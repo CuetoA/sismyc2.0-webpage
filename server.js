@@ -77,14 +77,17 @@ io.on("connection", (socket) => {
 		//console.log('lista es:', lista)
 	});
 
+	async function test(){
+		let lista = await solicitudyRecepcionDeDatos.listaDeArboles();
+		//console.log('lista es: ', lista)
+		socket.emit(('listaDropdown'),lista);
+		// Sigue enviar estos datos por el socket hacia nuestra página web para desplegarlos en el item
+	}
+	
 	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
 });
 
-async function test(){
-	let lista = await solicitudyRecepcionDeDatos.listaDeArboles();
-	console.log('lista es: ', lista)
-	// Sigue enviar estos datos por el socket hacia nuestra página web para desplegarlos en el item
-}
+
 
 
 
