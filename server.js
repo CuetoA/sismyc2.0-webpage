@@ -83,9 +83,23 @@ io.on("connection", (socket) => {
 		socket.emit(('listaDropdown'),lista);
 		// Sigue enviar estos datos por el socket hacia nuestra página web para desplegarlos en el item
 	}
+
+	socket.on('solicitudDatos', (elemento) =>{
+		solicitandoDatos(elemento)
+	});
+
+	async function solicitandoDatos(elemento){
+		let datos = await solicitudyRecepcionDeDatos.solicitarDatos(elemento);
+
+		socket.emit(('datosSolicitados'),datos);
+		//let datos = await solicitudyRecepcionDeDatos.solicitarDatos(elemento);
+		//console.log('de nuevo: ', datos)
+		//return datos
+	}
 	
 	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
 });
+
 
 
 
