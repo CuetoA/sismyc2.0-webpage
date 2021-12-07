@@ -19,6 +19,7 @@ const parser = port.pipe(new Readline());
 const recepcion = require('./3 Modelo/Comunicaciones S7/recepcionDatosS7');
 const envioDatosBD = require('./3 Modelo/Comunicaciones BD/envioDatosBD');
 const enviarDatosSSF = require('./3 Modelo/Comunicaciones S7/envioDatosS7.js');
+const solicitudyRecepcionDeDatos = require('./3 Modelo/Comunicaciones BD/solicitudyRecepcionDeDatos');
 // Constantes para MongodB
 const mongoose = require('mongoose')
 const mdburi = 'mongodb+srv://andres-cueto:amox1.0@cluster0.uur9i.mongodb.net/sismyc-db'
@@ -69,8 +70,23 @@ io.on("connection", (socket) => {
 		enviarDatosSSF.enviarDatosArbolSSF(diccionario, port)
 	});
 
+	socket.on('listaArboles', (mensaje) =>{
+		//let lista = solicitudyRecepcionDeDatos.listaDeArboles();
+		test()
+
+		//console.log('lista es:', lista)
+	});
+
 	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
 });
+
+async function test(){
+	let lista = await solicitudyRecepcionDeDatos.listaDeArboles();
+	console.log('lista es: ', lista)
+	// Sigue enviar estos datos por el socket hacia nuestra página web para desplegarlos en el item
+}
+
+
 
 
 // Recepción de datos externos
