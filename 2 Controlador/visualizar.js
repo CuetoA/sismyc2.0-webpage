@@ -1,0 +1,1 @@
+//var botonConfirmarArbol = document.getElementById("botonConfirmarArbol");
