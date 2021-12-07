@@ -48,7 +48,12 @@ function desplegarElementos(lista){
 	}
 }
 
-function enviarDatos(llegada){
-	console.log('Hola bb chompi hermoso')
-	console.log(llegada)
+function enviarDatos(elemento){
+	//console.log('Hola bb chompi hermoso')
+	//console.log(llegada)
+	socket.emit(('solicitudDatos'), elemento)
 }
+
+socket.on('datosSolicitados', (datos) =>{
+	console.log(datos);
+});
