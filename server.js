@@ -67,24 +67,10 @@ io.on("connection", (socket) => {
 		diccionario = new Map(arreglo);
 		let flag = envioDatosBD.enviarDatosArbolBD(diccionario);
 		enviarDatosSSF.enviarDatosArbolSSF(diccionario, port)
-		//envioDatosSSFTest(flag, diccionario)
 	});
 
 	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
 });
-
-function envioDatosSSFTest(flag, diccionario){
-	if(flag){
-		console.log('')
-		console.log('Enviando datos por medio del puerto')
-		console.log('')
-			enviarDatosSSF.enviarDatosArbolSSF(diccionario)
-	}else{
-		console.log('')
-		console.log('No se enviarán datos por medio del puerto')
-		console.log('')
-	}
-}
 
 
 // Recepción de datos externos

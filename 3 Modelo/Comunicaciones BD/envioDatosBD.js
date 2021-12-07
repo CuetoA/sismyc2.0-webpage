@@ -24,8 +24,6 @@ function enviarDatosArbolBD(diccionario){
 			ciclosDeRiegoUnidad: diccionario.get('ciclosDeRiegoUnidad')
 		},
 
-
-
 	    datosDeRegistro: {
 	    	id: diccionario.get('id'),
 			fechaDeRegistro: diccionario.get('fechaDeRegistro'),
@@ -62,16 +60,54 @@ function enviarDatosArbolBD(diccionario){
 
 function confirmarCreacion(flag){
 	if (flag){
-		console.log('')
-		console.log('El arbolito se ha creado exitosamente')
-		console.log('')
+		console.log('\n El arbolito se ha creado exitosamente \n')
 	}
 	else{
-		console.log('')
-		console.log('El arbolito NO se ha creado')
-		console.log('')	
+		console.log('\n El arbolito NO se ha creado \n')
 	}
 	return flag
 }
 
+
+function actualizarDatosTelemetricos(dict){
+	//console.log('analizando entrada en envioDatosBD actualizarDatosTelemetricos():', dict)
+	let [filtro, datos] = generandoObjetosJsoon(dict);
+	let bandera = actualizandoDatos(filtro , datos);
+	if (bandera){console.log('El objeto se ha actualizado correctemente')}
+		else{console.log('El objeto NO se ha actualizado correctemente')}
+
+}
+
+async function actualizandoDatos(filtro , datos){
+	let bandera = false;
+
+	ObjetoArbol.updateOne(filtro, datos)
+		.then( () => bandera = true)
+		.catch(() => bandera = false);
+	return await bandera
+}
+
+function generandoObjetosJsoon(dict){
+	let datosTelemetriaObj = {datosDeTelemetria: {
+			fechayHora: dict.get('fechayHora'),
+			temperatura: dict.get('temperatura'),
+			humedad: dict.get('humedad'),
+			ph: dict.get('ph'),
+			nutrientes: {
+				n: dict.get('n'),
+				p: dict.get('p'),
+				k: dict.get('k')
+				} //nutrientes
+			} // datosDeTelemetria
+		} // datosTelemetriaObj
+
+	//console.log('el diccionario es: ', dict);
+	let filtro = {"informacionDelArbol.anilloRelacionado": dict.get('anilloRelacionado')}; //dict.get('id')};
+	let datos = { $push: datosTelemetriaObj};
+
+	return [filtro, datos]
+}
+
+
 module.exports.enviarDatosArbolBD = enviarDatosArbolBD;
+module.exports.actualizarDatosTelemetricos = actualizarDatosTelemetricos;
