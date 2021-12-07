@@ -282,9 +282,11 @@
 }
 
 .table-element {
+  font-size: 15px;
   width: 130px;
   margin-left: auto;
   margin-right: auto; 
+  margin-bottom: 5px;
 }
 
 .table-element .text {

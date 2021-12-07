@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto barra-nav">
                     <li class="nav-item"><a class="nav-link enlace" href="../index.html" >Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link enlace" href="../Registrar/registrar.html">Registrar</a></li>
+                    <li class="nav-item"><a class="nav-link enlace" href="./registrar.html">Registrar</a></li>
                     <li class="nav-item"><a class="nav-link enlace principal" href="../Visualizar/visualizar.html">Visualizar</a></li>
                 </ul>
             </div>
@@ -104,23 +104,23 @@
                             </div>
                             <div >
                                 <label class="form-label text label">Fecha del registro:</label>
-                                <input type="text">
+                                <input type="text" id="fechaDeRegistro">
                             </div>
                             <div >
                                 <label class="form-label text label">Edad de ingreso:</label>
-                                <input type="text">
+                                <input type="text" id="edadDeIngreso">
                             </div>
                             <div >
                                 <label class="form-label text label">Registrante:</label>
-                                <input type="text">
+                                <input type="text" id="registrante">
                             </div>
                             <div >
                                 <label class="form-label text label">Altura de registro:</label>
-                                <input type="text">
+                                <input type="text" id="alturaDeRegistro">
                             </div>
                             <div >
                                 <label class="form-label text label">Diámetro de registro:</label>
-                                <input type="text">
+                                <input type="text" id="diametroDeRegistro"> 
                             </div>
                         </div>
 
@@ -129,23 +129,23 @@
                             <h1 class="rv-subtitle">Información:</h1>
                             <div >
                                 <label class="form-label text label">Anillo relacionado:</label>
-                                <input type="text">
+                                <input type="text" id="anilloRelacionado">
                             </div>
                             <div >
                                 <label class="form-label text label">Familia:</label>
-                                <input type="text">
+                                <input type="text" id="familia">
                             </div>
                             <div >
                                 <label class="form-label text label">Género:</label>
-                                <input type="text">
+                                <input type="text" id="genero">
                             </div>
                             <div >
                                 <label class="form-label text label">Especie:</label>
-                                <input type="text">
+                                <input type="text" id="especie">
                             </div>
                             <div >
                                 <label class="form-label text label">Ubicación:</label>
-                                <input type="text">
+                                <input type="text" id="ubicacion">
                             </div>
                             <div></div>
                         </div>
@@ -176,17 +176,17 @@
                                 <div class="col-md-6 col2">
                                     <div style="text-align: center;">
                                         <label class="form-label sml-text">Rango de temperaturas:</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="rangoTemperaturaInferior">
                                         <label class="form-label char3-txt">-</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="rangoTemperaturaSuperior">
                                         <label class="form-label char3-txt">°C</label>
                                     </div>
 
                                     <div style="text-align: center;">
                                         <label class="form-label sml-text">Rango de humedad:</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="rangoHumedadInferior">
                                         <label class="form-label char3-txt">-</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="rangoHumedadSuperior">
                                         <label class="form-label char3-txt">%</label>
                                     </div>
 
@@ -194,7 +194,7 @@
 
                                     <div style="text-align: center;">
                                         <label class="form-label sml-text">Ciclos de Medición:</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="ciclosMedicionNumero">
                                         <label class="form-label char3-txt">:</label>
                                         <div class="dropdown sml-text" style=" display: inline-block;">
                                             <button class="btn dropdown-toggle sml-tgl" aria-expanded="false" data-bs-toggle="dropdown" type="button">día
@@ -212,19 +212,19 @@
                                 <div class="col-md-6 col2">
                                     <div style="text-align: center;">
                                         <label class="form-label sml-text">Fertilizante por riego:</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="fertilizantePorRiego">
                                         <label class="form-label char3-txt">L</label>
                                     </div>
 
                                     <div style="text-align: center;">
                                         <label class="form-label sml-text">Agua por riego:</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="aguaPorRiego">
                                         <label class="form-label char3-txt">L</label>
                                     </div>
 
                                     <div style="text-align: center;">
                                         <label class="form-label sml-text">Ciclos de Riego:</label>
-                                        <input class="input-sml" type="text">
+                                        <input class="input-sml" type="text" id="ciclosDeRiego">
                                         <label class="form-label char3-txt">:</label>
                                         <div class="dropdown sml-text" style=" display: inline-block;">
                                             <button class="btn dropdown-toggle sml-tgl" aria-expanded="false" data-bs-toggle="dropdown" type="button">día
@@ -248,7 +248,7 @@
                 <div style="text-align: center;">
                     <div class="mrg-auto">
                         <h1 class="rv-subtitle high bckg-gray-low">Datos de Telemetría:</h1>
-                        <div class="container rv-subtitle high bckg-gray-low" style="margin-bottom: 42px;">
+                        <div class="container rv-subtitle high bckg-gray-low" style="margin-bottom: 42px;" id="tablaDatos">
                             <div class="row mrg-auto" >
                                 <div class="col-md-3 table-element"><h1 class="text">Fecha y hora</h1></div>
                                 <div class="col-md-3 table-element"><h1 class="text">Temperatura</h1></div>
@@ -256,7 +256,7 @@
                                 <div class="col-md-3 table-element"><h1 class="text">Nutrientes</h1></div>
                                 <div class="col-md-3 table-element"><h1 class="text">PH</h1></div>
                             </div>
-
+                            <!--
                             <div class="row mrg-auto">
                                 <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                                 <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
@@ -327,11 +327,12 @@
                                 <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                                 <div class="col-md-3 table-element"><h1 class="text">-</h1></div>
                             </div>
+                        -->
                         </div>
                     </div>
                     <div style="padding-bottom: 40px">
-                        <button class="btn sqr-btn bckg-green" type="button">10 muestras atrás</button>
-                        <button class="btn sqr-btn bckg-green" type="button">10 muestras adelante<br></button>
+                        <button class="btn sqr-btn bckg-green" type="button" id="10menos">10 muestras atrás</button>
+                        <button class="btn sqr-btn bckg-green" type="button" id="10mas">10 muestras adelante<br></button>
                     </div>
                 </div>
             </div><!-- Section Visualizar árbol-->
