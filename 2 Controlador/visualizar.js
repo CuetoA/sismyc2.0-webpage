@@ -6,19 +6,20 @@ var DatosArbol = Object
 var dropdownArbol = document.getElementById("dropdownArbol");
 var dropdownMenu = document.getElementById("dropdown-menu");
 var tablaDatos = document.getElementById("tablaDatos");
+var botonCancelarArbol = document.getElementById("botonCancelarArbol");
 // Primer columna
 var idArbol = document.getElementById("idArbol");
-var fechaDeRegistro = document.getElementById("fechaDeRegistro");
-var edadDeIngreso = document.getElementById("edadDeIngreso");
-var registrante = document.getElementById("registrante");
-var alturaDeRegistro = document.getElementById("alturaDeRegistro");
-var diametroDeRegistro = document.getElementById("diametroDeRegistro");
+var fechaRegistroArbol = document.getElementById("fechaDeRegistro");
+var edadIngresoArbol = document.getElementById("edadDeIngreso");
+var registranteArbol = document.getElementById("registrante");
+var alturaRegistroArbol = document.getElementById("alturaDeRegistro");
+var diametroRegistroArbol = document.getElementById("diametroDeRegistro");
 // Segunda columna
 var anilloRelacionado = document.getElementById("anilloRelacionado");
-var familia = document.getElementById("familia");
-var genero = document.getElementById("genero");
-var especie = document.getElementById("especie");
-var ubicacion = document.getElementById("ubicacion");
+var familiaArbol = document.getElementById("familia");
+var generoArbol = document.getElementById("genero");
+var especieArbol = document.getElementById("especie");
+var ubicacionArbol = document.getElementById("ubicacion");
 // Segunda fila
 // Primer columna
 var rangoTemperaturaInferior = document.getElementById("rangoTemperaturaInferior");
@@ -34,12 +35,45 @@ var ciclosDeRiego = document.getElementById("ciclosDeRiego");
 var mas10 = document.getElementById('10mas')
 var menos10 = document.getElementById('10menos')
 
-
+//import {limpiarDatos} from './operacionesCompartidas.js';
 
 mostrarListadoArboles()
 // Eventos de botones
 dropdownArbol.onclick = () => {};
+botonCancelarArbol.onclick = () => {
+	limpiarDatos()
+	colocarDatos(DatosArbol)
+};
 
+
+function limpiarDatos(){
+	// Recuadros de información árbol
+	idArbol.value = ''
+	fechaRegistroArbol.value = ''
+	edadIngresoArbol.value = ''
+	registranteArbol.value = ''
+	alturaRegistroArbol.value = ''
+	diametroRegistroArbol.value = ''
+	anilloRelacionado.value = ''
+	familiaArbol.value = ''
+	generoArbol.value = ''
+	especieArbol.value = ''
+	ubicacionArbol.value = ''
+	rangoTemperaturaInferior.value = ''
+	rangoTemperaturaSuperior.value = ''
+	rangoHumedadInferior.value = ''
+	rangoHumedadSuperior.value = ''
+	ciclosMedicionNumero.value = ''
+	fertilizantePorRiego.value = ''
+	aguaPorRiego.value = ''
+	ciclosDeRiego.value = ''
+	// Recuadros de información anillo
+	idAnillo.value = ''
+	fechaRegistroArbol.value = ''
+	registranteArbolAnillo.value = ''
+	numeroConexion.value = ''
+}
+	
 function mostrarListadoArboles(){
 	solicitarListaArboles();	
 }
@@ -88,27 +122,30 @@ function enviarDatos(elemento){
 
 socket.on('datosSolicitados', (datos) =>{
 	//console.log('tomamesta' , datos);
+	//console.log('tomamesta');
 	DatosArbol = datos;
 	colocarDatos(datos);
 });
 
 
 function colocarDatos(datos){
+	console.log('Prueba', datos)
+	//console.log('jota')
 	//console.log(datos[0])
-	//console.log(datos[0].datosDeRegistro.edadDeIngreso)
+	//console.log(datos[0].datosDeRegistro.edadIngresoArbol)
 	// Primer columna
 	idArbol.setAttribute('value',datos[0].datosDeRegistro.id);
-	fechaDeRegistro.setAttribute('value',datos[0].datosDeRegistro.fechaDeRegistro);
-	edadDeIngreso.setAttribute('value',datos[0].datosDeRegistro.edadDeIngreso);
-	registrante.setAttribute('value',datos[0].datosDeRegistro.registrante);
-	alturaDeRegistro.setAttribute('value',datos[0].datosDeRegistro.tamañoDeIngresoAlSistema.alturaDeRegistro);
-	diametroDeRegistro.setAttribute('value',datos[0].datosDeRegistro.tamañoDeIngresoAlSistema.diametroDeRegistro);
+	fechaRegistroArbol.setAttribute('value',datos[0].datosDeRegistro.fechaDeRegistro);
+	edadIngresoArbol.setAttribute('value',datos[0].datosDeRegistro.edadDeIngreso);
+	registranteArbol.setAttribute('value',datos[0].datosDeRegistro.registrante);
+	alturaRegistroArbol.setAttribute('value',datos[0].datosDeRegistro.tamañoDeIngresoAlSistema.alturaDeRegistro);
+	diametroRegistroArbol.setAttribute('value',datos[0].datosDeRegistro.tamañoDeIngresoAlSistema.diametroDeRegistro);
 	// Segunda columna.setAttribute('value',datos[0]);
 	anilloRelacionado.setAttribute('value',datos[0].informacionDelArbol.anilloRelacionado);
-	familia.setAttribute('value',datos[0].informacionDelArbol.taxonomia.familia);
-	genero.setAttribute('value',datos[0].informacionDelArbol.taxonomia.genero);
-	especie.setAttribute('value',datos[0].informacionDelArbol.taxonomia.especie);
-	ubicacion.setAttribute('value',datos[0].informacionDelArbol.ubicacion);
+	familiaArbol.setAttribute('value',datos[0].informacionDelArbol.taxonomia.familia);
+	generoArbol.setAttribute('value',datos[0].informacionDelArbol.taxonomia.genero);
+	especieArbol.setAttribute('value',datos[0].informacionDelArbol.taxonomia.especie);
+	ubicacionArbol.setAttribute('value',datos[0].informacionDelArbol.ubicacion);
 	// Segunda fila.setAttribute('value',datos[0]);
 	// Primer columna.setAttribute('value',datos[0]);
 	rangoTemperaturaInferior.setAttribute('value',datos[0].datosDeRiego.rangoHumedadInferior);
@@ -121,29 +158,23 @@ function colocarDatos(datos){
 	aguaPorRiego.setAttribute('value',datos[0].datosDeRiego.aguaPorRiego);
 	ciclosDeRiego.setAttribute('value',datos[0].datosDeRiego.ciclosDeRiego);
 
-	imprimirDatosTelemetria(datos[0])	
+	//console.log('n:', datos[0].datosDeTelemetria.length)
+	if (datos[0].datosDeTelemetria.length != 0){imprimirDatosTelemetria(datos[0])};
 
 }
 
 function imprimirDatosTelemetria(datos){
 	console.log('así es datos: ', datos.datosDeTelemetria)
 	tablaDatos.innerHTML = ''
-	//tablaDatos.removeChild()
+	
 	for (let i = 0; i < 10; i ++){
-		//console.log(i)
-		//datos.datosDeTelemetria[i]
 		let datosIndefinidos = (datos.datosDeTelemetria[offset + i] == undefined);
 		if(i == 0 && datosIndefinidos){ 
 			retroceder10(); 
 			break};
 		if(datosIndefinidos){break};
-		//let renglon = crearRenglon()
 		crearRenglon(i, datos.datosDeTelemetria[i])
-		console.log('dato numero n: ', datos.datosDeTelemetria[i])
-		//console.log('tipo dato numero n: ',typeof(datos.datosDeTelemetria[i]))
-		//imprimirDatosEnPosicion(i,offset, datos.datosDeTelemetria[i]);
-		//console.log('dato numero n: ', datos.datosDeTelemetria[elemento])
-		
+		//console.log('dato numero n: ', datos.datosDeTelemetria[i])
 	}
 }
 
