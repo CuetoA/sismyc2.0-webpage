@@ -22,10 +22,10 @@ function limpiarDatos(){
 	aguaPorRiego.value = ''
 	ciclosDeRiego.value = ''
 	// Recuadros de información anillo
-	idAnillo.value = ''
-	fechaDeRegistro.value = ''
-	registranteAnillo.value = ''
-	numeroConexion.value = ''
+	//idAnillo.value = ''
+	//fechaDeRegistro.value = ''
+	//registranteAnillo.value = ''
+	//numeroConexion.value = ''
 }
 
 export {limpiarDatos};

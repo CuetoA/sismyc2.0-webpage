@@ -9,17 +9,17 @@ var tablaDatos = document.getElementById("tablaDatos");
 var botonCancelarArbol = document.getElementById("botonCancelarArbol");
 // Primer columna
 var idArbol = document.getElementById("idArbol");
-var fechaRegistroArbol = document.getElementById("fechaDeRegistro");
-var edadIngresoArbol = document.getElementById("edadDeIngreso");
-var registranteArbol = document.getElementById("registrante");
-var alturaRegistroArbol = document.getElementById("alturaDeRegistro");
-var diametroRegistroArbol = document.getElementById("diametroDeRegistro");
+var fechaRegistroArbol = document.getElementById("fechaRegistroArbol");
+var edadIngresoArbol = document.getElementById("edadIngresoArbol");
+var registranteArbol = document.getElementById("registranteArbol");
+var alturaRegistroArbol = document.getElementById("alturaRegistroArbol");
+var diametroRegistroArbol = document.getElementById("diametroRegistroArbol");
 // Segunda columna
 var anilloRelacionado = document.getElementById("anilloRelacionado");
-var familiaArbol = document.getElementById("familia");
-var generoArbol = document.getElementById("genero");
-var especieArbol = document.getElementById("especie");
-var ubicacionArbol = document.getElementById("ubicacion");
+var familiaArbol = document.getElementById("familiaArbol");
+var generoArbol = document.getElementById("generoArbol");
+var especieArbol = document.getElementById("especieArbol");
+var ubicacionArbol = document.getElementById("ubicacionArbol");
 // Segunda fila
 // Primer columna
 var rangoTemperaturaInferior = document.getElementById("rangoTemperaturaInferior");
@@ -67,11 +67,6 @@ function limpiarDatos(){
 	fertilizantePorRiego.value = ''
 	aguaPorRiego.value = ''
 	ciclosDeRiego.value = ''
-	// Recuadros de información anillo
-	idAnillo.value = ''
-	fechaRegistroArbol.value = ''
-	registranteArbolAnillo.value = ''
-	numeroConexion.value = ''
 }
 	
 function mostrarListadoArboles(){
