@@ -1,5 +1,5 @@
 int valor = 0; // for incoming serial data
-
+String mensaje0 = "Arduino ha recibido el siguiente mensaje: ";
 
 void setup() {
   Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
@@ -13,9 +13,9 @@ void loop() {
     // read the incoming byte:
     valor = Serial.read();
     // say what you got:
-    Serial.print("Arduino ha recibido el siguiente mensaje: ");
-    Serial.println((char)valor);    
-    Serial.println("Cambio");    
-    Serial.println();    
+    //Serial.println(mensaje0);
+    Serial.print((char)valor);    
+    //Serial.println("Cambio");    
+    //Serial.println();    
   }
 }

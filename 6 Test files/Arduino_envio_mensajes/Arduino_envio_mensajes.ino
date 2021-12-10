@@ -27,6 +27,6 @@ void setup() {
 void loop() {
     //String mensaje = "RSP00011,158,0,1,1,0,0,0,0,0,0,0,0,0,0,0";
     delay(3000);
-    //Serial.println(mensaje); //Muestra el dato con salto de línea
+    Serial.println(mensaje); //Muestra el dato con salto de línea
     delay(10000);
 }
