@@ -39,35 +39,11 @@ var menos10 = document.getElementById('10menos')
 
 mostrarListadoArboles()
 // Eventos de botones
-dropdownArbol.onclick = () => {};
-botonCancelarArbol.onclick = () => {
-	limpiarDatos()
-	colocarDatos(DatosArbol)
-};
+//dropdownArbol.onclick = () => {};
+
+botonCancelarArbol.onclick = () => {colocarDatos(DatosArbol)};
 
 
-function limpiarDatos(){
-	// Recuadros de información árbol
-	idArbol.value = ''
-	fechaRegistroArbol.value = ''
-	edadIngresoArbol.value = ''
-	registranteArbol.value = ''
-	alturaRegistroArbol.value = ''
-	diametroRegistroArbol.value = ''
-	anilloRelacionado.value = ''
-	familiaArbol.value = ''
-	generoArbol.value = ''
-	especieArbol.value = ''
-	ubicacionArbol.value = ''
-	rangoTemperaturaInferior.value = ''
-	rangoTemperaturaSuperior.value = ''
-	rangoHumedadInferior.value = ''
-	rangoHumedadSuperior.value = ''
-	ciclosMedicionNumero.value = ''
-	fertilizantePorRiego.value = ''
-	aguaPorRiego.value = ''
-	ciclosDeRiego.value = ''
-}
 	
 function mostrarListadoArboles(){
 	solicitarListaArboles();	
@@ -86,16 +62,8 @@ socket.on('listaDropdown', (lista) =>{
 });
 
 function desplegarElementos(lista){
-	/*
-	console.log('elemento 1: ', lista[0])
-	console.log('elemento 1: ', lista[0].datosDeRegistro.id)
-	console.log('elemento 2: ', lista[0]._id)
-	console.log('elemento 3: ', lista[2])
-	*/
-	//console.log(Object.keys(dropdownMenu))
 	
 	for (let elemento in lista){
-		
 		var opt = lista[elemento];
 		var el = document.createElement("button")
 		el.className = 'dropdown-item'
@@ -104,56 +72,45 @@ function desplegarElementos(lista){
 
 		el.setAttribute('onclick', `enviarDatos('${lista[elemento]._id}')`)
 		dropdownMenu.appendChild(el)
-
-		//console.log('elementos: ', lista)
 	}
 }
 
 function enviarDatos(elemento){
-	//console.log('Hola bb chompi hermoso')
-	//console.log(llegada)
 	socket.emit(('solicitudDatos'), elemento)
 }
 
 socket.on('datosSolicitados', (datos) =>{
-	//console.log('tomamesta' , datos);
-	//console.log('tomamesta');
 	DatosArbol = datos;
 	colocarDatos(datos);
 });
 
 
 function colocarDatos(datos){
-	console.log('Prueba', datos)
-	//console.log('jota')
-	//console.log(datos[0])
-	//console.log(datos[0].datosDeRegistro.edadIngresoArbol)
-	// Primer columna
-	idArbol.setAttribute('value',datos[0].datosDeRegistro.id);
-	fechaRegistroArbol.setAttribute('value',datos[0].datosDeRegistro.fechaDeRegistro);
-	edadIngresoArbol.setAttribute('value',datos[0].datosDeRegistro.edadDeIngreso);
-	registranteArbol.setAttribute('value',datos[0].datosDeRegistro.registrante);
-	alturaRegistroArbol.setAttribute('value',datos[0].datosDeRegistro.tamañoDeIngresoAlSistema.alturaDeRegistro);
-	diametroRegistroArbol.setAttribute('value',datos[0].datosDeRegistro.tamañoDeIngresoAlSistema.diametroDeRegistro);
-	// Segunda columna.setAttribute('value',datos[0]);
-	anilloRelacionado.setAttribute('value',datos[0].informacionDelArbol.anilloRelacionado);
-	familiaArbol.setAttribute('value',datos[0].informacionDelArbol.taxonomia.familia);
-	generoArbol.setAttribute('value',datos[0].informacionDelArbol.taxonomia.genero);
-	especieArbol.setAttribute('value',datos[0].informacionDelArbol.taxonomia.especie);
-	ubicacionArbol.setAttribute('value',datos[0].informacionDelArbol.ubicacion);
-	// Segunda fila.setAttribute('value',datos[0]);
-	// Primer columna.setAttribute('value',datos[0]);
-	rangoTemperaturaInferior.setAttribute('value',datos[0].datosDeRiego.rangoHumedadInferior);
-	rangoTemperaturaSuperior.setAttribute('value',datos[0].datosDeRiego.rangoTemperaturaSuperior);
-	rangoHumedadInferior.setAttribute('value',datos[0].datosDeRiego.rangoHumedadInferior);
-	rangoHumedadSuperior.setAttribute('value',datos[0].datosDeRiego.rangoHumedadSuperior);
-	ciclosMedicionNumero.setAttribute('value',datos[0].datosDeRiego.ciclosMedicionNumero);
+	
+	idArbol.value = datos[0].datosDeRegistro.id;
+	fechaRegistroArbol.value = datos[0].datosDeRegistro.fechaDeRegistro;
+	edadIngresoArbol.value = datos[0].datosDeRegistro.edadDeIngreso;
+	registranteArbol.value = datos[0].datosDeRegistro.registrante;
+	alturaRegistroArbol.value = datos[0].datosDeRegistro.tamañoDeIngresoAlSistema.alturaDeRegistro;
+	diametroRegistroArbol.value = datos[0].datosDeRegistro.tamañoDeIngresoAlSistema.diametroDeRegistro;
+	// Segunda columna.value = datos[0];
+	anilloRelacionado.value = datos[0].informacionDelArbol.anilloRelacionado;
+	familiaArbol.value = datos[0].informacionDelArbol.taxonomia.familia;
+	generoArbol.value = datos[0].informacionDelArbol.taxonomia.genero;
+	especieArbol.value = datos[0].informacionDelArbol.taxonomia.especie;
+	ubicacionArbol.value = datos[0].informacionDelArbol.ubicacion;
+	// Segunda fila.value = datos[0];
+	// Primer columna.value = datos[0];
+	rangoTemperaturaInferior.value = datos[0].datosDeRiego.rangoHumedadInferior;
+	rangoTemperaturaSuperior.value = datos[0].datosDeRiego.rangoTemperaturaSuperior;
+	rangoHumedadInferior.value = datos[0].datosDeRiego.rangoHumedadInferior;
+	rangoHumedadSuperior.value = datos[0].datosDeRiego.rangoHumedadSuperior;
+	ciclosMedicionNumero.value = datos[0].datosDeRiego.ciclosMedicionNumero;
 	// Segunda columna
-	fertilizantePorRiego.setAttribute('value',datos[0].datosDeRiego.fertilizantePorRiego);
-	aguaPorRiego.setAttribute('value',datos[0].datosDeRiego.aguaPorRiego);
-	ciclosDeRiego.setAttribute('value',datos[0].datosDeRiego.ciclosDeRiego);
+	fertilizantePorRiego.value = datos[0].datosDeRiego.fertilizantePorRiego;
+	aguaPorRiego.value = datos[0].datosDeRiego.aguaPorRiego;
+	ciclosDeRiego.value = datos[0].datosDeRiego.ciclosDeRiego;
 
-	//console.log('n:', datos[0].datosDeTelemetria.length)
 	if (datos[0].datosDeTelemetria.length != 0){imprimirDatosTelemetria(datos[0])};
 
 }
@@ -210,22 +167,6 @@ function imprimirColumnas(i, datos, renglon){
 	renglon.appendChild(columna3)
 	renglon.appendChild(columna4)
 	renglon.appendChild(columna5)
-
-	
-	/*
-	for (let elemento in datos){
-		if(elemento == '_id'){continue}
-		console.log('cou: ', elemento)		
-		console.log('max: ', datos[elemento])		
-		let columna = document.createElement('div')
-		//let titulo = document.createElement('h1')
-		//titulo.className = 'text'
-		//titulo.textContent = 'test'
-		columna.className = 'col-md-3 table-element text';
-		columna.textContent = datos[elemento]
-		renglon.appendChild(columna)	
-	}
-	*/
 }
 
 function concatenandoNutrientes(nutrientes){
@@ -256,5 +197,3 @@ function retroceder10(){
 	//if (offset == 0){break}
 	imprimirDatosTelemetria(DatosArbol[0])
 }
-
-//Lo que queremos hacer es que no avance más allá de lo que debería
