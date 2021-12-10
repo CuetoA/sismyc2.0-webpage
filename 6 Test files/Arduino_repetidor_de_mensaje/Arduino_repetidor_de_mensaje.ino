@@ -14,7 +14,7 @@ void loop() {
     valor = Serial.read();
     // say what you got:
     //Serial.println(mensaje0);
-    Serial.print((char)valor);    
+    //Serial.print((char)valor);    
     //Serial.println("Cambio");    
     //Serial.println();    
   }

@@ -9,7 +9,7 @@ const io = require('socket.io')(server);
 // Constantes para abrir el puerto serial
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
-const puertoSerie = 'COM6'
+const puertoSerie = 'COM17'
 const port = new Serialport(puertoSerie, { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 })
 const parser = port.pipe(new Readline());
 
@@ -78,7 +78,7 @@ io.on("connection", (socket) => {
 		let datos = await solicitudyRecepcionDeDatos.solicitarDatos(elemento);
 		socket.emit(('datosSolicitados'),datos);
 	}
-	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
+	socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
 });
 
 // Recepción de datos externos
