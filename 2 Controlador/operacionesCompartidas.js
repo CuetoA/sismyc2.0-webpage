@@ -1,4 +1,7 @@
 
+function manitaDesconchabadita(){
+	console.log('holamami')
+}
 
 function limpiarDatos(){
 	// Recuadros de información árbol

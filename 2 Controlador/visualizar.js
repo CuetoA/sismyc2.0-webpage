@@ -7,6 +7,7 @@ var dropdownArbol = document.getElementById("dropdownArbol");
 var dropdownMenu = document.getElementById("dropdown-menu");
 var tablaDatos = document.getElementById("tablaDatos");
 var botonCancelarArbol = document.getElementById("botonCancelarArbol");
+var botonAceptarArbol = document.getElementById("botonAceptarArbol");
 // Primer columna
 var idArbol = document.getElementById("idArbol");
 var fechaRegistroArbol = document.getElementById("fechaRegistroArbol");
@@ -42,6 +43,53 @@ mostrarListadoArboles()
 //dropdownArbol.onclick = () => {};
 
 botonCancelarArbol.onclick = () => {colocarDatos(DatosArbol)};
+botonAceptarArbol.onclick = () => {modificarDatos()}
+//var test = require('operacionesCompartidas')
+
+//test.manitaDesconchabadita()
+
+function modificarDatos(){
+	let dict = recolectarDatosArbol()
+	let arreglo = Array.from(dict);
+	console.log('soyu un click', arreglo)
+	//modificarObjeto(arreglo)
+}
+
+function modificarObjeto(arreglo){
+	socket.emit('modificarBD', arreglo);
+}
+
+function recolectarDatosArbol(){
+	let dicTemp = new Map();
+	dicTemp.set('id', idArbol.value);
+	dicTemp.set('fechaDeRegistro', fechaRegistroArbol.value);
+	dicTemp.set('edadDeIngreso', edadIngresoArbol.value);
+	dicTemp.set('registrante', registranteArbol.value);
+	dicTemp.set('alturaDeRegistro', alturaRegistroArbol.value);
+	dicTemp.set('diametroDeRegistro', diametroRegistroArbol.value);
+
+	dicTemp.set('anilloRelacionado', anilloRelacionado.value);
+	dicTemp.set('ubicacion', ubicacionArbol.value);
+	dicTemp.set('familia', familiaArbol.value);
+	dicTemp.set('genero', generoArbol.value);
+	dicTemp.set('especie', especieArbol.value);
+	
+	dicTemp.set('rangoTemperaturaInferior', rangoTemperaturaInferior.value);
+	dicTemp.set('rangoTemperaturaSuperior', rangoTemperaturaSuperior.value);
+	dicTemp.set('rangoHumedadInferior', rangoHumedadInferior.value);
+	dicTemp.set('rangoHumedadSuperior', rangoHumedadSuperior.value);
+	dicTemp.set('ciclosMedicionNumero', ciclosMedicionNumero.value);
+	dicTemp.set('ciclosMedicionUnidad', '0');
+	dicTemp.set('fertilizantePorRiego', fertilizantePorRiego.value);
+	dicTemp.set('aguaPorRiego', aguaPorRiego.value);
+	dicTemp.set('ciclosDeRiego', ciclosDeRiego.value);
+	dicTemp.set('ciclosDeRiegoUnidad', '0');	
+
+	return dicTemp
+};
+
+
+
 
 
 	
