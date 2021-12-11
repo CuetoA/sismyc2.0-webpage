@@ -2,6 +2,12 @@
 //const socket = io();
 const ObjetoArbol = require('./Esquemas');
 
+function eliminarArbolBD(idMongo){
+	console.log('id: ', idMongo)
+	ObjetoArbol.deleteOne({_id: idMongo}, function (err) {if (err) return handleError(err);})
+}
+
+
 function modificarDatosArbolBD(diccionario){
 	//console.log('diccionario aquí', diccionario)
 	let [filtro, datos] = obteniendoDatosModificarBD(diccionario)
@@ -179,3 +185,4 @@ function generandoObjetosJsoon(dict){
 module.exports.enviarDatosArbolBD = enviarDatosArbolBD;
 module.exports.actualizarDatosTelemetricos = actualizarDatosTelemetricos;
 module.exports.modificarDatosArbolBD = modificarDatosArbolBD;
+module.exports.eliminarArbolBD = eliminarArbolBD;

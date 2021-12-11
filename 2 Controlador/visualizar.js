@@ -8,6 +8,7 @@ var dropdownMenu = document.getElementById("dropdown-menu");
 var tablaDatos = document.getElementById("tablaDatos");
 var botonCancelarArbol = document.getElementById("botonCancelarArbol");
 var botonAceptarArbol = document.getElementById("botonAceptarArbol");
+var eliminarButton = document.getElementById("eliminarButton");
 // Primer columna
 var idArbol = document.getElementById("idArbol");
 var fechaRegistroArbol = document.getElementById("fechaRegistroArbol");
@@ -43,10 +44,17 @@ mostrarListadoArboles()
 //dropdownArbol.onclick = () => {};
 
 botonCancelarArbol.onclick = () => {colocarDatos(DatosArbol)};
-botonAceptarArbol.onclick = () => {modificarDatos()}
+botonAceptarArbol.onclick = () => {modificarDatos()};
+eliminarButton.onclick = () => {eliminarDatos()};
 //var test = require('operacionesCompartidas')
 
 //test.manitaDesconchabadita()
+
+function eliminarDatos(){
+	idMongo = DatosArbol[0]._id;
+	socket.emit('eliminarBD', idMongo)	
+}
+
 
 function modificarDatos(){	
 	//idMongo = console.log('ñoño: ', DatosArbol[0]._id)

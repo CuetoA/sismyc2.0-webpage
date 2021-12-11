@@ -86,6 +86,8 @@ io.on("connection", (socket) => {
 		envioDatosBD.modificarDatosArbolBD(diccionario);
 	});
 
+	socket.on('eliminarBD', (idMongo) => envioDatosBD.eliminarArbolBD(idMongo) )
+
 
 });
 
