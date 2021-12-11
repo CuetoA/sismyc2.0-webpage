@@ -79,6 +79,14 @@ io.on("connection", (socket) => {
 		socket.emit(('datosSolicitados'),datos);
 	}
 	socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
+
+	socket.on('modificarBD', (arreglo) => {
+		diccionario = new Map(arreglo);
+		//console.log('\npopo', diccionario)
+		envioDatosBD.modificarDatosArbolBD(diccionario);
+	});
+
+
 });
 
 // Recepción de datos externos

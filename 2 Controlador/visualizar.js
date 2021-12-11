@@ -48,19 +48,24 @@ botonAceptarArbol.onclick = () => {modificarDatos()}
 
 //test.manitaDesconchabadita()
 
-function modificarDatos(){
-	let dict = recolectarDatosArbol()
+function modificarDatos(){	
+	//idMongo = console.log('ñoño: ', DatosArbol[0]._id)
+	idMongo = DatosArbol[0]._id;
+	let dict = recolectarDatosArbol(true ,idMongo)
 	let arreglo = Array.from(dict);
-	console.log('soyu un click', arreglo)
-	//modificarObjeto(arreglo)
+	//console.log('soyu un click', arreglo)
+	modificarObjeto(arreglo)
 }
 
 function modificarObjeto(arreglo){
+	//console.log('arreglo', arreglo)
 	socket.emit('modificarBD', arreglo);
 }
 
-function recolectarDatosArbol(){
+function recolectarDatosArbol(bandera, idMongo){
 	let dicTemp = new Map();
+
+	if(bandera){dicTemp.set('idMongo', idMongo)}
 	dicTemp.set('id', idArbol.value);
 	dicTemp.set('fechaDeRegistro', fechaRegistroArbol.value);
 	dicTemp.set('edadDeIngreso', edadIngresoArbol.value);
