@@ -88,6 +88,7 @@ io.on("connection", (socket) => {
 
 	socket.on('eliminarBD', (idMongo) => envioDatosBD.eliminarArbolBD(idMongo) )
 
+	socket.on('modoManual', (arreglo) => enviarDatosSSF.modoManual(arreglo, port))
 
 });
 

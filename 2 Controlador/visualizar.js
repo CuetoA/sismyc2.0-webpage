@@ -9,6 +9,11 @@ var tablaDatos = document.getElementById("tablaDatos");
 var botonCancelarArbol = document.getElementById("botonCancelarArbol");
 var botonAceptarArbol = document.getElementById("botonAceptarArbol");
 var eliminarButton = document.getElementById("eliminarButton");
+var comprobarConexionButton = document.getElementById('comprobarConexionButton')
+
+var abrirAguaButton = document.getElementById('abrirAguaButton')
+var abrirFertilizanteButton = document.getElementById('abrirFertilizanteButton')
+var tomarMedidasButton = document.getElementById('tomarMedidasButton')
 // Primer columna
 var idArbol = document.getElementById("idArbol");
 var fechaRegistroArbol = document.getElementById("fechaRegistroArbol");
@@ -46,6 +51,47 @@ mostrarListadoArboles()
 botonCancelarArbol.onclick = () => {colocarDatos(DatosArbol)};
 botonAceptarArbol.onclick = () => {modificarDatos()};
 eliminarButton.onclick = () => {eliminarDatos()};
+//comprobarConexionButton.onclick = () => {modoManual('comprobarConexion')};
+abrirAguaButton.onclick = () => {modoManual('abrirAgua')};
+abrirFertilizanteButton.onclick = () => {modoManual('abrirFertilizante')};
+tomarMedidasButton.onclick = () => {modoManual('tomarMedidas')};
+
+
+
+function modoManual(mensaje){
+
+	console.log('mensaje es: ', mensaje)
+    console.log(DatosArbol)
+	let noConexion = DatosArbol[0].informacionDelArbol.anilloRelacionado
+	let edoActual = '1'
+	let edoAnterior = '0'
+	let modo = '0'
+	let id = '0'
+	let opRegar = '0'
+	let opMedir = '0'
+	let opFertilizar = '0'
+
+
+	if(mensaje == 'abrirAgua'){
+		opRegar = '1';
+		console.log('estado 1')
+	}
+	else if(mensaje == 'abrirFertilizante'){
+		opMedir = '1'
+		console.log('estado 2')
+	}
+	else if(mensaje == 'tomarMedidas'){
+		opFertilizar = '1'
+		console.log('estado 3')
+	}
+
+
+	let arreglo = [noConexion, edoActual, edoAnterior, modo, id, opRegar, opMedir, opFertilizar]
+
+
+	socket.emit('modoManual', arreglo)
+	// Continuar con el socket en el servidor
+}
 //var test = require('operacionesCompartidas')
 
 //test.manitaDesconchabadita()
