@@ -161,15 +161,16 @@ async function actualizandoDatos(filtro , datos){
 }
 
 function generandoObjetosJsoon(dict){
+
 	let datosTelemetriaObj = {datosDeTelemetria: {
 			fechayHora: dict.get('fechayHora'),
 			temperatura: dict.get('temperatura'),
 			humedad: dict.get('humedad'),
 			ph: dict.get('ph'),
 			nutrientes: {
-				n: dict.get('n'),
-				p: dict.get('p'),
-				k: dict.get('k')
+				n: (parseInt(dict.get('n')) / 100).toString(),
+				p: (parseInt(dict.get('p')) / 100).toString(),
+				k: (parseInt(dict.get('k')) / 100).toString()
 				} //nutrientes
 			} // datosDeTelemetria
 		} // datosTelemetriaObj

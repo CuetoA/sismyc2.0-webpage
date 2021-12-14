@@ -40,8 +40,8 @@ function ordenarDatosArbolSSF(diccionario, contenidoMensaje){
 	contenidoMensaje.push(0);												   	    	 //R26 ESTÁ EN DÍAS POR DEFAULT
 	contenidoMensaje.push(parseInt( diccionario.get('ciclosMedicionNumero') ) );	     //R27
 	contenidoMensaje.push(0);												   	    	 //R28 ESTÁ EN DÍAS POR DEFAULT
-	contenidoMensaje.push(parseInt( diccionario.get('aguaPorRiego') ) );			     //R29
-	contenidoMensaje.push(parseInt( diccionario.get('fertilizantePorRiego') ) );	     //R30
+	contenidoMensaje.push(parseFloat( diccionario.get('aguaPorRiego') ) * 1000 );		 //R29
+	contenidoMensaje.push(parseFloat( diccionario.get('fertilizantePorRiego') ) * 1000 );//R30
 	contenidoMensaje.push(parseInt( diccionario.get('rangoTemperaturaInferior') ) );     //R31
 	contenidoMensaje.push(parseInt( diccionario.get('rangoTemperaturaSuperior') ) );     //R32
 	contenidoMensaje.push(parseInt( diccionario.get('rangoHumedadInferior') ) );         //R33
