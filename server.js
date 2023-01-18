@@ -6,14 +6,12 @@ const server = http.createServer(app);
 console.log('pasando por servidor');
 const io = require('socket.io')(server);
 
-
 // Constantes para abrir el puerto serial
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
-const puertoSerie = 'COM6'
+const puertoSerie = 'COM20'
 const port = new Serialport(puertoSerie, { baudRate: 9600, databits: 8, parity: 'none', stopbits: 1, flowControl: false, buffersize: 32768 })
 const parser = port.pipe(new Readline());
-
 
 // Constantes de bibliotecas
 const recepcion = require('./3 Modelo/Comunicaciones S7/recepcionDatosS7');
@@ -22,7 +20,7 @@ const enviarDatosSSF = require('./3 Modelo/Comunicaciones S7/envioDatosS7.js');
 const solicitudyRecepcionDeDatos = require('./3 Modelo/Comunicaciones BD/solicitudyRecepcionDeDatos');
 // Constantes para MongodB
 const mongoose = require('mongoose')
-const mdburi = 'mongodb+srv://andres-cueto:amox1.0@cluster0.uur9i.mongodb.net/sismyc-db'
+const mdburi = 'mongodb+srv://andres-cueto:amox1.0@cluster0.uur9i.mongodb.net/sismyc-db';
 mongoose.connect(mdburi)
 	.then((result) => console.log('connected to moongo db'))
 	.catch((err) => console.log(err))
@@ -34,20 +32,15 @@ server.listen(8080, () => {
 	console.log('Servidor escuchando en http://localhost:8080')
 });
 
-
 // Utilizando máquina de estados
-//setTimeout(() => recepcion.maquinaDeEstados(10000, port), 60 )// * 1000 * 2);
-
+setTimeout(() => recepcion.maquinaDeEstados(20000, port), 60 )// * 1000 * 2);
 
 // Envío de datos externo
-function escribiendoEnPuerto(mensaje){
-	port.write(mensaje);
-}
+function escribiendoEnPuerto(mensaje){port.write(mensaje);}
 
 // Envío de datos interno
-function enviandoInternamente(evento, ){
 
-}
+//function enviandoInternamente(evento, ){}
 
 
 // Recepción de datos internos
@@ -59,9 +52,9 @@ io.on("connection", (socket) => {
 		app.get('/', function (req, res) { res.sendFile(__dirname + '/registrar.html') });
 	});
 
-	socket.on('apagar', (valor) => {
+	//socket.on('apagar', (valor) => {
 		
-	});
+	//});
 
 	socket.on('enviarBD', (arreglo) => {
 		console.log('arreglo en server es: ', arreglo);
@@ -70,18 +63,11 @@ io.on("connection", (socket) => {
 		enviarDatosSSF.enviarDatosArbolSSF(diccionario, port)
 	});
 
-	socket.on('listaArboles', (mensaje) =>{
-		//let lista = solicitudyRecepcionDeDatos.listaDeArboles();
-		test()
+	socket.on('listaArboles', (mensaje) =>{solicitarLista()});
 
-		//console.log('lista es:', lista)
-	});
-
-	async function test(){
+	async function solicitarLista(){
 		let lista = await solicitudyRecepcionDeDatos.listaDeArboles();
-		//console.log('lista es: ', lista)
 		socket.emit(('listaDropdown'),lista);
-		// Sigue enviar estos datos por el socket hacia nuestra página web para desplegarlos en el item
 	}
 
 	socket.on('solicitudDatos', (elemento) =>{
@@ -90,29 +76,26 @@ io.on("connection", (socket) => {
 
 	async function solicitandoDatos(elemento){
 		let datos = await solicitudyRecepcionDeDatos.solicitarDatos(elemento);
-
 		socket.emit(('datosSolicitados'),datos);
-		//let datos = await solicitudyRecepcionDeDatos.solicitarDatos(elemento);
-		//console.log('de nuevo: ', datos)
-		//return datos
 	}
-	
-	//socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
+	socket.on('enviarSerial', (mensaje) => {escribiendoEnPuerto(mensaje)});
+
+	socket.on('modificarBD', (arreglo) => {
+		diccionario = new Map(arreglo);
+		//console.log('\npopo', diccionario)
+		envioDatosBD.modificarDatosArbolBD(diccionario);
+	});
+
+	socket.on('eliminarBD', (idMongo) => envioDatosBD.eliminarArbolBD(idMongo) )
+
+	socket.on('modoManual', (arreglo) => enviarDatosSSF.modoManual(arreglo, port))
+
 });
-
-
-
-
-
-
 
 // Recepción de datos externos
 parser.on('data', function(data){
-	//console.log('Se ha recibido: ', data)
 	recepcion.recibiendoDatos(data, port);
 });
-
-
 
 
 //Llamado a la página

@@ -118,16 +118,17 @@
                             <div >
                                 <label class="form-label text label">Ubicación:</label>
                                 <input type="text" id="ubicacionArbol" placeholder="Colima 26, Santa María Acatitla, Iztapalapa, CDMX">
-                            </div>
-                            <div></div>
+                            </div>                            
                         </div>
 
 
                         <div class="col col4">
                             <div class="col-btns">
+                                <!--
                                 <a class="btn btn-warning btn-floating cicle-small" role="button" id="botonEliminarArbol">
                                     <i class="gg-trash"></i>
                                 </a>
+                                -->
                                 <a class="btn btn-warning btn-floating cicle-small" role="button" id="botonConfirmarArbol">
                                     <i class="gg-check-o"></i>
                                 </a>
@@ -221,6 +222,7 @@
             </div><!-- Registrar árbol sección-->
         </section><!-- /Registrar árbol sección-->
 
+        <!--
         <section class="seccion registrar-anillo" style="margin-top: 500px;">
             <div  class="main-div" >
                 <div class="container">
@@ -298,14 +300,18 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- Registrar anillo sección-->
-        </section><!-- /Registrar anillo sección-->
+            </div>
+        </section>
+        -->
+
+
     </div><!-- /Sections-->
 
     <script src="/socket.io/socket.io.js" charset="utf-8"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script type="module" src="../2 Controlador/registrar.js"></script>
     <script type="module" src="../3 Modelo/Objetos.js"></script>
+    <script type="module" src="../2 Controlador/operacionesCompartidas.js"></script>
 
 
 </body>

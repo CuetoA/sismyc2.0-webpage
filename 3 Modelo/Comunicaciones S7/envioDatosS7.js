@@ -7,10 +7,7 @@ function ArbolSSF(diccionario, port){
 	contenidoMensaje = ordenarDatosArbolSSF(diccionario, contenidoMensaje);
 
 	// Concatenando lista de datos en una string
-	let contenidoMensajeStr = ''
-	for (let elemento in contenidoMensaje){
-		contenidoMensajeStr += contenidoMensaje[elemento] + ','
-	};
+	let contenidoMensajeStr = arregloAString(contenidoMensaje)
 
 	// Preparando mensaje
 	let registroInicio = 17;
@@ -18,6 +15,14 @@ function ArbolSSF(diccionario, port){
 	let nodoDirigido = parseInt( diccionario.get('anilloRelacionado') );
 	enviarDatosSSF('envio', registroInicio, noRegistros, nodoDirigido, contenidoMensaje, port);
 };
+
+function arregloAString(arreglo){
+	let contenidoMensajeStr = ''
+	for (let elemento in arreglo){
+		contenidoMensajeStr += arreglo[elemento] + ','
+	};
+	return contenidoMensajeStr
+}
 
 
 // Ordenando el contenido de los datos del árbol
@@ -35,8 +40,8 @@ function ordenarDatosArbolSSF(diccionario, contenidoMensaje){
 	contenidoMensaje.push(0);												   	    	 //R26 ESTÁ EN DÍAS POR DEFAULT
 	contenidoMensaje.push(parseInt( diccionario.get('ciclosMedicionNumero') ) );	     //R27
 	contenidoMensaje.push(0);												   	    	 //R28 ESTÁ EN DÍAS POR DEFAULT
-	contenidoMensaje.push(parseInt( diccionario.get('aguaPorRiego') ) );			     //R29
-	contenidoMensaje.push(parseInt( diccionario.get('fertilizantePorRiego') ) );	     //R30
+	contenidoMensaje.push(parseFloat( diccionario.get('aguaPorRiego') ) * 1000 );		 //R29
+	contenidoMensaje.push(parseFloat( diccionario.get('fertilizantePorRiego') ) * 1000 );//R30
 	contenidoMensaje.push(parseInt( diccionario.get('rangoTemperaturaInferior') ) );     //R31
 	contenidoMensaje.push(parseInt( diccionario.get('rangoTemperaturaSuperior') ) );     //R32
 	contenidoMensaje.push(parseInt( diccionario.get('rangoHumedadInferior') ) );         //R33
@@ -46,10 +51,17 @@ function ordenarDatosArbolSSF(diccionario, contenidoMensaje){
 }
 
 
+function modoManual(arreglo, port){
+	
+	console.log('nomama')
+	let cadena = arregloAString(arreglo);
+	let nodoDirigido = arreglo[0];
+	let contenidoMensaje = arreglo;
+	enviarDatosSSF('envio', '17', '8', nodoDirigido, contenidoMensaje, port)
+}
+
 
 function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, contenidoMensaje, port){
-
-
 	let comando = ''
 
 	// Header del mensaje
@@ -69,3 +81,4 @@ function enviarDatosSSF(inOrOut, registroInicio, noRegistros, nodoDirigido, cont
 
 
 module.exports.enviarDatosArbolSSF = ArbolSSF;
+module.exports.modoManual = modoManual;
