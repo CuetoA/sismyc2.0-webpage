@@ -28,7 +28,7 @@ function recibiendoDatos(datos, port){
 	}else{
 		console.log('Recibiendo datos no programados');
 	}
-	//console.log('Mensaje recibido: ', datos);
+	console.log('Mensaje recibido: ', datos);
 }
 
 

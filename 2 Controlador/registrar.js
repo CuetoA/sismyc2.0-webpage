@@ -38,9 +38,11 @@ const numeroConexion = document.getElementById("numeroConexion");
 
 //Importando objetos
 import {arbol, anillo} from '../3 Modelo/Objetos.js';
+import {limpiarDatos} from './operacionesCompartidas.js';
 
 //botonConfirmarArbol.onclick = () => {recolectarDatosArbol()};
 botonConfirmarArbol.onclick = () => {enviarDatosArbol()};
+botonCancelarArbol.onclick = () => {limpiarDatos()};
 
 
 // Enviando los datos del árbol al SSF
