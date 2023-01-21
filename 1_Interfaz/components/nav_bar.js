@@ -22,6 +22,6 @@ class NavBar extends React.Component {
 }
 
 
-const domContainer = document.querySelector('#nav_container');
+const domContainer = document.querySelector('.nav_container');
 const root = ReactDOM.createRoot(domContainer);
 root.render(e(NavBar));
