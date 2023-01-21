@@ -4,6 +4,8 @@
   "description": "Test of the web server communicated by serial port",
   "main": "index.js",
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
     "express": "^4.17.1",
     "mongodb": "^4.2.1",
     "mongoose": "^6.0.14",
